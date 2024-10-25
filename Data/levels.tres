@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://cj2p5wklv2mnr"]
+
+[ext_resource type="Script" path="res://Code/Utilities/level_data.gd" id="1_hxarh"]
+
+[resource]
+script = ExtResource("1_hxarh")
+levels = {
+"test": "res://Scenes/Worlds/test_world.tscn"
+}
+extra_loading_time = 1.0
