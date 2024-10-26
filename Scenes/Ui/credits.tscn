@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgmsdf1skw0bp"]
+
+[ext_resource type="Script" path="res://Code/Ui/sy_panel_container.gd" id="1_mxr6m"]
+[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_fku58"]
+
+[node name="Credits" type="PanelContainer"]
+custom_minimum_size = Vector2(640, 360)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mxr6m")
+id = "credits"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="btn_back" type="Button" parent="Control"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -73.0
+offset_right = -33.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "credits_back_button"
+text_overrun_behavior = 1
+script = ExtResource("2_fku58")
+destination = "main_menu"

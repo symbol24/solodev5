@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://d01n8fqwy23uf"]
+
+[ext_resource type="Script" path="res://Code/Ui/loading_screen.gd" id="1_hewoh"]
+[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_12w83"]
+
+[node name="LevelUpScreen" type="PanelContainer"]
+custom_minimum_size = Vector2(640, 360)
+script = ExtResource("1_hewoh")
+id = "level_up_screen"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = 260.0
+offset_top = 40.0
+offset_right = 380.0
+offset_bottom = 100.0
+text = "LEVEL UP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="close_button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 174.0
+offset_right = 345.0
+offset_bottom = 214.0
+text = "close"
+script = ExtResource("2_12w83")
+destination = "close_pause"

@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_hxarh")
 levels = {
-"test": "res://Scenes/Worlds/test_world.tscn"
+"test": "res://Scenes/Worlds/test_world.tscn",
+"ui": "res://Scenes/Ui/UI.tscn"
 }
-extra_loading_time = 1.0
+extra_loading_time = 2.0

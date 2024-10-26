@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtrfisiwrvq7f"]
+
+[ext_resource type="Script" path="res://Code/Tower/Weapons/sweeping_light.gd" id="1_p3qa0"]
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_1i2jh"]
+[ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="2_h0qh2"]
+[ext_resource type="Resource" uid="uid://b772xfrm8u57v" path="res://Data/Tower/WeaponDamages/sweeping_light_damage.tres" id="3_dvw8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ade2w"]
+size = Vector2(160, 10)
+
+[node name="SweepingLight" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_p3qa0")
+rotation_speed = 0.5
+
+[node name="light" type="Line2D" parent="."]
+unique_name_in_owner = true
+points = PackedVector2Array(0, 0, 160, 0)
+
+[node name="AttackArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("2_h0qh2")
+damages = Array[ExtResource("2_1i2jh")]([ExtResource("3_dvw8y")])
+
+[node name="collider" type="CollisionShape2D" parent="AttackArea"]
+unique_name_in_owner = true
+position = Vector2(80, 0)
+shape = SubResource("RectangleShape2D_ade2w")
+debug_color = Color(0.576471, 0, 0.0352941, 0.419608)

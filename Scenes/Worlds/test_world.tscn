@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://h0ri72osowoa"]
+[gd_scene load_steps=3 format=3 uid="uid://h0ri72osowoa"]
 
-[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="1_ex34i"]
+[ext_resource type="Script" path="res://Code/Worlds/world.gd" id="1_evot6"]
+[ext_resource type="PackedScene" uid="uid://b7812wy4hcle3" path="res://Scenes/Tower/tower.tscn" id="1_jyg8q"]
 
 [node name="test_world" type="Node2D"]
+script = ExtResource("1_evot6")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(301, 166)
-texture = ExtResource("1_ex34i")
+[node name="Tower" parent="." instance=ExtResource("1_jyg8q")]
+position = Vector2(320, 196)

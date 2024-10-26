@@ -3,7 +3,7 @@ extends Node2D
 
 @export var levels:LevelData
 
-var active_level:Node
+var active_world:Node
 var is_loading := false
 var to_load := ""
 var load_complete := false
@@ -16,6 +16,7 @@ func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 
 	Signals.LoadScene.connect(_load_scene)
+	Signals.ClearActiveScene.connect(_clear_active_scene)
 
 	if levels == null: push_error("Level data in scene manager is not set.")
 
@@ -42,12 +43,6 @@ func _load_scene(_id:String = "") -> void:
 		push_error("Path to load is empty.")
 		return
 	
-	# If there is an active level, queue_free it.
-	if active_level != null: 
-		var temp := active_level
-		remove_child.call_deferred(temp)
-		temp.queue_free.call_deferred()
-	
 	# Starting the ResourceLoader.
 	to_load = path
 	is_loading = true
@@ -57,14 +52,29 @@ func _load_scene(_id:String = "") -> void:
 
 func _complete_load() -> void:
 	is_loading = false
-	
+
 	# Get the new level from the ResourceLoader and instantiate it.
-	var new_level := ResourceLoader.load_threaded_get(to_load)
-	active_level = new_level.instantiate()
-	add_child.call_deferred(active_level)
+	var new_scene := ResourceLoader.load_threaded_get(to_load)
+	var new = new_scene.instantiate()
+	# If there is an active level, queue_free it.
+	if active_world != null and new is World: 
+		var temp := active_world
+		remove_child.call_deferred(temp)
+		temp.queue_free.call_deferred()
+
+	if new is World:
+		active_world = new
+
+	add_child.call_deferred(new)
 	
-	if not active_level.is_node_ready():
-		await active_level.ready
+	if not new.is_node_ready():
+		await new.ready
 	
 	get_tree().paused = false
-	Signals.SceneLoadingComplete.emit()
+	Signals.SceneLoadingComplete.emit(new)
+
+
+func _clear_active_scene() -> void:
+	if active_world != null:
+		active_world.queue_free.call_deferred()
+		active_world = null

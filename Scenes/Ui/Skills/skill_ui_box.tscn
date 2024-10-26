@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8s2rl5xmi84s"]
+
+[ext_resource type="Script" path="res://Code/Ui/skill_ui_bar.gd" id="1_x5h5w"]
+[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_qaoi2"]
+[ext_resource type="Texture2D" uid="uid://ng0kq2ygxgox" path="res://Textures/Ui/exp_bar_fill.png" id="4_lvkmx"]
+
+[node name="SkillUiElement" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5h5w")
+
+[node name="texture_bar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_under = ExtResource("2_qaoi2")
+texture_progress = ExtResource("4_lvkmx")
+tint_progress = Color(1, 1, 1, 0.458824)

@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf5ploonyff18"]
+
+[ext_resource type="Script" path="res://Code/Ui/sy_panel_container.gd" id="1_isblu"]
+[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="1_noof6"]
+
+[node name="MainMenu" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_isblu")
+id = "main_menu"
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 2
+
+[node name="game_title" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 520.0
+offset_bottom = 140.0
+bbcode_enabled = true
+text = "game_title"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+offset_left = 270.0
+offset_top = 140.0
+offset_right = 370.0
+offset_bottom = 190.0
+
+[node name="btn_play" type="Button" parent="Control/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "main_menu_play"
+text_overrun_behavior = 1
+clip_text = true
+script = ExtResource("1_noof6")
+destination = "play"
+
+[node name="btn_credits" type="Button" parent="Control/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "main_menu_credits"
+text_overrun_behavior = 1
+clip_text = true
+script = ExtResource("1_noof6")
+destination = "credits"

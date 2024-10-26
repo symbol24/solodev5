@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://71ppn76n5xiu"]
+
+[ext_resource type="Script" path="res://Code/Player/Skills/monster_one_spawner.gd" id="1_jqapd"]
+
+[node name="MonsterOneSpawner" type="Node2D"]
+script = ExtResource("1_jqapd")

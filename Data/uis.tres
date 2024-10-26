@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://daws0ryvbsa7w"]
+
+[ext_resource type="Script" path="res://Code/Utilities/level_data.gd" id="1_jn6me"]
+
+[resource]
+script = ExtResource("1_jn6me")
+levels = {
+"credits": "res://Scenes/Ui/credits.tscn",
+"level_up_screen": "res://Scenes/Ui/LevelUpScreen.tscn",
+"main_menu": "res://Scenes/Ui/main_menu.tscn",
+"pause_menu": "res://Scenes/Ui/pause_menu.tscn",
+"player_ui": "res://Scenes/Ui/player_ui.tscn",
+"result_screen": "res://Scenes/Ui/result_screen.tscn"
+}
+extra_loading_time = 0.0

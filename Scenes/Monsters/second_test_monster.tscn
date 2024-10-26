@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cei0y8uwmtqvv"]
+
+[ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_idicf"]
+[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_rn48v"]
+[ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_xwklx"]
+[ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_b1x8p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mckh3"]
+radius = 8.06226
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0husp"]
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ytnx"]
+radius = 13.0
+
+[node name="SecondTestMonster" type="CharacterBody2D"]
+script = ExtResource("1_idicf")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.901595, 0.854876, 2.31028e-06, 1)
+position = Vector2(0, -13)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_rn48v")
+
+[node name="move_collider" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_mckh3")
+
+[node name="HitBox" parent="." instance=ExtResource("3_xwklx")]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="hit_collider" parent="HitBox" index="0"]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_0husp")
+debug_color = Color(2.45467e-06, 0.636356, 0.405916, 0.42)
+
+[node name="AttackArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+script = ExtResource("4_b1x8p")
+
+[node name="attack_collider" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_6ytnx")
+debug_color = Color(0.42843, 0, 0.0318467, 0.42)
+
+[editable path="HitBox"]

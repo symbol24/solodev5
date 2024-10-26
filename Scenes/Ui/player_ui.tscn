@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bci10bx531v3k"]
+
+[ext_resource type="Script" path="res://Code/Ui/player_ui.gd" id="1_hia8p"]
+[ext_resource type="Texture2D" uid="uid://bes3byjr8r5cu" path="res://Textures/Ui/exp_bar_outline.png" id="2_crpe0"]
+[ext_resource type="PackedScene" uid="uid://c8s2rl5xmi84s" path="res://Scenes/Ui/Skills/skill_ui_box.tscn" id="2_wntxg"]
+[ext_resource type="Texture2D" uid="uid://ng0kq2ygxgox" path="res://Textures/Ui/exp_bar_fill.png" id="3_3mddq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_531id"]
+
+[node name="PlayerUi" type="PanelContainer"]
+z_index = 4000
+z_as_relative = false
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_531id")
+script = ExtResource("1_hia8p")
+skill_box = ExtResource("2_wntxg")
+id = "player_ui"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="monsters" type="VBoxContainer" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 30.0
+offset_right = -40.0
+offset_bottom = 70.0
+grow_horizontal = 0
+
+[node name="exp_bar" type="TextureProgressBar" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 300)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = 330.0
+grow_horizontal = 0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_over = ExtResource("2_crpe0")
+texture_progress = ExtResource("3_3mddq")

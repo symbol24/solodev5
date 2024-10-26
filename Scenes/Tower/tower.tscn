@@ -1,6 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7812wy4hcle3"]
+[gd_scene load_steps=9 format=3 uid="uid://b7812wy4hcle3"]
 
 [ext_resource type="Script" path="res://Code/Tower/tower.gd" id="1_d06k4"]
+[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_avwcn"]
+[ext_resource type="Script" path="res://Code/Tower/Weapons/tower_weapon_data.gd" id="2_tj2tc"]
+[ext_resource type="Resource" uid="uid://3sxbco0o384" path="res://Data/Tower/WeaponData/sweeping_light_data.tres" id="3_oobyp"]
+[ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="5_ikdop"]
 
-[node name="Tower" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_byxyb"]
+radius = 47.0425
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_svnny"]
+radius = 160.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l28km"]
+radius = 24.0
+
+[node name="Tower" type="Area2D"]
+process_mode = 1
 script = ExtResource("1_d06k4")
+starter_weapons = Array[ExtResource("2_tj2tc")]([ExtResource("3_oobyp")])
+metadata/_edit_horizontal_guides_ = [-32.0]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -16)
+scale = Vector2(0.0625, 0.25)
+texture = ExtResource("2_avwcn")
+
+[node name="attack_point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -16)
+scale = Vector2(0.0703125, 0.363281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_byxyb")
+
+[node name="light_area" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -16)
+
+[node name="light_area_collider" type="CollisionShape2D" parent="light_area"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_svnny")
+debug_color = Color(0.51121, 0.557194, 0.432005, 0.42)
+
+[node name="light_point" type="Marker2D" parent="." groups=["light"]]
+position = Vector2(0, -16)
+
+[node name="HitBox" parent="." instance=ExtResource("5_ikdop")]
+position = Vector2(0, -16)
+collision_mask = 8
+
+[node name="hit_collider" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_l28km")
+
+[editable path="HitBox"]
