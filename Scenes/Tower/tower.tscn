@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7812wy4hcle3"]
+[gd_scene load_steps=10 format=3 uid="uid://b7812wy4hcle3"]
 
 [ext_resource type="Script" path="res://Code/Tower/tower.gd" id="1_d06k4"]
 [ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_avwcn"]
 [ext_resource type="Script" path="res://Code/Tower/Weapons/tower_weapon_data.gd" id="2_tj2tc"]
 [ext_resource type="Resource" uid="uid://3sxbco0o384" path="res://Data/Tower/WeaponData/sweeping_light_data.tres" id="3_oobyp"]
+[ext_resource type="Texture2D" uid="uid://bwlepvi67n8tj" path="res://Textures/Tower/tower_light_circle.png" id="4_psetr"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="5_ikdop"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_byxyb"]
@@ -20,6 +21,12 @@ process_mode = 1
 script = ExtResource("1_d06k4")
 starter_weapons = Array[ExtResource("2_tj2tc")]([ExtResource("3_oobyp")])
 metadata/_edit_horizontal_guides_ = [-32.0]
+
+[node name="tower_light_circle" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.623529)
+position = Vector2(0, -16)
+texture = ExtResource("4_psetr")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, -16)
@@ -39,6 +46,8 @@ shape = SubResource("CircleShape2D_byxyb")
 [node name="light_area" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -16)
+collision_layer = 16
+collision_mask = 16
 
 [node name="light_area_collider" type="CollisionShape2D" parent="light_area"]
 unique_name_in_owner = true
@@ -49,10 +58,14 @@ debug_color = Color(0.51121, 0.557194, 0.432005, 0.42)
 position = Vector2(0, -16)
 
 [node name="HitBox" parent="." instance=ExtResource("5_ikdop")]
+unique_name_in_owner = true
 position = Vector2(0, -16)
 collision_mask = 8
 
 [node name="hit_collider" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_l28km")
+
+[node name="radius_timer" type="Timer" parent="."]
+unique_name_in_owner = true
 
 [editable path="HitBox"]

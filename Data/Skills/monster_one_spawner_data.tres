@@ -7,5 +7,9 @@
 script = ExtResource("1_7rpo5")
 id = "monster_one_spawner"
 texture = ExtResource("2_845xm")
-starting_delay = 5.0
+starting_delay = 3.0
 skill_path = "res://Scenes/Player/Skills/monster_one_spawner.tscn"
+json_path = "res://Data/Skills/JSONS/monster_one_levels.json"
+title = "monster_one_spawner_title"
+description = "monster_one_spawner_desc"
+ui_texture = ExtResource("2_845xm")

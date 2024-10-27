@@ -3,6 +3,8 @@ class_name HitBox extends Area2D
 
 @export var hit_delay:float = 0.1
 
+@onready var hit_collider: CollisionShape2D = %hit_collider
+
 var monster:Monster
 var tower:Tower
 var is_active:bool = false
@@ -15,6 +17,7 @@ var timer:float = 0.0:
 
 
 func _ready() -> void:
+	Signals.UpdateTowerLightArea.connect(_update_collision_radius)
 	area_entered.connect(_area_entered)
 	name = "hit_box_0"
 	var parent = get_parent()
@@ -40,3 +43,8 @@ func _area_entered(area: Area2D ) -> void:
 		elif area.attack_owner is Tower and monster != null:
 			monster.receive_damage(area.damages.duplicate())
 			is_active = false
+
+
+func _update_collision_radius(value:float) -> void:
+	if tower:
+		hit_collider.shape.radius = value

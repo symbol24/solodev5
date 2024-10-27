@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://bl6hfu8twtu16"]
+
+[ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="1_7b01k"]
+[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_mpg23"]
+
+[resource]
+script = ExtResource("1_7b01k")
+id = "autospawner_one"
+texture = ExtResource("2_mpg23")
+starting_delay = 30.0
+skill_path = "res://Scenes/Player/Skills/autospawner_one_skill.tscn"
+json_path = "res://Data/Skills/JSONS/autospawner_one_levels.json"
+title = "autospawner_one_title"
+description = "autospawner_one_desc"
+ui_texture = ExtResource("2_mpg23")

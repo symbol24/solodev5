@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwpwy2a7m5gkg"]
+
+[ext_resource type="Texture2D" uid="uid://cqm8nq5qo2t52" path="res://Textures/Ui/monster_hp_bar_outline.png" id="1_cyfc1"]
+[ext_resource type="Texture2D" uid="uid://d0lj2onsl5q58" path="res://Textures/Ui/monster_hp_bar_bar.png" id="2_th5k5"]
+
+[node name="MonsterHealthBar" type="TextureProgressBar"]
+custom_minimum_size = Vector2(24, 4)
+offset_right = 24.0
+offset_bottom = 4.0
+max_value = 2.0
+value = 1.0
+rounded = true
+nine_patch_stretch = true
+texture_over = ExtResource("1_cyfc1")
+texture_progress = ExtResource("2_th5k5")

@@ -1,15 +1,28 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc7r65a7703mk"]
 
-[ext_resource type="Script" path="res://Code/Ui/sy_panel_container.gd" id="1_bdbpq"]
+[ext_resource type="Script" path="res://Code/Ui/result_screen.gd" id="1_7xora"]
 [ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_agw4d"]
 
 [node name="ResultScreen" type="PanelContainer"]
 custom_minimum_size = Vector2(640, 360)
-script = ExtResource("1_bdbpq")
+script = ExtResource("1_7xora")
+succes_id = "result_succes_title"
+fail_id = "result_fail_title"
 id = "result_screen"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
+
+[node name="result_title" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 520.0
+offset_bottom = 80.0
+bbcode_enabled = true
+scroll_active = false
 
 [node name="exit_result_btn" type="Button" parent="Control"]
 custom_minimum_size = Vector2(80, 40)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0n8wddyqxbrp"]
+
+[ext_resource type="Script" path="res://Code/Utilities/Managers/spawn_manager.gd" id="1_oct6q"]
+
+[node name="SpawnManager" type="Node2D"]
+script = ExtResource("1_oct6q")
+monsters = {
+"first": "res://Scenes/Monsters/monster.tscn",
+"second": "res://Scenes/Monsters/second_test_monster.tscn"
+}
+auto_spawners = {
+"auto_spawner_one": "res://Scenes/Autospawners/auto_spawner_one.tscn",
+"autospawner_two": "res://Scenes/Autospawners/auto_spawner_two.tscn"
+}

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://cc08dcoqg1mea"]
+
+[ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="1_urvi7"]
+[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_kvgfd"]
+
+[resource]
+script = ExtResource("1_urvi7")
+id = "monster_two"
+texture = ExtResource("2_kvgfd")
+starting_delay = 3.0
+skill_path = "res://Scenes/Player/Skills/monster_two_spawning_skill.tscn"
+json_path = "res://Data/Skills/JSONS/monster_two_levels.json"
+title = "monster_two_title"
+description = "monster_two_desc"
+ui_texture = ExtResource("2_kvgfd")

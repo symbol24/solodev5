@@ -12,6 +12,7 @@ size = Vector2(160, 10)
 process_mode = 1
 script = ExtResource("1_p3qa0")
 rotation_speed = 0.5
+damages = Array[ExtResource("2_1i2jh")]([ExtResource("3_dvw8y")])
 
 [node name="light" type="Line2D" parent="."]
 unique_name_in_owner = true
@@ -22,7 +23,6 @@ unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("2_h0qh2")
-damages = Array[ExtResource("2_1i2jh")]([ExtResource("3_dvw8y")])
 
 [node name="collider" type="CollisionShape2D" parent="AttackArea"]
 unique_name_in_owner = true

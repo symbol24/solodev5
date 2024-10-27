@@ -13,15 +13,21 @@ class_name Monster extends CharacterBody2D
 
 @export_group("Other")
 @export var target:Vector2 = Vector2(320, 180)
+@export var packed_hp_bar:PackedScene
+
+@onready var hp_point: Marker2D = %hp_point
 
 
 # Stats
 var current_hp:int = 0:
 	set(value):
 		current_hp = value
-		clampi(current_hp, 0, starting_hp)
+		clampi(current_hp, 0, data.hp)
 		if current_hp == 0: _death()
+
 var is_dead:bool = false
+var data:SkillData
+var hp_bar:TextureProgressBar
 
 
 func _process(_delta: float) -> void:
@@ -36,7 +42,9 @@ func receive_damage(received:Array[Damage]) -> void:
 		for each in received:
 			var amount:int = each.get_damage()
 			current_hp -= amount
-			Signals.DamageNumber.emit(amount, global_position)
+			if hp_bar != null: 
+				hp_bar.value = current_hp
+			Signals.DamageNumber.emit(amount, global_position, "light")
 			#print("Monster ", name, " received damage: ", amount)
 
 
@@ -44,9 +52,18 @@ func entered_light_pool() -> void:
 	_death()
 
 
-func setup_stats() -> void:
+func setup_stats(_data:SkillData) -> void:
 	is_dead = false
-	current_hp = starting_hp
+	data = _data
+	speed = data.speed
+	current_hp = data.hp
+	if packed_hp_bar:
+		hp_bar = packed_hp_bar.instantiate()
+		add_child(hp_bar)
+		hp_bar.position = hp_point.position
+		hp_bar.step = 1
+		hp_bar.max_value = data.hp
+		hp_bar.value = current_hp
 	if attack_area:
 		attack_area.set_attack_owner(self)
 		attack_area.set_damages(damages.duplicate())
@@ -57,4 +74,4 @@ func setup_stats() -> void:
 func _death() -> void:
 	is_dead = true
 	Signals.SpawnCurrency.emit(global_position)
-	Signals.ReturnMonsterToPool.emit(self)
+	Signals.ReturnToPool.emit(self, get_parent())

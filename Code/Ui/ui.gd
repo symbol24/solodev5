@@ -29,18 +29,19 @@ func _toggle_ui(id:String, display:bool = true) -> void:
 	var found:bool = false
 	for each in ui_panels:
 		if each.id == id: 
-			each.visible = display
+			each.toggle_panel(display)
 			found = true
-		else: each.hide()
+		else: each.toggle_panel(false)
 	
 	if not found and display:
 		var to_load:String = uis.get_level_path(id)
 		if to_load != "":
-			var new_ui = load(to_load).instantiate()
+			var new_ui:SyPanelContainer = load(to_load).instantiate()
 			add_child(new_ui)
 			if not new_ui.is_node_ready:
 				await new_ui.ready
 			ui_panels.append(new_ui)
+			new_ui.toggle_panel(display)
 
 
 func _button_dispatcher(destination:String) -> void:

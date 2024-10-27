@@ -76,5 +76,5 @@ func _complete_load() -> void:
 
 func _clear_active_scene() -> void:
 	if active_world != null:
-		active_world.queue_free.call_deferred()
+		active_world.queue_free()
 		active_world = null

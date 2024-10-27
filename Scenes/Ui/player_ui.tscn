@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bci10bx531v3k"]
+[gd_scene load_steps=7 format=3 uid="uid://bci10bx531v3k"]
 
 [ext_resource type="Script" path="res://Code/Ui/player_ui.gd" id="1_hia8p"]
 [ext_resource type="Texture2D" uid="uid://bes3byjr8r5cu" path="res://Textures/Ui/exp_bar_outline.png" id="2_crpe0"]
 [ext_resource type="PackedScene" uid="uid://c8s2rl5xmi84s" path="res://Scenes/Ui/Skills/skill_ui_box.tscn" id="2_wntxg"]
 [ext_resource type="Texture2D" uid="uid://ng0kq2ygxgox" path="res://Textures/Ui/exp_bar_fill.png" id="3_3mddq"]
+[ext_resource type="PackedScene" uid="uid://dx3builap6b86" path="res://Scenes/Ui/damage_number.tscn" id="3_aoemk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_531id"]
 
@@ -17,13 +18,17 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_531id")
 script = ExtResource("1_hia8p")
 skill_box = ExtResource("2_wntxg")
+dmg_number = ExtResource("3_aoemk")
+light_color = Color(0.870543, 0.849439, 0.709633, 1)
+dark_color = Color(0.127927, 0.000183258, 0.335759, 1)
 id = "player_ui"
 
-[node name="Control" type="Control" parent="."]
+[node name="control" type="Control" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 
-[node name="monsters" type="VBoxContainer" parent="Control"]
+[node name="skills" type="VBoxContainer" parent="control"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
@@ -36,7 +41,7 @@ offset_right = -40.0
 offset_bottom = 70.0
 grow_horizontal = 0
 
-[node name="exp_bar" type="TextureProgressBar" parent="Control"]
+[node name="exp_bar" type="TextureProgressBar" parent="control"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 300)
 layout_mode = 1

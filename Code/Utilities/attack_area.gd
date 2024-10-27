@@ -12,3 +12,5 @@ func set_attack_owner(new_owner) -> void:
 
 func set_damages(new:Array[Damage]) -> void:
 	damages = new
+	for each in damages:
+		each.set_damage_owner(attack_owner)

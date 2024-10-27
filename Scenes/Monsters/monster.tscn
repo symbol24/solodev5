@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://vw1f6bwm15wd"]
+[gd_scene load_steps=11 format=3 uid="uid://vw1f6bwm15wd"]
 
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_jjqfh"]
 [ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="1_ng8kv"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_3y0lg"]
+[ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_5s4gb"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_7k3cy"]
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="5_egk2c"]
 [ext_resource type="Resource" uid="uid://blsdobkjsnro3" path="res://Data/Monsters/Damages/test_monster_damage.tres" id="6_yu4be"]
@@ -26,6 +27,7 @@ id = "first"
 starting_hp = 1
 damages = Array[ExtResource("5_egk2c")]([ExtResource("6_yu4be")])
 attack_area = NodePath("AttackArea")
+packed_hp_bar = ExtResource("4_5s4gb")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
@@ -55,5 +57,9 @@ script = ExtResource("4_7k3cy")
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_b3jq4")
 debug_color = Color(0.42843, 0, 0.0318467, 0.42)
+
+[node name="hp_point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-12, -30)
 
 [editable path="HitBox"]

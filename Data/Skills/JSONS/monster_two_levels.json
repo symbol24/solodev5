@@ -1,0 +1,38 @@
+{
+	"1" : {
+		"used_delay" : 5,
+		"damage" : 5,
+		"speed" : 15,
+		"hp" : 1
+	},
+	"2" : {
+		"used_delay" : 4.6,
+		"damage" : 6,
+		"speed" : 18,
+		"hp" : 2
+	},
+	"3" : {
+		"used_delay" : 4.2,
+		"damage" : 7,
+		"speed" : 21,
+		"hp" : 2
+	},
+	"4" : {
+		"used_delay" : 3.8,
+		"damage" : 8,
+		"speed" : 24,
+		"hp" : 3
+	},
+	"5" : {
+		"used_delay" : 3.4,
+		"damage" : 9,
+		"speed" : 27,
+		"hp" : 3
+	},
+	"6" : {
+		"used_delay" : 3,
+		"damage" : 10,
+		"speed" : 30,
+		"hp" : 5
+	}
+}

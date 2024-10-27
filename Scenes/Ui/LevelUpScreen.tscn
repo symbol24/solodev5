@@ -1,33 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://d01n8fqwy23uf"]
+[gd_scene load_steps=4 format=3 uid="uid://d01n8fqwy23uf"]
 
-[ext_resource type="Script" path="res://Code/Ui/loading_screen.gd" id="1_hewoh"]
+[ext_resource type="Script" path="res://Code/Ui/level_up_screen.gd" id="1_sbbjg"]
+[ext_resource type="PackedScene" uid="uid://bgfxe5h65e0no" path="res://Scenes/Ui/level_up_card.tscn" id="2_4qckg"]
 [ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_12w83"]
 
 [node name="LevelUpScreen" type="PanelContainer"]
 custom_minimum_size = Vector2(640, 360)
-script = ExtResource("1_hewoh")
+script = ExtResource("1_sbbjg")
+level_card = ExtResource("2_4qckg")
 id = "level_up_screen"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control"]
-custom_minimum_size = Vector2(120, 60)
+custom_minimum_size = Vector2(120, 40)
 layout_mode = 0
 offset_left = 260.0
-offset_top = 40.0
+offset_top = 20.0
 offset_right = 380.0
-offset_bottom = 100.0
+offset_bottom = 60.0
 text = "LEVEL UP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="choices" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 80.0
+offset_right = 565.0
+offset_bottom = 280.0
+theme_override_constants/separation = 20
+
 [node name="close_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 295.0
-offset_top = 174.0
-offset_right = 345.0
-offset_bottom = 214.0
+offset_left = 529.0
+offset_top = 294.0
+offset_right = 579.0
+offset_bottom = 334.0
 text = "close"
 script = ExtResource("2_12w83")
 destination = "close_pause"

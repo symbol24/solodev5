@@ -10,10 +10,11 @@ class_name SweepingLight extends TowerWeapon
 
 func _ready() -> void:
 	attack_area.set_attack_owner(tower)
+	attack_area.set_damages(damages.duplicate(true))
 
 
 func _process(delta: float) -> void:
-	if is_active:
-		light.points[1].x = tower.light_radius
+	if tower.is_active and is_active:
+		light.points[1].x = tower.pushback_radius
 
 		rotate(rotation_speed * delta)

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://71ppn76n5xiu"]
+[gd_scene load_steps=3 format=3 uid="uid://71ppn76n5xiu"]
 
-[ext_resource type="Script" path="res://Code/Player/Skills/monster_one_spawner.gd" id="1_jqapd"]
+[ext_resource type="Script" path="res://Code/Player/Skills/spawner_skill.gd" id="1_jqapd"]
+[ext_resource type="Resource" uid="uid://bo1cq3t60dexi" path="res://Data/Skills/monster_one_spawner_data.tres" id="2_qeahb"]
 
 [node name="MonsterOneSpawner" type="Node2D"]
 script = ExtResource("1_jqapd")
+to_spawn = "first"
+skill_data = ExtResource("2_qeahb")

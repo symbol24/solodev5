@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjom6ej0hiyo1"]
+
+[ext_resource type="Script" path="res://Code/Player/Skills/spawner_skill.gd" id="1_uydj1"]
+[ext_resource type="Resource" uid="uid://cc08dcoqg1mea" path="res://Data/Skills/monster_two_spawner_data.tres" id="3_5j5qp"]
+
+[node name="MonsterTwoSpawningSkill" type="Node2D"]
+script = ExtResource("1_uydj1")
+to_spawn = "second"
+skill_data = ExtResource("3_5j5qp")
