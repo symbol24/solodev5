@@ -1,0 +1,36 @@
+KEYS,en
+game_title,[center]Last Light[/center]
+company_name,[center]Robots in Disguise[/center]
+main_menu_play,Play
+main_menu_credits,Credits
+credits_back_button,Back
+level_up_screen_title,Level Up
+exit_pause_menu,Main Menu
+close_pause_menu,Close
+exit_result_btn,Main Menu
+autospawner_one_title,[center]Fire Circle[/center]
+autospawner_one_desc,The Creeper Circle spawns Creepers on its own.
+autospawner_two_title,[center]Monolith[/center]
+autospawner_two_desc,The Grumbler Monolith spawns Grumblers on its own.
+monster_one_spawner_title,[center]Creeper[/center]
+monster_one_spawner_desc,"Slow, smal and fraill, the Creeper does good damage."
+monster_two_title,[center]Grumbler[/center]
+monster_two_desc,"Grumblers are fast and hardy, but do low damage."
+result_succes_title,[center]The Dark has won[/center]
+result_fail_title,[center]The Light has prevailed[/center]
+pause_title,Paused
+credits_title,[center]Credits[/center]
+everything_label,Solo Dev:
+me,Symbol24
+art_label,Most Art:
+art_link_label,https://penusbmic.itch.io
+font_label,Font:
+font_link_label,https://sik.itch.io/fonts
+player_ui_pause_btn,Pause
+empty_kills_for_upgrades_title,No Skills Left
+empty_kills_for_upgrades_desc,"Sorry, no skills left to upgrade or get. #gamejams"
+game_info,"[ul bullet=>] Spawn Monsters in the Dark.[/ul]
+
+[ul bullet=>] Encroach on the Light to destroy it.[/ul]
+
+[ul bullet=>] Do not let the Light reach the Dark.[/ul]"

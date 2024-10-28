@@ -13,9 +13,7 @@ func set_damage_owner(new_owner) -> void:
 
 func get_damage() -> int:
 	if damage_owner and damage_owner.is_dead: return 0
-	print(damage_owner)
 	if damage_owner is Monster:
-		print("Damage is monster")
 		final_value = damage_owner.data.damage
 	else:
 		final_value = base_value

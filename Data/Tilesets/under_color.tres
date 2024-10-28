@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dm60nmkkal3bp"]
+
+[ext_resource type="Texture2D" uid="uid://1uso02f7dn2k" path="res://Textures/Objects/patch.png" id="1_mflxf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6in8"]
+texture = ExtResource("1_mflxf")
+texture_region_size = Vector2i(15, 8)
+0:0/0 = 0
+
+[resource]
+tile_shape = 1
+tile_size = Vector2i(15, 8)
+sources/0 = SubResource("TileSetAtlasSource_k6in8")

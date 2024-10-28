@@ -16,7 +16,8 @@ class_name Monster extends CharacterBody2D
 @export var packed_hp_bar:PackedScene
 
 @onready var hp_point: Marker2D = %hp_point
-
+@onready var animator: AnimationPlayer = %animator
+@onready var sprite: Sprite2D = %sprite
 
 # Stats
 var current_hp:int = 0:
@@ -69,9 +70,19 @@ func setup_stats(_data:SkillData) -> void:
 		attack_area.set_damages(damages.duplicate())
 	else:
 		push_error("Attack area not set in ", name, " monster.")
+	animator.play("RESET")
+	animator.play("walk")
+	if global_position.x >= target.x and not sprite.flip_h:
+		sprite.position.x = -sprite.position.x
+		sprite.flip_h = !sprite.flip_h
+	elif global_position.x < target.x and sprite.flip_h:
+		sprite.position.x = -sprite.position.x
+		sprite.flip_h = !sprite.flip_h
 
 
 func _death() -> void:
 	is_dead = true
+	animator.play("death")
 	Signals.SpawnCurrency.emit(global_position)
+	await animator.animation_finished
 	Signals.ReturnToPool.emit(self, get_parent())

@@ -14,6 +14,7 @@ var spawn_count:int = 0
 func trigger_skill(pos:Vector2) -> void:
 	if not used:
 		used = true
+		used_timer = current_used_delay
 		_spawn_one(pos)
 
 

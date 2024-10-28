@@ -1,38 +1,38 @@
 {
 	"1" : {
 		"used_delay" : 5,
-		"damage" : 5,
-		"speed" : 15,
+		"damage" : 2,
+		"speed" : 20,
 		"hp" : 1
 	},
 	"2" : {
 		"used_delay" : 4.6,
-		"damage" : 6,
-		"speed" : 18,
+		"damage" : 3,
+		"speed" : 23,
 		"hp" : 2
 	},
 	"3" : {
 		"used_delay" : 4.2,
-		"damage" : 7,
-		"speed" : 21,
+		"damage" : 4,
+		"speed" : 26,
 		"hp" : 2
 	},
 	"4" : {
 		"used_delay" : 3.8,
-		"damage" : 8,
-		"speed" : 24,
+		"damage" : 5,
+		"speed" : 29,
 		"hp" : 3
 	},
 	"5" : {
 		"used_delay" : 3.4,
-		"damage" : 9,
-		"speed" : 27,
-		"hp" : 3
+		"damage" : 6,
+		"speed" : 32,
+		"hp" : 4
 	},
 	"6" : {
 		"used_delay" : 3,
-		"damage" : 10,
-		"speed" : 30,
+		"damage" : 7,
+		"speed" : 35,
 		"hp" : 5
 	}
 }

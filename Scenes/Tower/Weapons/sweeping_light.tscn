@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtrfisiwrvq7f"]
+[gd_scene load_steps=7 format=3 uid="uid://dtrfisiwrvq7f"]
 
 [ext_resource type="Script" path="res://Code/Tower/Weapons/sweeping_light.gd" id="1_p3qa0"]
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_1i2jh"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="2_h0qh2"]
 [ext_resource type="Resource" uid="uid://b772xfrm8u57v" path="res://Data/Tower/WeaponDamages/sweeping_light_damage.tres" id="3_dvw8y"]
+
+[sub_resource type="Curve" id="Curve_0iox5"]
+_data = [Vector2(0.244032, 0.49437), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ade2w"]
 size = Vector2(160, 10)
@@ -17,9 +21,13 @@ damages = Array[ExtResource("2_1i2jh")]([ExtResource("3_dvw8y")])
 [node name="light" type="Line2D" parent="."]
 unique_name_in_owner = true
 points = PackedVector2Array(0, 0, 160, 0)
+width_curve = SubResource("Curve_0iox5")
+default_color = Color(1, 0.984314, 0.913725, 0.670588)
+antialiased = true
 
 [node name="AttackArea" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("2_h0qh2")

@@ -45,7 +45,7 @@ func _construct_skill_button(_data:SkillData, is_disabled:bool = false) -> void:
 		if not new.is_node_ready():
 			await new.ready
 		new.id = _data.id
-		new.texture_bar.texture_under = _data.texture
+		new.texture_bar.texture_under = _data.ui_texture
 		new.skill_button.disabled = is_disabled
 		skill_boxes.append(new)
 

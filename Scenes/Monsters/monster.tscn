@@ -1,21 +1,77 @@
-[gd_scene load_steps=11 format=3 uid="uid://vw1f6bwm15wd"]
+[gd_scene load_steps=15 format=3 uid="uid://vw1f6bwm15wd"]
 
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_jjqfh"]
-[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="1_ng8kv"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_3y0lg"]
 [ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_5s4gb"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_7k3cy"]
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="5_egk2c"]
+[ext_resource type="Texture2D" uid="uid://63ivvac1yycm" path="res://Textures/Enemies/34x15 Monster 1 without shadows.png" id="5_gw4wh"]
 [ext_resource type="Resource" uid="uid://blsdobkjsnro3" path="res://Data/Monsters/Damages/test_monster_damage.tres" id="6_yu4be"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kemp"]
-radius = 8.06226
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kjki"]
-radius = 12.0416
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3jq4"]
-radius = 13.0
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_v3cjq"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_w5bxi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2cq5p"]
+resource_name = "death"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53, 54, 55, 39]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxbew"]
+_data = {
+"RESET": SubResource("Animation_w5bxi"),
+"death": SubResource("Animation_2cq5p"),
+"walk": SubResource("Animation_v3cjq")
+}
 
 [node name="Monster" type="CharacterBody2D" node_paths=PackedStringArray("attack_area")]
 process_mode = 1
@@ -29,14 +85,16 @@ damages = Array[ExtResource("5_egk2c")]([ExtResource("6_yu4be")])
 attack_area = NodePath("AttackArea")
 packed_hp_bar = ExtResource("4_5s4gb")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -13)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_ng8kv")
+[node name="sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, -6)
+texture = ExtResource("5_gw4wh")
+hframes = 8
+vframes = 7
 
 [node name="move_collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -13)
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_3kemp")
 
 [node name="HitBox" parent="." instance=ExtResource("3_3y0lg")]
@@ -45,21 +103,29 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="hit_collider" parent="HitBox" index="0"]
-position = Vector2(0, -13)
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_3kjki")
 debug_color = Color(2.45467e-06, 0.636356, 0.405916, 0.42)
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 script = ExtResource("4_7k3cy")
 
 [node name="attack_collider" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(0, -13)
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_b3jq4")
 debug_color = Color(0.42843, 0, 0.0318467, 0.42)
 
 [node name="hp_point" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-12, -30)
+position = Vector2(-12, -16)
+
+[node name="animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_bxbew")
+}
+autoplay = "walk"
 
 [editable path="HitBox"]

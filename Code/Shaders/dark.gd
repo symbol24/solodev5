@@ -15,15 +15,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if visible:
-		var light_positions = _get_light_positions()
-		material.set_shader_parameter("number_of_lights", light_positions.size())
-		material.set_shader_parameter("lights", light_positions)
+		material.set_shader_parameter("number_of_lights", 1)
+		material.set_shader_parameter("lights", _get_light_positions())
 
 
 func _get_light_positions() -> Array:
 	return get_tree().get_nodes_in_group("light").map(
 			func(light: Node2D):
-				return light.get_global_transform_with_canvas().origin
+				var v_pos:Vector2i = light.get_global_transform_with_canvas().origin
+				return v_pos
 	)
 
 
@@ -35,8 +35,8 @@ func _toggle_dark(value:bool) -> void:
 func _update_radius(value:float) -> void:
 	var current_base_radius:float = material.get_shader_parameter("base_radius")
 	var current_band_radius:float = material.get_shader_parameter("band_radius")
-	current_base_radius += value
-	current_band_radius += value
+	current_base_radius -= value
+	current_band_radius -= value
 	material.set_shader_parameter("band_radius", current_band_radius)
 	material.set_shader_parameter("base_radius", current_base_radius)
 

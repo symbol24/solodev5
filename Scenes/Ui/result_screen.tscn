@@ -15,17 +15,18 @@ layout_mode = 2
 
 [node name="result_title" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(500, 50)
 layout_mode = 0
-offset_left = 120.0
-offset_top = 40.0
-offset_right = 520.0
-offset_bottom = 80.0
+offset_left = 60.0
+offset_top = 130.0
+offset_right = 560.0
+offset_bottom = 180.0
+theme_type_variation = &"GameTitle"
 bbcode_enabled = true
 scroll_active = false
 
 [node name="exit_result_btn" type="Button" parent="Control"]
-custom_minimum_size = Vector2(80, 40)
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

@@ -42,7 +42,7 @@ func _spawn_one() -> void:
 	if new:
 		var monster_skill_data:SkillData = SkillData.new()
 		monster_skill_data.current_level = skill_data.current_level
-		print("spawning monster level: ", monster_skill_data.current_level)
+		#print("spawning monster level: ", monster_skill_data.current_level)
 		monster_skill_data.paresed_json = Game.parse_json_data(skill_data.paresed_json["spawned_json"])
 		new.setup_stats(monster_skill_data)
 		new.global_position = spawn_point.global_position

@@ -1,6 +1,8 @@
 class_name LevelUpManager extends Node2D
 
 
+@export var no_skill:SkillData
+
 var levels_to_do:int = 0
 var level_up_in_progress:bool = false
 var level_just_complete:bool = false
@@ -45,6 +47,8 @@ func get_level_up_datas() -> Array[SkillData]:
 	if not possibles.is_empty():
 		for each in Game.get_random_from_array(possibles, 3):
 			result.append(Game.player_manager.get_data_by_id(each))
+	else:
+		result.append(no_skill)
 
 	return result
 

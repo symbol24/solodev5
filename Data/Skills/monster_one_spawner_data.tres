@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://bo1cq3t60dexi"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://bo1cq3t60dexi"]
 
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="1_7rpo5"]
 [ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_845xm"]
+[ext_resource type="Texture2D" uid="uid://qw1iapmcdy4w" path="res://Textures/Ui/skill_icons_monster_1.png" id="3_em27l"]
 
 [resource]
 script = ExtResource("1_7rpo5")
@@ -12,4 +13,4 @@ skill_path = "res://Scenes/Player/Skills/monster_one_spawner.tscn"
 json_path = "res://Data/Skills/JSONS/monster_one_levels.json"
 title = "monster_one_spawner_title"
 description = "monster_one_spawner_desc"
-ui_texture = ExtResource("2_845xm")
+ui_texture = ExtResource("3_em27l")

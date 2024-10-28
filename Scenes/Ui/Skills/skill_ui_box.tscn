@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8s2rl5xmi84s"]
 
 [ext_resource type="Script" path="res://Code/Ui/skill_ui_bar.gd" id="1_x5h5w"]
-[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_qaoi2"]
+[ext_resource type="Texture2D" uid="uid://cmfmd6gugq6tu" path="res://Textures/Ui/skill_icons_monster_2.png" id="2_8fgd5"]
+[ext_resource type="Texture2D" uid="uid://irry3veg474v" path="res://Textures/Ui/skill_icons_progress_bar.png" id="3_33ebp"]
 [ext_resource type="StyleBox" uid="uid://b5so7kp2qey08" path="res://Data/Skills/ButtonStyles/hover.tres" id="4_2ygla"]
 [ext_resource type="StyleBox" uid="uid://diw6lgcckd5pb" path="res://Data/Skills/ButtonStyles/disabled.tres" id="4_jgayi"]
-[ext_resource type="Texture2D" uid="uid://ng0kq2ygxgox" path="res://Textures/Ui/exp_bar_fill.png" id="4_lvkmx"]
 [ext_resource type="StyleBox" uid="uid://2qhyqgk8d582" path="res://Data/Skills/ButtonStyles/pressed.tres" id="5_0ytp8"]
 [ext_resource type="StyleBox" uid="uid://dlhdkvmcnhvb0" path="res://Data/Skills/ButtonStyles/normal.tres" id="6_1x1yp"]
 
@@ -24,14 +24,15 @@ script = ExtResource("1_x5h5w")
 
 [node name="texture_bar" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 fill_mode = 5
 nine_patch_stretch = true
-texture_under = ExtResource("2_qaoi2")
-texture_progress = ExtResource("4_lvkmx")
-tint_progress = Color(1, 1, 1, 0.458824)
+texture_under = ExtResource("2_8fgd5")
+texture_progress = ExtResource("3_33ebp")
+tint_progress = Color(1, 1, 1, 0.670588)
 
 [node name="skill_button" type="Button" parent="."]
 unique_name_in_owner = true
@@ -54,8 +55,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
+offset_left = -23.0
+offset_top = -17.0
+offset_right = -3.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "1"

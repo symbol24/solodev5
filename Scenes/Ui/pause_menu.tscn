@@ -11,15 +11,38 @@ id = "pause_menu"
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="Control"]
+custom_minimum_size = Vector2(320, 40)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 20.0
+offset_right = 480.0
+offset_bottom = 60.0
+theme_type_variation = &"LEvelUpTitleLabel"
+text = "pause_title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="game_info" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(400, 160)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 100.0
+offset_right = 520.0
+offset_bottom = 260.0
+bbcode_enabled = true
+text = "game_info"
+scroll_active = false
+
 [node name="btn_close" type="Button" parent="Control"]
-custom_minimum_size = Vector2(80, 40)
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
+offset_left = -120.0
 offset_top = -60.0
 offset_right = -20.0
 offset_bottom = -20.0
@@ -31,16 +54,16 @@ script = ExtResource("2_5awn7")
 destination = "close_pause"
 
 [node name="btn_exit" type="Button" parent="Control"]
-custom_minimum_size = Vector2(80, 40)
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
+offset_left = -240.0
 offset_top = -60.0
-offset_right = -120.0
+offset_right = -140.0
 offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0

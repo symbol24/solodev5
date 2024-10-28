@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://b7812wy4hcle3"]
 
 [ext_resource type="Script" path="res://Code/Tower/tower.gd" id="1_d06k4"]
-[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_avwcn"]
 [ext_resource type="Script" path="res://Code/Tower/Weapons/tower_weapon_data.gd" id="2_tj2tc"]
 [ext_resource type="Resource" uid="uid://3sxbco0o384" path="res://Data/Tower/WeaponData/sweeping_light_data.tres" id="3_oobyp"]
 [ext_resource type="Texture2D" uid="uid://bwlepvi67n8tj" path="res://Textures/Tower/tower_light_circle.png" id="4_psetr"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="5_ikdop"]
+[ext_resource type="Texture2D" uid="uid://cgkdtbgf7xv28" path="res://Textures/Tower/tower_orb.png" id="7_nk46k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_byxyb"]
 radius = 47.0425
@@ -24,14 +24,13 @@ metadata/_edit_horizontal_guides_ = [-32.0]
 
 [node name="tower_light_circle" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.623529)
+modulate = Color(1, 1, 1, 0.309804)
 position = Vector2(0, -16)
 texture = ExtResource("4_psetr")
 
-[node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(-1.19209e-07, -16)
-scale = Vector2(0.0625, 0.25)
-texture = ExtResource("2_avwcn")
+[node name="TowerOrb" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("7_nk46k")
 
 [node name="attack_point" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -59,6 +58,7 @@ position = Vector2(0, -16)
 
 [node name="HitBox" parent="." instance=ExtResource("5_ikdop")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, -16)
 collision_mask = 8
 

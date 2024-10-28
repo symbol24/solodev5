@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://bytqu832gvuva"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://bytqu832gvuva"]
 
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="1_bq1q5"]
 [ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_uj6i6"]
+[ext_resource type="Texture2D" uid="uid://capju35j0560s" path="res://Textures/Ui/skill_icons_spawner_2.png" id="3_7c5i5"]
 
 [resource]
 script = ExtResource("1_bq1q5")
@@ -12,4 +13,4 @@ skill_path = "res://Scenes/Player/Skills/auto_spawner_two_skill.tscn"
 json_path = "res://Data/Skills/JSONS/autospawner_two_levels.json"
 title = "autospawner_two_title"
 description = "autospawner_two_desc"
-ui_texture = ExtResource("2_uj6i6")
+ui_texture = ExtResource("3_7c5i5")

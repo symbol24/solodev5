@@ -30,6 +30,7 @@ func _ready() -> void:
 	Signals.SetupTower.connect(_setup_tower)
 	Signals.ActivateTower.connect(_activate)
 	Signals.StopRound.connect(_tower_stop)
+	Signals.UpdatePushbackRadius.connect(_update_push_back_area)
 	radius_timer.timeout.connect(_timer_timeout)
 	light_area.mouse_entered.connect(_mouse_entered_light)
 	light_area.mouse_exited.connect(_mouse_exited_light)
@@ -43,7 +44,7 @@ func receive_damage(received:Array[Damage]) -> void:
 			Signals.DamageNumber.emit(amount, global_position, "dark")
 			if light_radius == starting_light_radius:
 				pushback_radius -= amount 
-				Signals.UpdatePushbackRadius.emit(-amount)
+				Signals.UpdatePushbackRadius.emit(amount)
 				Signals.CheckMatchEnd.emit(starting_light_radius, light_radius, pushback_radius)
 
 
@@ -110,3 +111,7 @@ func _update_light_radius(value:float) -> void:
 		tower_light_circle.scale = Vector2(scale_value, scale_value)
 
 		Signals.CheckMatchEnd.emit(starting_light_radius, light_radius, pushback_radius)
+
+
+func _update_push_back_area(radius:float) -> void:
+	light_area_collider.shape.radius -= radius

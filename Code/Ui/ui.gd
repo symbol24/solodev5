@@ -61,6 +61,9 @@ func _button_dispatcher(destination:String) -> void:
 		"close_pause":
 			_toggle_ui("player_ui", true)
 			get_tree().paused = false
+		"pause_menu":
+			_toggle_ui("pause_menu", true)
+			get_tree().paused = true
 		_:
 			pass
 

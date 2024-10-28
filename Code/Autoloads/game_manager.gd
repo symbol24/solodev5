@@ -93,6 +93,7 @@ func _clear_tower() -> void:
 			spawn_manager.queue_free()
 			spawn_manager = null
 		spawn_manager_ready = false
+		Signals.ToggleDark.emit(false)
 		Signals.ClearPlayerUi.emit()
 
 

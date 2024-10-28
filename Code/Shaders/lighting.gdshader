@@ -10,7 +10,7 @@ uniform float band_str = 0.3;
 
 
 float distance_to_light(vec2 coords, vec2 _lights[100]){
-	float dist = 1000.0;
+	float dist = 1000000.0;
 	
 	for (int i = 0; i < number_of_lights; i++){
 		float new_dist = distance(coords, _lights[i]);
