@@ -9,6 +9,10 @@ const LEVELUPMANAGER = preload("res://Scenes/Utilities/Managers/level_up_manager
 const SPAWNMANAGER = preload("res://Scenes/Utilities/Managers/spawn_manager.tscn")
 
 
+@export var btn_click:AudioFile
+@export var hit:AudioFile
+@export var death:AudioFile
+
 var active_tower:Tower = null
 var tower_ready:bool = false
 var player_manager:PlayerManager = null

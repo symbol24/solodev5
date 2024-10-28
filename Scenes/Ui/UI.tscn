@@ -17,6 +17,7 @@ shader_parameter/band_str = 0.3
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource("1_81ag7")
 uis = ExtResource("2_1ulbe")
+btn_click = null
 
 [node name="dark" type="ColorRect" parent="."]
 unique_name_in_owner = true

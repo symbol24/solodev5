@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://c1v5rvh7d3kno"]
+
+[ext_resource type="AudioStream" uid="uid://dp2d5lxg1oy1k" path="res://Audio/SFX/Boss hit 1.wav" id="1_6ipi1"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_lgpcu"]
+
+[resource]
+script = ExtResource("1_lgpcu")
+id = "death"
+files = Array[AudioStream]([ExtResource("1_6ipi1")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

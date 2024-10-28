@@ -10,6 +10,7 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
+	Audio.play_audio(Game.btn_click)
 	Signals.ToggleLoadingScreen.emit(display_loading_screen)
 	Signals.SyButtonPressed.emit(destination)
 

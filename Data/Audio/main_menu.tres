@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://btlvu1kpjqm5k"]
+
+[ext_resource type="AudioStream" uid="uid://dwhojp1acd3mh" path="res://Audio/Music/Dark 80's Synth.mp3" id="1_nnjs1"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_wka53"]
+
+[resource]
+script = ExtResource("1_wka53")
+id = "main_menu"
+files = Array[AudioStream]([ExtResource("1_nnjs1")])
+volume_db = -20.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true
+always_play = false
+is_unique = false

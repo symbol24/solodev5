@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 Signals="*res://Code/Autoloads/signals.gd"
 SM="*res://Scenes/Autoloads/scene_manager.tscn"
 Game="*res://Scenes/Autoloads/game_manager.tscn"
+Audio="*res://addons/AudioBySymbol/Code/Autoloads/audio_autoload.gd"
 
 [debug]
 
@@ -34,6 +35,10 @@ window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AudioBySymbol/plugin.cfg")
 
 [file_customization]
 

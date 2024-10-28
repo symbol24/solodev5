@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://d3xe33kfauxr8"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_nyl2m"]
+[ext_resource type="AudioStream" uid="uid://d1374gbipc071" path="res://Audio/SFX/menu_23.wav" id="1_t885m"]
+
+[resource]
+script = ExtResource("1_nyl2m")
+id = "menu_click"
+files = Array[AudioStream]([ExtResource("1_t885m")])
+volume_db = -10.0
+min_pitch_scale = 0.9
+max_pitch_scale = 1.1
+is_music = false
+always_play = false
+is_unique = false

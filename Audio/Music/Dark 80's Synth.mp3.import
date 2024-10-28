@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwhojp1acd3mh"
+path="res://.godot/imported/Dark 80's Synth.mp3-7cf46d476b24e74559a96d7fe169ac4d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Dark 80's Synth.mp3"
+dest_files=["res://.godot/imported/Dark 80's Synth.mp3-7cf46d476b24e74559a96d7fe169ac4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

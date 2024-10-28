@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=5 format=3 uid="uid://cfxtr1ea2mflc"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_muwmo"]
+[ext_resource type="AudioStream" uid="uid://b6v5gvrsep76c" path="res://Audio/Music/Death Do Us Part.mp3" id="1_wuesy"]
+[ext_resource type="AudioStream" uid="uid://dt1tt1ajj1re4" path="res://Audio/Music/Extinction.mp3" id="2_im84i"]
+[ext_resource type="AudioStream" uid="uid://b780dayo647bn" path="res://Audio/Music/Lazerface.mp3" id="3_3f0ch"]
+
+[resource]
+script = ExtResource("1_muwmo")
+id = "gameplay"
+files = Array[AudioStream]([ExtResource("1_wuesy"), ExtResource("2_im84i"), ExtResource("3_3f0ch")])
+volume_db = -20.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true
+always_play = false
+is_unique = false

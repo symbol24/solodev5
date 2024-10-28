@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=4 uid="uid://cf5ploonyff18"]
+[gd_scene load_steps=21 format=4 uid="uid://cf5ploonyff18"]
 
-[ext_resource type="Script" path="res://Code/Ui/sy_panel_container.gd" id="1_isblu"]
+[ext_resource type="Script" path="res://Code/Ui/main_menu.gd" id="1_ek4cp"]
 [ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="1_noof6"]
+[ext_resource type="Resource" uid="uid://btlvu1kpjqm5k" path="res://Data/Audio/main_menu.tres" id="2_jm764"]
 [ext_resource type="Texture2D" uid="uid://d113p7obrsr5k" path="res://Textures/Ui/screen_hole.png" id="3_vkmdx"]
 [ext_resource type="Texture2D" uid="uid://opseqrjfatdh" path="res://Textures/Objects/big bones.png" id="4_b1n28"]
 [ext_resource type="TileSet" uid="uid://brpouks8vyp2u" path="res://Data/Tilesets/blood_desert.tres" id="4_ocd1m"]
@@ -26,7 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_isblu")
+script = ExtResource("1_ek4cp")
+audio_file = ExtResource("2_jm764")
 id = "main_menu"
 
 [node name="background_stuff" type="Node2D" parent="."]

@@ -25,6 +25,7 @@ func _update_bar(_id:String, _value:float) -> void:
 func skill_button_pressed() -> void:
 	if not skill_button.button_pressed:
 		skill_button.button_pressed = true
+	Audio.play_audio(Game.btn_click)
 	Signals.ActivateSkill.emit(id)
 	Signals.UntoggleSkillButtons.emit(id)
 
