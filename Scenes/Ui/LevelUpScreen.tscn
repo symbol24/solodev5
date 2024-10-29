@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bgfxe5h65e0no" path="res://Scenes/Ui/level_up_card.tscn" id="2_4qckg"]
 
 [node name="LevelUpScreen" type="PanelContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(640, 360)
 script = ExtResource("1_sbbjg")
 level_card = ExtResource("2_4qckg")

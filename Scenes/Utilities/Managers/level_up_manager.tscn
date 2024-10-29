@@ -4,5 +4,6 @@
 [ext_resource type="Resource" uid="uid://m648hpp0vbo" path="res://Data/Skills/empty_kills_for_upgrades.tres" id="2_jsoik"]
 
 [node name="LevelUpManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_2ol35")
 no_skill = ExtResource("2_jsoik")

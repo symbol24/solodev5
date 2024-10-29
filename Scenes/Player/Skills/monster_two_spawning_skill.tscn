@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://cc08dcoqg1mea" path="res://Data/Skills/monster_two_spawner_data.tres" id="3_5j5qp"]
 
 [node name="MonsterTwoSpawningSkill" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_uydj1")
 to_spawn = "second"
 skill_data = ExtResource("3_5j5qp")

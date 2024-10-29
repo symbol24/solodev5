@@ -16,5 +16,5 @@ func get_damage() -> int:
 	if damage_owner is Monster:
 		final_value = damage_owner.data.damage
 	else:
-		final_value = base_value
+		final_value = damage_owner.current_damage
 	return final_value

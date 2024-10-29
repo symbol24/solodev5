@@ -13,7 +13,7 @@ signal ToggleLoadingScreen(display:bool)
 signal ToggleDark(show:bool)
 signal DamageNumber(value:int, pos:Vector2, type:String)
 signal SyButtonPressed(destination:String)
-signal ToggleUi(id:String)
+signal ToggleUi(id:String, previous:String)
 signal UpdatePlayerExp(value:int, max:int)
 signal UpdateSkillTimer(id:String, value:float)
 signal ConstructSkillBox(data:SkillData)
@@ -23,6 +23,7 @@ signal PressFirstSkillButton()
 signal UntoggleSkillButtons(id:String)
 signal SkillLevelUpdated(id:String, level:int)
 signal ReturnDmgNbrToPool(dmg_number:DamageNumber)
+signal ToggleSkillFromKey(id:String)
 
 
 # Game Manager

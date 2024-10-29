@@ -31,7 +31,8 @@ func get_thing_to_spawn(_type:String, _id:String) -> Node2D:
 	
 	if path:
 		var new = load(path).instantiate()
-		add_child(new)
+		if new.get_parent() == null:
+			add_child(new)
 		return new
 	else:
 		push_error("No ", _type, " with id ", _id, " was found.")
@@ -48,7 +49,7 @@ func _get_from_pool(_id:String) -> Node2D:
 func _return_to_pool(_item, _parent) -> void:
 	var added:bool = false
 
-	_parent.remove_child.call_deferred(_item)
+	remove_child.call_deferred(_item)
 
 	for array in pool:
 		if not array.is_empty() and array[0].get("id") == _item.get("id"):

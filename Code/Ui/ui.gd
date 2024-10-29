@@ -25,13 +25,13 @@ func _toggle_loading_screen(display:bool) -> void:
 		loading_screen.visible = display
 
 
-func _toggle_ui(id:String, display:bool = true) -> void:
+func _toggle_ui(id:String, display:bool = true, _previous:String = "") -> void:
 	var found:bool = false
 	for each in ui_panels:
 		if each.id == id: 
-			each.toggle_panel(display)
+			each.toggle_panel(display, _previous)
 			found = true
-		else: each.toggle_panel(false)
+		else: each.toggle_panel(false, _previous)
 	
 	if not found and display:
 		var to_load:String = uis.get_level_path(id)
@@ -41,10 +41,10 @@ func _toggle_ui(id:String, display:bool = true) -> void:
 			if not new_ui.is_node_ready:
 				await new_ui.ready
 			ui_panels.append(new_ui)
-			new_ui.toggle_panel(display)
+			new_ui.toggle_panel(display, _previous)
 
 
-func _button_dispatcher(destination:String) -> void:
+func _button_dispatcher(destination:String, _previous:String = "") -> void:
 	match destination:
 		"play":
 			Signals.LoadScene.emit("test")
@@ -62,8 +62,10 @@ func _button_dispatcher(destination:String) -> void:
 			_toggle_ui("player_ui", true)
 			get_tree().paused = false
 		"pause_menu":
-			_toggle_ui("pause_menu", true)
+			_toggle_ui("pause_menu", true, _previous)
 			get_tree().paused = true
+		"audio_settings":
+			_toggle_ui("audio_settings", true, _previous)
 		_:
 			pass
 

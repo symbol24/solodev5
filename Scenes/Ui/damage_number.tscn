@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Code/Ui/damage_number.gd" id="1_gn4in"]
 
 [node name="DamageNumber" type="Label"]
+process_mode = 1
 custom_minimum_size = Vector2(32, 24)
 text = "000"
 horizontal_alignment = 1

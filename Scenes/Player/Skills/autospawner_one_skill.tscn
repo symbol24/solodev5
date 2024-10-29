@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://bl6hfu8twtu16" path="res://Data/Skills/autospawner_one_data.tres" id="2_fbme2"]
 
 [node name="AutospawnerOneSkill" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_0fnuh")
 to_spawn = "auto_spawner_one"
 spawn_type = "auto_spawner"

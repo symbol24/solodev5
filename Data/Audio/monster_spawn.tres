@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://bytoqcw1fkxqq"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_abv5e"]
+[ext_resource type="AudioStream" uid="uid://l870elw7eoa7" path="res://Audio/SFX/Retro Swooosh 07.wav" id="1_qjrjp"]
+
+[resource]
+script = ExtResource("1_abv5e")
+id = "monster_spawn"
+files = Array[AudioStream]([ExtResource("1_qjrjp")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

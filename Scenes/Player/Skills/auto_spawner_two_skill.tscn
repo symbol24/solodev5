@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://bytqu832gvuva" path="res://Data/Skills/autospawner_two_data.tres" id="2_petac"]
 
 [node name="AutoSpawnerTwoSkill" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_kgmet")
 to_spawn = "autospawner_two"
 spawn_type = "auto_spawner"

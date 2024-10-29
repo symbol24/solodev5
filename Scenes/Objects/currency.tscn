@@ -87,6 +87,7 @@ animations = [{
 }]
 
 [node name="Currency" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_5o45c")
 wait_before_tween = 2.0
 tween_time = 0.5

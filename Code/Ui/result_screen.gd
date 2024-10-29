@@ -7,7 +7,7 @@ class_name ResultScreen extends SyPanelContainer
 @onready var result_title: RichTextLabel = %result_title
 
 
-func toggle_panel(display:bool) -> void:
+func toggle_panel(display:bool, _previous:String = "") -> void:
 	if display:
 		result_title.text = tr(succes_id) if Game.last_round_result else tr(fail_id)
 		show()

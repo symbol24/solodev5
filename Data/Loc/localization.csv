@@ -34,3 +34,10 @@ game_info,"[ul bullet=>] Spawn Monsters in the Dark.[/ul]
 [ul bullet=>] Encroach on the Light to destroy it.[/ul]
 
 [ul bullet=>] Do not let the Light reach the Dark.[/ul]"
+audio_settings_title,Audio Settings
+audio_back_button,Back
+master_label,Master
+music_label,Music
+sfx_label,SFX
+main_menu_audio,Audio
+audio_pause_menu,Audio

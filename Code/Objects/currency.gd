@@ -23,6 +23,7 @@ func start_tween() -> void:
 	tween.finished.connect(_finished)
 	tween.tween_property(self, "global_position", Vector2(global_position.x, global_position.y-height), tween_time)
 	animated.play("play")
+	Audio.play_audio(Game.audio_list.get_audio_file("currency"))
 
 
 func _finished() -> void:

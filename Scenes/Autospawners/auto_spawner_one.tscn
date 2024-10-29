@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boutwssclwxee" path="res://Textures/Ui/spawner_progress_bar_bar.png" id="4_4ng0a"]
 
 [node name="AutoSpawnerOne" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_yvuja")
 id = "auto_spawner_one"
 

@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://d113p7obrsr5k" path="res://Textures/Ui/screen_hole.png" id="18_120uo"]
 
 [node name="Credits" type="PanelContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(640, 360)
 anchors_preset = 15
 anchor_right = 1.0
@@ -506,6 +507,7 @@ text = "font_link_label"
 
 [node name="dark" type="TextureRect" parent="Control"]
 self_modulate = Color(1, 1, 1, 0.733333)
+layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("18_120uo")
 

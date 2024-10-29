@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://pgbxvinrx6t0" path="res://Textures/Objects/patch 2.png" id="18_0fg5b"]
 
 [node name="test_world" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_evot6")
 music = ExtResource("2_opxi8")
 

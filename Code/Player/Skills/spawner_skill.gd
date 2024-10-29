@@ -20,11 +20,15 @@ func trigger_skill(pos:Vector2) -> void:
 
 func _spawn_one(pos:Vector2) -> void:
 	var new = Game.spawn_manager.get_thing_to_spawn(spawn_type, to_spawn)
+	var to_play:String = "monster_spawn"
 	if new:
 		new.global_position = pos
 		new.name = spawn_type + "_0" + str(spawn_count)
 		if spawn_type == "monster":
 			new.setup_stats(data)
+			
 		elif spawn_type == "auto_spawner":
+			to_play = "spawner_placed"
 			new.setup_auto_spawner(data, spawner_spawns)
 		spawn_count += 1
+		Audio.play_audio(Game.audio_list.get_audio_file(to_play))

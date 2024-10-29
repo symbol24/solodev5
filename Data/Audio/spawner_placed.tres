@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://cyi6ucj3cqe1w"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_8a5rc"]
+[ext_resource type="AudioStream" uid="uid://d77wrh4vt6hh" path="res://Audio/SFX/spawner_placed.wav" id="1_vu4m8"]
+
+[resource]
+script = ExtResource("1_8a5rc")
+id = "spawner_placed"
+files = Array[AudioStream]([ExtResource("1_vu4m8")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

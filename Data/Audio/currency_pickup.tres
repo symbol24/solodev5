@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://b8gt5dm5pb3tx"]
+
+[ext_resource type="AudioStream" uid="uid://dh88610jc60tq" path="res://Audio/SFX/currency.wav" id="1_a41yc"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_yyka7"]
+
+[resource]
+script = ExtResource("1_yyka7")
+id = "currency"
+files = Array[AudioStream]([ExtResource("1_a41yc")])
+volume_db = -20.0
+min_pitch_scale = 0.7
+max_pitch_scale = 0.8
+is_music = false
+always_play = false
+is_unique = false

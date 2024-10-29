@@ -12,6 +12,7 @@ func _ready() -> void:
 	Signals.UpdateSkillTimer.connect(_update_bar)
 	Signals.UntoggleSkillButtons.connect(_untoggle_button)
 	Signals.SkillLevelUpdated.connect(_update_level)
+	Signals.ToggleSkillFromKey.connect(skill_button_pressed)
 	skill_button.pressed.connect(skill_button_pressed)
 	skill_button.mouse_entered.connect(_mouse_entered_skill)
 	skill_button.mouse_exited.connect(_mouse_exited_skill)
@@ -22,12 +23,13 @@ func _update_bar(_id:String, _value:float) -> void:
 		texture_bar.value = _value
 
 
-func skill_button_pressed() -> void:
-	if not skill_button.button_pressed:
-		skill_button.button_pressed = true
-	Audio.play_audio(Game.btn_click)
-	Signals.ActivateSkill.emit(id)
-	Signals.UntoggleSkillButtons.emit(id)
+func skill_button_pressed(_id:String = id) -> void:
+	if id == _id:
+		if not skill_button.button_pressed:
+			skill_button.button_pressed = true
+		Audio.play_audio(Game.audio_list.get_audio_file("menu_click"))
+		Signals.ActivateSkill.emit(id)
+		Signals.UntoggleSkillButtons.emit(id)
 
 
 func _untoggle_button(_id:String) -> void:

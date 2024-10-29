@@ -26,6 +26,20 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("pause"):
 			get_tree().paused = true
 			Signals.ToggleUi.emit("pause_menu")
+		
+		if event.is_action_pressed("1"):
+			_set_active_skill_by_key(0)
+
+		if event.is_action_pressed("2"):
+			_set_active_skill_by_key(1)
+
+		if event.is_action_pressed("3"):
+			_set_active_skill_by_key(2)
+
+		if event.is_action_pressed("4"):
+			_set_active_skill_by_key(3)
+
+		
 
 
 func _ready() -> void:
@@ -110,9 +124,15 @@ func _set_active_skill(_id:String) -> void:
 	push_warning("No skill found with id ", _id)
 
 
+func _set_active_skill_by_key(key:int) -> void:
+	if key < all_active_skills.size():
+		Signals.ToggleSkillFromKey.emit(all_active_skills[key].data.id)
+
+
 func _activate_player() -> void:
 	is_active = true
 
 
 func _stop_player() -> void:
 	is_active = false
+

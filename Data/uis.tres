@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_jn6me")
 levels = {
+"audio_settings": "res://Scenes/Ui/audio_settings.tscn",
 "credits": "res://Scenes/Ui/credits.tscn",
 "level_up_screen": "res://Scenes/Ui/LevelUpScreen.tscn",
 "main_menu": "res://Scenes/Ui/main_menu.tscn",

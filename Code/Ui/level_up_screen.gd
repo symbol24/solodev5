@@ -8,7 +8,7 @@ class_name LevelUpScreen extends SyPanelContainer
 var active_choices:Array[LevelUpCard] = []
 
 
-func toggle_panel(display:bool) -> void:
+func toggle_panel(display:bool, _previous:String = "") -> void:
 	if display:
 		show()
 		_setup_cards(Game.level_up_manager.get_level_up_datas())

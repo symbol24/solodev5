@@ -23,8 +23,7 @@ class_name Monster extends CharacterBody2D
 var current_hp:int = 0:
 	set(value):
 		current_hp = value
-		clampi(current_hp, 0, data.hp)
-		if current_hp == 0: _death()
+		if current_hp <= 0: _death()
 
 var is_dead:bool = false
 var data:SkillData
@@ -40,7 +39,7 @@ func _process(_delta: float) -> void:
 
 func receive_damage(received:Array[Damage]) -> void:
 	if not received.is_empty() and not is_dead:
-		Audio.play_audio(Game.hit)
+		Audio.play_audio(Game.audio_list.get_audio_file("hit"))
 		for each in received:
 			var amount:int = each.get_damage()
 			current_hp -= amount
@@ -82,7 +81,7 @@ func setup_stats(_data:SkillData) -> void:
 
 
 func _death() -> void:
-	Audio.play_audio(Game.death)
+	Audio.play_audio(Game.audio_list.get_audio_file("death"))
 	is_dead = true
 	animator.play("death")
 	Signals.SpawnCurrency.emit(global_position)

@@ -48,6 +48,7 @@ func _spawn_one() -> void:
 		new.global_position = spawn_point.global_position
 		new.name = spawn_type + "_0" + str(spawn_count)
 		spawn_count += 1
+		Audio.play_audio(Game.audio_list.get_audio_file("monster_spawn"))
 
 
 func _get_current_spawn_delay() -> float:

@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_agw4d"]
 
 [node name="ResultScreen" type="PanelContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(640, 360)
 script = ExtResource("1_7xora")
 succes_id = "result_succes_title"
@@ -20,7 +21,7 @@ layout_mode = 0
 offset_left = 60.0
 offset_top = 130.0
 offset_right = 560.0
-offset_bottom = 180.0
+offset_bottom = 247.0
 theme_type_variation = &"GameTitle"
 bbcode_enabled = true
 scroll_active = false

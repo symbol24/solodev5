@@ -10,6 +10,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_531id"]
 
 [node name="PlayerUi" type="PanelContainer"]
+process_mode = 1
 z_index = 4000
 z_as_relative = false
 custom_minimum_size = Vector2(640, 360)

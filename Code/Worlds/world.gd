@@ -17,6 +17,6 @@ func _world_load(scene) -> void:
 
 
 func _play_next_song() -> void:
-	stream = Audio.play_audio(music)
+	stream = Audio.play_audio(Game.audio_list.get_audio_file("gameplay"))
 	await stream.finished
 	_play_next_song()

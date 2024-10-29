@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Code/Utilities/Managers/spawn_manager.gd" id="1_oct6q"]
 
 [node name="SpawnManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_oct6q")
 monsters = {
 "first": "res://Scenes/Monsters/monster.tscn",

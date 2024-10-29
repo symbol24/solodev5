@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AudioList" load_steps=12 format=3 uid="uid://dxfhq10kgcew8"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_fmb0v"]
+[ext_resource type="Script" path="res://Code/Utilities/audio_list.gd" id="1_h15s7"]
+[ext_resource type="Resource" uid="uid://b8gt5dm5pb3tx" path="res://Data/Audio/currency_pickup.tres" id="2_okgu1"]
+[ext_resource type="Resource" uid="uid://c1v5rvh7d3kno" path="res://Data/Audio/death.tres" id="3_n6bu3"]
+[ext_resource type="Resource" uid="uid://cfxtr1ea2mflc" path="res://Data/Audio/gameplay.tres" id="4_s2s7a"]
+[ext_resource type="Resource" uid="uid://c8o0t0rkavgsb" path="res://Data/Audio/hit.tres" id="5_qxubs"]
+[ext_resource type="Resource" uid="uid://btlvu1kpjqm5k" path="res://Data/Audio/main_menu.tres" id="6_qrv8q"]
+[ext_resource type="Resource" uid="uid://d3xe33kfauxr8" path="res://Data/Audio/menu_click.tres" id="7_qipkk"]
+[ext_resource type="Resource" uid="uid://bytoqcw1fkxqq" path="res://Data/Audio/monster_spawn.tres" id="8_a3uni"]
+[ext_resource type="Resource" uid="uid://dxigdkilc3aca" path="res://Data/Audio/monster_spawning.tres" id="9_nwdon"]
+[ext_resource type="Resource" uid="uid://cyi6ucj3cqe1w" path="res://Data/Audio/spawner_placed.tres" id="10_6ytjc"]
+
+[resource]
+script = ExtResource("1_h15s7")
+list = Array[ExtResource("1_fmb0v")]([ExtResource("2_okgu1"), ExtResource("3_n6bu3"), ExtResource("4_s2s7a"), ExtResource("5_qxubs"), ExtResource("6_qrv8q"), ExtResource("7_qipkk"), ExtResource("8_a3uni"), ExtResource("9_nwdon"), ExtResource("10_6ytjc")])

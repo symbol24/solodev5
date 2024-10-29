@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bag7wwgp6qx7l" path="res://Textures/Objects/Tree5.png" id="17_2jhiw"]
 
 [node name="MainMenu" type="PanelContainer"]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -473,6 +474,17 @@ text_overrun_behavior = 1
 clip_text = true
 script = ExtResource("1_noof6")
 destination = "play"
+
+[node name="btn_audio" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "main_menu_audio"
+text_overrun_behavior = 1
+clip_text = true
+script = ExtResource("1_noof6")
+destination = "audio_settings"
 
 [node name="btn_credits" type="Button" parent="Control/VBoxContainer"]
 clip_contents = true
