@@ -4,6 +4,9 @@ class_name Dark extends ColorRect
 @export var starting_base_radius:float = 180
 @export var starting_band_radius:float = 160
 
+var current_band_radius:float
+var current_base_radius:float
+
 var width:float
 var height:float
 
@@ -11,8 +14,7 @@ func _ready() -> void:
 	Signals.ToggleDark.connect(_toggle_dark)
 	Signals.UpdatePushbackRadius.connect(_update_radius)
 	Signals.ClearPlayerUi.connect(_reset_members)
-	material.set_shader_parameter("band_radius", starting_band_radius)
-	material.set_shader_parameter("base_radius", starting_base_radius)
+	_reset_members()
 	width = ProjectSettings.get_setting("display/window/size/viewport_width")
 	height = ProjectSettings.get_setting("display/window/size/viewport_height")
 
@@ -41,17 +43,18 @@ func _toggle_dark(value:bool) -> void:
 
 
 func _update_radius(value:float) -> void:
-	var current_base_radius:float = material.get_shader_parameter("base_radius")
-	var current_band_radius:float = material.get_shader_parameter("band_radius")
 	current_base_radius -= value
 	current_band_radius -= value
-	material.set_shader_parameter("band_radius", current_band_radius)
-	material.set_shader_parameter("base_radius", current_base_radius)
 
 
 func _reset_members() -> void:
-	material.set_shader_parameter("band_radius", starting_band_radius)
-	material.set_shader_parameter("base_radius", starting_base_radius)
+	var ratio:float = _get_ratio()
+	current_band_radius = starting_band_radius
+	current_base_radius = starting_base_radius
+	var band = current_band_radius * ratio
+	var base = current_base_radius * ratio
+	material.set_shader_parameter("band_radius", band)
+	material.set_shader_parameter("base_radius", base)
 
 
 func _test() -> void:
@@ -108,8 +111,8 @@ func _get_ratio() -> float:
 
 func _update_shader_params() -> void:
 	var ratio:float = _get_ratio()
-	var band = starting_band_radius * ratio
-	var base = starting_base_radius * ratio
+	var band = current_band_radius * ratio
+	var base = current_base_radius * ratio
 	material.set_shader_parameter("band_radius", band)
 	material.set_shader_parameter("base_radius", base)
 
