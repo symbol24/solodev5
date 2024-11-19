@@ -6,7 +6,7 @@ class_name Skill extends Node2D
 var data:SkillData
 var used:bool = false
 var current_used_delay:float:
-	get: return _get_current_used_delay()
+	get: return _get_current_use_delay()
 var used_timer:float = 0.0:
 	set(value):
 		used_timer = value
@@ -30,8 +30,8 @@ func trigger_skill(_pos:Vector2) -> void:
 		used = true
 
 
-func _get_current_used_delay() -> float:
+func _get_current_use_delay() -> float:
 	if data:
-		return data.used_delay
+		return data.use_delay
 	else:
 		return 100

@@ -41,7 +41,7 @@ func _spawn_one() -> void:
 	var new = Game.spawn_manager.get_thing_to_spawn(spawn_type, to_spawn)
 	if new:
 		var monster_skill_data:SkillData = SkillData.new()
-		monster_skill_data = skill_data.get_monster_data()
+		monster_skill_data = skill_data.monster_data.duplicate(true)
 		monster_skill_data.current_level = skill_data.current_level
 		#print("spawning monster level: ", monster_skill_data.current_level)
 		new.setup_stats(monster_skill_data)

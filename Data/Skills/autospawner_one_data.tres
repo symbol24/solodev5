@@ -1,15 +1,25 @@
-[gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=4 format=3 uid="uid://bl6hfu8twtu16"]
+[gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=7 format=3 uid="uid://bl6hfu8twtu16"]
 
 [ext_resource type="Resource" uid="uid://bo1cq3t60dexi" path="res://Data/Skills/monster_one_spawner_data.tres" id="1_1feyk"]
 [ext_resource type="Script" path="res://Code/Player/Skills/autospawner_skill_data.gd" id="1_7b01k"]
+[ext_resource type="Script" path="res://Code/Player/Skills/skill_level_data.gd" id="1_cm5n5"]
+[ext_resource type="Script" path="res://Code/Player/Skills/autospawner_sld.gd" id="2_uwqu3"]
 [ext_resource type="Texture2D" uid="uid://dxfsghsxvh82j" path="res://Textures/Ui/skill_icons_spawner_1.png" id="3_3p750"]
+
+[sub_resource type="Resource" id="Resource_x2jn0"]
+script = ExtResource("2_uwqu3")
+spawn_delay = 0.0
+spawn_count = 0
+extra_spawn_chance = 0.0
+level = 0
+use_delay = 3.0
 
 [resource]
 script = ExtResource("1_7b01k")
 monster_data = ExtResource("1_1feyk")
 id = "autospawner_one"
 skill_path = "res://Scenes/Player/Skills/autospawner_one_skill.tscn"
-level_datas = {}
+level_datas = Array[ExtResource("1_cm5n5")]([SubResource("Resource_x2jn0")])
 title = "autospawner_one_title"
 description = "autospawner_one_desc"
 ui_texture = ExtResource("3_3p750")

@@ -26,7 +26,7 @@ var current_hp:int = 0:
 		if current_hp <= 0: _death()
 
 var is_dead:bool = false
-var data:SkillData
+var data:MonsterSkillData
 var hp_bar:TextureProgressBar
 
 
@@ -54,10 +54,12 @@ func entered_light_pool() -> void:
 
 
 func setup_stats(_data:SkillData) -> void:
+	if not _data is MonsterSkillData:
+		push_error("Monster has received not Monster Skill Data")
+		return
 	is_dead = false
 	data = _data
 	speed = data.speed
-	print("Monster speed: ", data.speed)
 	current_hp = data.hp
 	if packed_hp_bar:
 		hp_bar = packed_hp_bar.instantiate()

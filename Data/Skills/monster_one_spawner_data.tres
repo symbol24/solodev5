@@ -1,53 +1,45 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://bo1cq3t60dexi"]
+[gd_resource type="Resource" script_class="MonsterSkillData" load_steps=7 format=3 uid="uid://bo1cq3t60dexi"]
 
-[ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="1_7rpo5"]
-[ext_resource type="Texture2D" uid="uid://dxgcwkk4mywkf" path="res://icon.svg" id="2_845xm"]
+[ext_resource type="Script" path="res://Code/Player/Skills/monster_skill_data.gd" id="1_7rpo5"]
+[ext_resource type="Script" path="res://Code/Player/Skills/skill_level_data.gd" id="1_jxcvw"]
+[ext_resource type="Script" path="res://Code/Player/Skills/monster_sld.gd" id="2_seqxi"]
 [ext_resource type="Texture2D" uid="uid://qw1iapmcdy4w" path="res://Textures/Ui/skill_icons_monster_1.png" id="3_em27l"]
+
+[sub_resource type="Resource" id="Resource_l2bec"]
+script = ExtResource("2_seqxi")
+hp = 0
+speed = 0
+armor = 0
+hit_shield = 0
+damage = 0
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 0
+use_delay = 3.0
+
+[sub_resource type="Resource" id="Resource_yr7x4"]
+script = ExtResource("2_seqxi")
+hp = 0
+speed = 0
+armor = 0
+hit_shield = 0
+damage = 0
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 1
+use_delay = 3.0
 
 [resource]
 script = ExtResource("1_7rpo5")
 id = "monster_one_spawner"
-texture = ExtResource("2_845xm")
-starting_delay = 3.0
 skill_path = "res://Scenes/Player/Skills/monster_one_spawner.tscn"
-level_datas = {
-1: {
-"damage": 3,
-"hp": 1,
-"speed": 10.0,
-"used_delay": 3.0
-},
-2: {
-"damage": 4,
-"hp": 2,
-"speed": 12.0,
-"used_delay": 2.8
-},
-3: {
-"damage": 5,
-"hp": 4,
-"speed": 14.0,
-"used_delay": 2.6
-},
-4: {
-"damage": 7,
-"hp": 6,
-"speed": 16.0,
-"used_delay": 2.4
-},
-5: {
-"damage": 8,
-"hp": 6,
-"speed": 18.0,
-"used_delay": 2.2
-},
-6: {
-"damage": 0,
-"hp": 0,
-"speed": 0.0,
-"used_delay": 0.0
-}
-}
+level_datas = Array[ExtResource("1_jxcvw")]([SubResource("Resource_l2bec"), SubResource("Resource_yr7x4")])
 title = "monster_one_spawner_title"
 description = "monster_one_spawner_desc"
 ui_texture = ExtResource("3_em27l")

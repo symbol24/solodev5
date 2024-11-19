@@ -272,8 +272,10 @@ script = ExtResource("1_d1g35")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(640, 360)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 3.0
+offset_top = 14.0
+offset_right = 643.0
+offset_bottom = 374.0
 color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 
 [node name="godot" type="AnimatedSprite2D" parent="."]
