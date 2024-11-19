@@ -1,0 +1,50 @@
+{
+	"categories": [
+		{
+			"uuid": "07a8c403-507d-408a-aa41-9acae9042451",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "690edf9a-1811-41a8-a470-8a64adaae110",
+			"title": "Todo",
+			"tasks": [
+				"ee60026c-f2c6-4ef6-85a3-881011583f93"
+			]
+		},
+		{
+			"uuid": "5c59d444-6109-45a0-9f44-ad4b0ca74b00",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "22fea728-0c33-4571-841d-cde6616d7d0f",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "ee60026c-f2c6-4ef6-85a3-881011583f93",
+			"title": "update win condition to new better condition",
+			"description": "set LOSE to when light reaches dark at max dark\n",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"690edf9a-1811-41a8-a470-8a64adaae110"
+			],
+			[
+				"5c59d444-6109-45a0-9f44-ad4b0ca74b00"
+			],
+			[
+				"22fea728-0c33-4571-841d-cde6616d7d0f"
+			]
+		]
+	}
+}
