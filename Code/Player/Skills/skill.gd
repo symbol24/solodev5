@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 func set_data(_new_data:SkillData) -> void:
 	data = _new_data.duplicate(true)
 	data.current_level += 1
-	data.paresed_json = Game.parse_json_data(data.json_path)
 
 
 func trigger_skill(_pos:Vector2) -> void:

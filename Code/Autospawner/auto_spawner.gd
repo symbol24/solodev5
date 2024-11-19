@@ -6,7 +6,7 @@ class_name AutoSpawner extends Node2D
 @onready var spawn_point: Marker2D = %spawn_point
 @onready var spawn_progress_bar: TextureProgressBar = %spawn_progress_bar
 
-var skill_data:SkillData
+var skill_data:AutoSpawnerSkillData
 var skill_id:String:
 	get: return skill_data.id if skill_data else str(self.name)
 var to_spawn:String
@@ -41,9 +41,9 @@ func _spawn_one() -> void:
 	var new = Game.spawn_manager.get_thing_to_spawn(spawn_type, to_spawn)
 	if new:
 		var monster_skill_data:SkillData = SkillData.new()
+		monster_skill_data = skill_data.get_monster_data()
 		monster_skill_data.current_level = skill_data.current_level
 		#print("spawning monster level: ", monster_skill_data.current_level)
-		monster_skill_data.paresed_json = Game.parse_json_data(skill_data.paresed_json["spawned_json"])
 		new.setup_stats(monster_skill_data)
 		new.global_position = spawn_point.global_position
 		new.name = spawn_type + "_0" + str(spawn_count)

@@ -57,6 +57,7 @@ func setup_stats(_data:SkillData) -> void:
 	is_dead = false
 	data = _data
 	speed = data.speed
+	print("Monster speed: ", data.speed)
 	current_hp = data.hp
 	if packed_hp_bar:
 		hp_bar = packed_hp_bar.instantiate()
