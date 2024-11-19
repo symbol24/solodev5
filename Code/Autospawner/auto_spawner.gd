@@ -53,6 +53,6 @@ func _spawn_one() -> void:
 
 func _get_current_spawn_delay() -> float:
 	if skill_data:
-		return skill_data.spawner_spawn_time
+		return skill_data.spawn_delay
 	else:
 		return 100

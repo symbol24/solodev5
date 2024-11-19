@@ -1,16 +1,65 @@
-[gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=5 format=3 uid="uid://bytqu832gvuva"]
+[gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=12 format=3 uid="uid://bytqu832gvuva"]
 
 [ext_resource type="Resource" uid="uid://cc08dcoqg1mea" path="res://Data/Skills/monster_two_spawner_data.tres" id="1_2rv7j"]
 [ext_resource type="Script" path="res://Code/Player/Skills/autospawner_skill_data.gd" id="1_bq1q5"]
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_level_data.gd" id="1_ic18l"]
+[ext_resource type="Script" path="res://Code/Player/Skills/autospawner_sld.gd" id="2_mjp6n"]
 [ext_resource type="Texture2D" uid="uid://capju35j0560s" path="res://Textures/Ui/skill_icons_spawner_2.png" id="3_7c5i5"]
+
+[sub_resource type="Resource" id="Resource_x2jn0"]
+script = ExtResource("2_mjp6n")
+spawn_delay = 15.0
+spawn_count = 1
+extra_spawn_chance = 0.0
+level = 1
+use_delay = 35.0
+
+[sub_resource type="Resource" id="Resource_i3x81"]
+script = ExtResource("2_mjp6n")
+spawn_delay = 14.0
+spawn_count = 1
+extra_spawn_chance = 0.0
+level = 2
+use_delay = 30.0
+
+[sub_resource type="Resource" id="Resource_wd631"]
+script = ExtResource("2_mjp6n")
+spawn_delay = 13.0
+spawn_count = 1
+extra_spawn_chance = 0.15
+level = 3
+use_delay = 30.0
+
+[sub_resource type="Resource" id="Resource_dgoic"]
+script = ExtResource("2_mjp6n")
+spawn_delay = 12.0
+spawn_count = 1
+extra_spawn_chance = 0.2
+level = 4
+use_delay = 12.0
+
+[sub_resource type="Resource" id="Resource_x4hpb"]
+script = ExtResource("2_mjp6n")
+spawn_delay = 11.0
+spawn_count = 1
+extra_spawn_chance = 0.4
+level = 5
+use_delay = 25.0
+
+[sub_resource type="Resource" id="Resource_rw7se"]
+script = ExtResource("2_mjp6n")
+spawn_delay = 10.0
+spawn_count = 1
+extra_spawn_chance = 0.6
+level = 6
+use_delay = 20.0
 
 [resource]
 script = ExtResource("1_bq1q5")
 monster_data = ExtResource("1_2rv7j")
 id = "autospawner_two"
 skill_path = "res://Scenes/Player/Skills/auto_spawner_two_skill.tscn"
-level_datas = Array[ExtResource("1_ic18l")]([])
+level_datas = Array[ExtResource("1_ic18l")]([SubResource("Resource_x2jn0"), SubResource("Resource_i3x81"), SubResource("Resource_wd631"), SubResource("Resource_dgoic"), SubResource("Resource_x4hpb"), SubResource("Resource_rw7se")])
 title = "autospawner_two_title"
 description = "autospawner_two_desc"
 ui_texture = ExtResource("3_7c5i5")
