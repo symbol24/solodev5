@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="MonsterSkillData" load_steps=11 format=3 uid="uid://cc08dcoqg1mea"]
+[gd_resource type="Resource" script_class="MonsterSkillData" load_steps=12 format=3 uid="uid://cc08dcoqg1mea"]
 
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_level_data.gd" id="1_4oh6x"]
 [ext_resource type="Script" path="res://Code/Player/Skills/monster_skill_data.gd" id="1_urvi7"]
 [ext_resource type="Script" path="res://Code/Player/Skills/monster_sld.gd" id="2_xtros"]
+[ext_resource type="PackedScene" uid="uid://cei0y8uwmtqvv" path="res://Scenes/Monsters/second_test_monster.tscn" id="3_fin11"]
 [ext_resource type="Texture2D" uid="uid://cmfmd6gugq6tu" path="res://Textures/Ui/skill_icons_monster_2.png" id="3_suqme"]
 
 [sub_resource type="Resource" id="Resource_l2bec"]
@@ -97,6 +98,7 @@ use_delay = 3.0
 
 [resource]
 script = ExtResource("1_urvi7")
+to_spawn = ExtResource("3_fin11")
 id = "monster_two"
 skill_path = "res://Scenes/Player/Skills/monster_two_spawning_skill.tscn"
 level_datas = Array[ExtResource("1_4oh6x")]([SubResource("Resource_l2bec"), SubResource("Resource_yr7x4"), SubResource("Resource_uyo45"), SubResource("Resource_6ug4j"), SubResource("Resource_ll1xi"), SubResource("Resource_4ga5u")])

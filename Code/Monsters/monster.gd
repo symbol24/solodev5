@@ -89,4 +89,4 @@ func _death() -> void:
 	animator.play("death")
 	Signals.SpawnCurrency.emit(global_position)
 	await animator.animation_finished
-	Signals.ReturnToPool.emit(self, get_parent())
+	Signals.ReturnToPool.emit(self)

@@ -10,6 +10,6 @@ monsters = {
 "second": "res://Scenes/Monsters/second_test_monster.tscn"
 }
 auto_spawners = {
-"auto_spawner_one": "res://Scenes/Autospawners/auto_spawner_one.tscn",
+"autospawner_one": "res://Scenes/Autospawners/auto_spawner_one.tscn",
 "autospawner_two": "res://Scenes/Autospawners/auto_spawner_two.tscn"
 }

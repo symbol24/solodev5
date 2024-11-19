@@ -19,7 +19,7 @@ func trigger_skill(pos:Vector2) -> void:
 
 
 func _spawn_one(pos:Vector2) -> void:
-	var new = Game.spawn_manager.get_thing_to_spawn(spawn_type, to_spawn)
+	var new = Game.spawn_manager.get_thing_to_spawn(skill_data)
 	var to_play:String = "monster_spawn"
 	if new:
 		new.global_position = pos

@@ -1,13 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5pmfkcaupjuo"]
 
-[ext_resource type="Script" path="res://Code/Player/Skills/spawner_skill.gd" id="1_kgmet"]
+[ext_resource type="Script" path="res://Code/Player/Skills/autospawner_skill.gd" id="1_7kboe"]
 [ext_resource type="Resource" uid="uid://bytqu832gvuva" path="res://Data/Skills/autospawner_two_data.tres" id="2_petac"]
 
 [node name="AutoSpawnerTwoSkill" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_kgmet")
-to_spawn = "autospawner_two"
-spawn_type = "auto_spawner"
-spawner_spawns = "second"
-starting_spawn_delay = 15.0
+script = ExtResource("1_7kboe")
 skill_data = ExtResource("2_petac")

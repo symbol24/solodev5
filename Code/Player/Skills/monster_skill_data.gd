@@ -1,6 +1,8 @@
 class_name MonsterSkillData extends SkillData
 
 
+@export var to_spawn:PackedScene
+
 # Monster
 var hp:int:
 	get: return _get_data("hp")

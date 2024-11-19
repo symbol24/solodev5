@@ -1,6 +1,7 @@
 class_name SpawnManager extends Node2D
 
 
+@export var use_pool:bool = false
 @export var monsters:Dictionary = {}
 @export var auto_spawners:Dictionary = {}
 
@@ -12,30 +13,20 @@ func _ready() -> void:
 	Signals.ManagerReady.emit(self)
 
 
-func get_thing_to_spawn(_type:String, _id:String) -> Node2D:
-	var check = _get_from_pool(_id)
-	if check: 
-		add_child(check)
-		return check
-
-	var path:String
-	match _type:
-		"monster":
-			if monsters.has(_id):
-				path = monsters[_id]
-		"auto_spawner":
-			if auto_spawners.has(_id):
-				path = auto_spawners[_id]
-		_:
-			pass
+func get_thing_to_spawn(_data:SkillData) -> Node2D:
+	if use_pool:
+		var check = _get_from_pool(_data.id)
+		if check:
+			add_child(check)
+			return check
 	
-	if path:
-		var new = load(path).instantiate()
+	if (_data is AutoSpawnerSkillData or _data is MonsterSkillData) and _data.to_spawn != null:
+		var new = _data.to_spawn.instantiate()
 		if new.get_parent() == null:
 			add_child(new)
 		return new
 	else:
-		push_error("No ", _type, " with id ", _id, " was found.")
+		push_error("Data sent to spawn Manager does not contain spawnable object.")
 		return null
 
 
@@ -46,15 +37,18 @@ func _get_from_pool(_id:String) -> Node2D:
 	return null
 
 
-func _return_to_pool(_item, _parent) -> void:
-	var added:bool = false
+func _return_to_pool(_item) -> void:
+	if use_pool:
+		var added:bool = false
 
-	remove_child.call_deferred(_item)
+		remove_child.call_deferred(_item)
 
-	for array in pool:
-		if not array.is_empty() and array[0].get("id") == _item.get("id"):
-			array.append(_item)
-			added = true
+		for array in pool:
+			if not array.is_empty() and array[0].get("id") == _item.get("id"):
+				array.append(_item)
+				added = true
 
-	if not added:
-		pool.append([_item])
+		if not added:
+			pool.append([_item])
+	else:
+		_item.queue_free.call_deferred()

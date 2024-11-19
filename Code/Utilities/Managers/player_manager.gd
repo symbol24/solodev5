@@ -135,4 +135,3 @@ func _activate_player() -> void:
 
 func _stop_player() -> void:
 	is_active = false
-

@@ -61,4 +61,4 @@ signal ReturnCurrencyToPool(currency:CurrencyObject)
 
 
 # Spawn Manager
-signal ReturnToPool(item, parent)
+signal ReturnToPool(item)
