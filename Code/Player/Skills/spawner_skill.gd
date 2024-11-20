@@ -26,9 +26,5 @@ func _spawn_one(pos:Vector2) -> void:
 		new.name = spawn_type + "_0" + str(spawn_count)
 		if spawn_type == "monster":
 			new.setup_stats(data)
-			
-		elif spawn_type == "auto_spawner":
-			to_play = "spawner_placed"
-			new.setup_auto_spawner(data, spawner_spawns)
 		spawn_count += 1
 		Audio.play_audio(Game.audio_list.get_audio_file(to_play))

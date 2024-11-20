@@ -28,11 +28,19 @@ var current_hp:int = 0:
 var is_dead:bool = false
 var data:MonsterSkillData
 var hp_bar:TextureProgressBar
+var flippables:Array = []
+var flipped:bool = false
+
+
+func _ready() -> void:
+	flippables = _get_flippables(self)
 
 
 func _process(_delta: float) -> void:
 	if not is_dead:
-		velocity = global_position.direction_to(target) * speed
+		var direction:Vector2 = global_position.direction_to(target)
+		_flip(direction)
+		velocity = direction * speed
 
 		move_and_slide()
 
@@ -75,12 +83,6 @@ func setup_stats(_data:SkillData) -> void:
 		push_error("Attack area not set in ", name, " monster.")
 	animator.play("RESET")
 	animator.play("walk")
-	if global_position.x >= target.x and not sprite.flip_h:
-		sprite.position.x = -sprite.position.x
-		sprite.flip_h = !sprite.flip_h
-	elif global_position.x < target.x and sprite.flip_h:
-		sprite.position.x = -sprite.position.x
-		sprite.flip_h = !sprite.flip_h
 
 
 func _death() -> void:
@@ -90,3 +92,31 @@ func _death() -> void:
 	Signals.SpawnCurrency.emit(global_position)
 	await animator.animation_finished
 	Signals.ReturnToPool.emit(self)
+
+
+func _flip(_direction:Vector2) -> void:
+	var flip:bool = false
+	if not flipped and _direction.x < 0:
+		flip = true
+	elif flipped and _direction.x >= 0:
+		flip  =true
+	
+	if flip:
+		for each in flippables:
+			if each is Sprite2D:
+				each.flip_h = !each.flip_h
+			each.position.x = -each.position.x
+		flipped = !flipped
+
+
+func _get_flippables(_parent) -> Array:
+	var result:Array = []
+
+	var children = _parent.get_children()
+	for child in children:
+		if child.is_in_group("flippable"):
+			result.append(child)
+
+		result.append_array(_get_flippables(child))
+
+	return result

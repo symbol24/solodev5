@@ -37,7 +37,8 @@
 			"tasks": [
 				"9ec0213c-06d7-4aaf-a38c-c9e7d6e1f807",
 				"04389002-df1f-42fa-b5ad-31b677d0fbb1",
-				"df7e147c-fd6c-4cc6-84b4-bb4eafecf03f"
+				"df7e147c-fd6c-4cc6-84b4-bb4eafecf03f",
+				"d752e154-cb02-4e47-97eb-e73260913777"
 			]
 		}
 	],
@@ -115,6 +116,13 @@
 		{
 			"uuid": "c0e83853-be9a-4e24-896e-6d01b88c7848",
 			"title": "investigate why some remove child trigger the error \"E 0:00:45:0917   remove_child: Condition \"p_child->data.parent != this\" is true.  <C++ Source>   scene/main/node.cpp:1602 @ remove_child()\"",
+			"description": "",
+			"category": "db9adcce-d8f6-44a5-b044-baaafc804c0c",
+			"steps": []
+		},
+		{
+			"uuid": "d752e154-cb02-4e47-97eb-e73260913777",
+			"title": "minions spawn always facing right",
 			"description": "",
 			"category": "db9adcce-d8f6-44a5-b044-baaafc804c0c",
 			"steps": []

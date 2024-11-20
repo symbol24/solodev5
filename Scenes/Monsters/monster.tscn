@@ -17,24 +17,6 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3jq4"]
 radius = 5.0
 
-[sub_resource type="Animation" id="Animation_v3cjq"]
-resource_name = "walk"
-length = 0.7
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [8, 9, 10, 11, 12, 13]
-}
-
 [sub_resource type="Animation" id="Animation_w5bxi"]
 length = 0.001
 tracks/0/type = "value"
@@ -66,6 +48,24 @@ tracks/0/keys = {
 "values": [48, 49, 50, 51, 52, 53, 54, 55, 39]
 }
 
+[sub_resource type="Animation" id="Animation_v3cjq"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bxbew"]
 _data = {
 "RESET": SubResource("Animation_w5bxi"),
@@ -85,7 +85,7 @@ damages = Array[ExtResource("5_egk2c")]([ExtResource("6_yu4be")])
 attack_area = NodePath("AttackArea")
 packed_hp_bar = ExtResource("4_5s4gb")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="." groups=["flippable"]]
 unique_name_in_owner = true
 position = Vector2(1, -6)
 texture = ExtResource("5_gw4wh")
