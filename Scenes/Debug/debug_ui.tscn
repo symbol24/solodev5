@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://e2v5qeofvyh"]
+
+[ext_resource type="Script" path="res://Code/Debug/debug_ui.gd" id="1_sslnm"]
+[ext_resource type="PackedScene" uid="uid://cweyf454atvkn" path="res://Scenes/Debug/debug_command_menu.tscn" id="2_iih3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jqnn"]
+
+[node name="Debug" type="PanelContainer"]
+z_index = 4096
+z_as_relative = false
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7jqnn")
+script = ExtResource("1_sslnm")
+
+[node name="debug_command_menu" parent="." instance=ExtResource("2_iih3y")]
+visible = false
+layout_mode = 2

@@ -1,6 +1,10 @@
 extends Node
 
 
+# Debug
+signal DebugPrint(text:String)
+
+
 # Scene Manager
 signal LoadScene(id:String)
 signal SceneLoadingComplete(scene)

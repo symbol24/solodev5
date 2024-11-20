@@ -28,7 +28,7 @@ func _ready() -> void:
 		tower = parent
 		is_active = true
 	else:
-		push_error("Parent ", parent.name, " is neither a Monster nor a Tower.")
+		Debug.error("Parent ", parent.name, " is neither a Monster nor a Tower.")
 
 
 func _process(delta: float) -> void:

@@ -40,7 +40,7 @@ func parse_json_data(_json:String) -> Dictionary:
 		var json = JSON.new()
 		var error = json.parse(json_string)
 		if error != OK:
-			push_error("JSON file parsing failed for ", _json)
+			Debug.error("JSON file parsing failed for ", _json)
 			return result
 		
 		result = json.data.duplicate()

@@ -8,5 +8,5 @@ func get_audio_file(id:String) -> AudioFile:
 	for each in list:
 		if each.id == id:
 			return each
-	push_error("No audio file found for ", id)
+	Debug.error("No audio file found for ", id)
 	return null

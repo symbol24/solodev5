@@ -19,4 +19,4 @@ func _spawn_one(pos:Vector2) -> void:
 		spawn_count += 1
 		Audio.play_audio(Game.audio_list.get_audio_file("spawner_placed"))
 	else:
-		push_error("Missing object for id ", skill_data.id , " in data manager.")
+		Debug.error("Missing object for id ", skill_data.id , " in data manager.")

@@ -8,12 +8,15 @@ const LSPATH:String = "res://Scenes/Ui/loading_screen.tscn"
 
 var ui_panels:Array[SyPanelContainer] = []
 var loading_screen:LoadingScreen
+var debug_ui:DebugUi
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	Signals.SyButtonPressed.connect(_button_dispatcher)
 	Signals.ToggleUi.connect(_toggle_ui)
 	Signals.ToggleLoadingScreen.connect(_toggle_loading_screen)
+	if Debug.active:
+		debug_ui = _add_debug_ui()
 
 
 func _toggle_loading_screen(display:bool) -> void:
@@ -70,3 +73,10 @@ func _button_dispatcher(destination:String, _previous:String = "") -> void:
 			pass
 
 
+func _add_debug_ui() -> DebugUi:
+	var to_load:String = uis.get_level_path("debug_ui")
+	if to_load != "":
+		var new_ui:DebugUi = load(to_load).instantiate()
+		add_child(new_ui)
+		return new_ui
+	return null

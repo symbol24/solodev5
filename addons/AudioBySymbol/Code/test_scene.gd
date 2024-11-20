@@ -66,9 +66,9 @@ func _sfx2d_pressed() -> void:
 func _sfx3d_pressed() -> void:
 	if sfx == null:
 		sfx = Audio.play_audio_3d(Audio.default.get_audio_file("sound_3d"))
-		print("---------")
-		print("3D audio requires a proper 3D environement. Only normal and 2D sounds are heard in this demo scene.")
-		print("The 3D audio file was instantiated under name ", sfx.name)
+		Debug.log("---------")
+		Debug.log("3D audio requires a proper 3D environement. Only normal and 2D sounds are heard in this demo scene.")
+		Debug.log("The 3D audio file was instantiated under name ", sfx.name)
 
 
 func _reset_pressed() -> void:

@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cweyf454atvkn"]
+
+[ext_resource type="Script" path="res://Code/Debug/debug_command_menu.gd" id="1_5a205"]
+[ext_resource type="FontFile" uid="uid://cb8yi3t0bjnjm" path="res://Data/Ui/NotoSans.ttf" id="2_edsht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bl1px"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql1ey"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color(0.0941176, 0.105882, 0.12549, 0.831373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyqae"]
+bg_color = Color(0.0666667, 0.0627451, 0.0392157, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewufr"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color(0.0666667, 0.0627451, 0.0392157, 0.647059)
+
+[node name="debug_command_menu" type="PanelContainer"]
+custom_minimum_size = Vector2(640, 0)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bl1px")
+script = ExtResource("1_5a205")
+
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="output" type="RichTextLabel" parent="vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 160)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_edsht")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ql1ey")
+bbcode_enabled = true
+scroll_following = true
+shortcut_keys_enabled = false
+
+[node name="input" type="LineEdit" parent="vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 1
+theme_override_fonts/font = ExtResource("2_edsht")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_hyqae")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewufr")
+placeholder_text = "Use 'commands' to see all available commands"
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false

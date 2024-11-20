@@ -54,7 +54,7 @@ func receive_damage(received:Array[Damage]) -> void:
 			if hp_bar != null: 
 				hp_bar.value = current_hp
 			Signals.DamageNumber.emit(amount, global_position, "light")
-			#print("Monster ", name, " received damage: ", amount)
+			#Debug.log("Monster ", name, " received damage: ", amount)
 
 
 func entered_light_pool() -> void:
@@ -63,7 +63,7 @@ func entered_light_pool() -> void:
 
 func setup_stats(_data:SkillData) -> void:
 	if not _data is MonsterSkillData:
-		push_error("Monster has received not Monster Skill Data")
+		Debug.error("Monster has received not Monster Skill Data")
 		return
 	is_dead = false
 	data = _data
@@ -80,7 +80,7 @@ func setup_stats(_data:SkillData) -> void:
 		attack_area.set_attack_owner(self)
 		attack_area.set_damages(damages.duplicate())
 	else:
-		push_error("Attack area not set in ", name, " monster.")
+		Debug.error("Attack area not set in ", name, " monster.")
 	animator.play("RESET")
 	animator.play("walk")
 

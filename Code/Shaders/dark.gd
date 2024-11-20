@@ -58,7 +58,7 @@ func _reset_members() -> void:
 
 
 func _test() -> void:
-	print("Viewport size x,y: ", get_viewport().size)
+	Debug.log("Viewport size x,y: ", get_viewport().size)
 
 
 func _get_border_orientation() -> int:

@@ -8,5 +8,5 @@ class_name LevelData extends Resource
 func get_level_path(id:String) -> String:
 	if levels.has(id):
 		return levels[id]
-	push_error("Level data does not have id: ", id)
+	Debug.error("Level data does not have id: ", id)
 	return ""

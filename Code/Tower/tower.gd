@@ -86,12 +86,12 @@ func _exit_tree() -> void:
 
 
 func _mouse_entered_light() -> void:
-	#print("mouse in")
+	#Debug.log("mouse in")
 	Signals.ToggleMouseEnteredNoClickArea.emit(true)
 
 
 func _mouse_exited_light() -> void:
-	#print("mouse out")
+	#Debug.log("mouse out")
 	Signals.ToggleMouseEnteredNoClickArea.emit(false)
 
 

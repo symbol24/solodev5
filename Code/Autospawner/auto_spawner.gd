@@ -50,7 +50,7 @@ func _spawn_one() -> void:
 		new.setup_stats(monster_skill_data)
 		new.global_position = spawn_point.global_position
 		new.name = name + "_" + monster_skill_data.id + "_0" + str(spawn_count)
-		#print("monster ", new.name, " spawned")
+		#Debug.log("monster ", new.name, " spawned")
 		spawn_count += 1
 		Audio.play_audio(Game.audio_list.get_audio_file("monster_spawn"))
 

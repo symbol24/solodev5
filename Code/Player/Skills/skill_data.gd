@@ -21,7 +21,7 @@ var use_delay:float:
 
 func _get_data(_id:String):
 	if level_datas.is_empty(): 
-		push_error("Level data for ", id ," does not contain any level datas")
+		Debug.error("Level data for ", id ," does not contain any level datas")
 		return null
 
 	var level_data:SkillLevelData = _get_data_for_level(current_level)
@@ -29,7 +29,7 @@ func _get_data(_id:String):
 	if level_data.sld_has(_id):
 		return level_data.get(_id)
 	else:
-		push_error("Level data of ", id, " does not have a key for ", _id, " at level ", current_level)
+		Debug.error("Level data of ", id, " does not have a key for ", _id, " at level ", current_level)
 		return 0
 
 

@@ -18,7 +18,7 @@ func _ready() -> void:
 	Signals.LoadScene.connect(_load_scene)
 	Signals.ClearActiveScene.connect(_clear_active_scene)
 
-	if levels == null: push_error("Level data in scene manager is not set.")
+	if levels == null: Debug.error("Level data in scene manager is not set.")
 
 
 func _process(_delta: float) -> void:
@@ -40,7 +40,7 @@ func _load_scene(_id:String = "") -> void:
 	# If path is empty, dont try to load.
 	var path:String = levels.get_level_path(_id)
 	if path == "":
-		push_error("Path to load is empty.")
+		Debug.error("Path to load is empty.")
 		return
 	
 	# Starting the ResourceLoader.

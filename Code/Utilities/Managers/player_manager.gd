@@ -73,7 +73,7 @@ func has_active_skill(_id:String) -> bool:
 
 func _toggle_mouse_entered(value:bool) -> void:
 	mouse_in_no_click = value
-	#print("Mouse in no click: ", mouse_in_no_click)
+	#Debug.log("Mouse in no click: ", mouse_in_no_click)
 
 
 func _add_currency(value:int) -> void:
@@ -91,7 +91,7 @@ func _get_level_exp_ceiling() -> int:
 
 func _level_up() -> void:
 	player_level += 1
-	print("Player Level up! ", player_level)
+	Debug.log("Player Level up! ", player_level)
 	Signals.PlayerlevelUp.emit(player_level)
 
 
@@ -121,7 +121,7 @@ func _set_active_skill(_id:String) -> void:
 		if each != null and each.data.id == _id:
 			active_skill = each
 			return
-	push_warning("No skill found with id ", _id)
+	Debug.warning("No skill found with id ", _id)
 
 
 func _set_active_skill_by_key(key:int) -> void:

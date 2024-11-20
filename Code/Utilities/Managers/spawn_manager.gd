@@ -26,7 +26,7 @@ func get_thing_to_spawn(_data:SkillData) -> Node2D:
 			add_child(new)
 		return new
 	else:
-		push_error("Data sent to spawn Manager does not contain spawnable object.")
+		Debug.error("Data sent to spawn Manager does not contain spawnable object.")
 		return null
 
 

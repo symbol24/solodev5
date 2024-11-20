@@ -11,4 +11,4 @@ var weapon_owner
 
 func activate() -> void:
 	is_active = true
-	#print("Weapon ", name, " is active!")
+	#Debug.log("Weapon ", name, " is active!")
