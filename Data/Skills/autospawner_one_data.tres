@@ -1,67 +1,68 @@
 [gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=13 format=3 uid="uid://bl6hfu8twtu16"]
 
-[ext_resource type="Resource" uid="uid://bo1cq3t60dexi" path="res://Data/Skills/monster_one_spawner_data.tres" id="1_1feyk"]
 [ext_resource type="Script" path="res://Code/Player/Skills/autospawner_skill_data.gd" id="1_7b01k"]
-[ext_resource type="Script" path="res://Code/Player/Skills/skill_level_data.gd" id="1_cm5n5"]
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_gbty6"]
 [ext_resource type="PackedScene" uid="uid://d2l2pa0ap3rp3" path="res://Scenes/Autospawners/auto_spawner_one.tscn" id="1_w1of6"]
 [ext_resource type="Script" path="res://Code/Player/Skills/autospawner_sld.gd" id="2_uwqu3"]
 [ext_resource type="Texture2D" uid="uid://dxfsghsxvh82j" path="res://Textures/Ui/skill_icons_spawner_1.png" id="3_3p750"]
+[ext_resource type="Resource" uid="uid://0uu5na754dq5" path="res://Data/Monsters/Dark/Minions/first_monster.tres" id="3_mnei2"]
 
 [sub_resource type="Resource" id="Resource_x2jn0"]
 script = ExtResource("2_uwqu3")
 spawn_delay = 15.0
 spawn_count = 1
 extra_spawn_chance = 0.0
-level = 1
 use_delay = 35.0
+level = 1
 
 [sub_resource type="Resource" id="Resource_i3x81"]
 script = ExtResource("2_uwqu3")
 spawn_delay = 14.0
 spawn_count = 1
 extra_spawn_chance = 0.0
-level = 2
 use_delay = 30.0
+level = 2
 
 [sub_resource type="Resource" id="Resource_wd631"]
 script = ExtResource("2_uwqu3")
 spawn_delay = 13.0
 spawn_count = 1
 extra_spawn_chance = 0.15
-level = 3
 use_delay = 30.0
+level = 3
 
 [sub_resource type="Resource" id="Resource_dgoic"]
 script = ExtResource("2_uwqu3")
 spawn_delay = 12.0
 spawn_count = 1
 extra_spawn_chance = 0.2
-level = 4
 use_delay = 12.0
+level = 4
 
 [sub_resource type="Resource" id="Resource_x4hpb"]
 script = ExtResource("2_uwqu3")
 spawn_delay = 11.0
 spawn_count = 1
 extra_spawn_chance = 0.4
-level = 5
 use_delay = 25.0
+level = 5
 
 [sub_resource type="Resource" id="Resource_rw7se"]
 script = ExtResource("2_uwqu3")
 spawn_delay = 10.0
 spawn_count = 1
 extra_spawn_chance = 0.6
-level = 6
 use_delay = 20.0
+level = 6
 
 [resource]
 script = ExtResource("1_7b01k")
 to_spawn = ExtResource("1_w1of6")
-monster_data = ExtResource("1_1feyk")
-id = "autospawner_one"
+monster_data = ExtResource("3_mnei2")
 skill_path = "res://Scenes/Player/Skills/autospawner_one_skill.tscn"
-level_datas = Array[ExtResource("1_cm5n5")]([SubResource("Resource_x2jn0"), SubResource("Resource_i3x81"), SubResource("Resource_wd631"), SubResource("Resource_dgoic"), SubResource("Resource_x4hpb"), SubResource("Resource_rw7se")])
 title = "autospawner_one_title"
 description = "autospawner_one_desc"
 ui_texture = ExtResource("3_3p750")
+id = "autospawner_one"
+owner_type = 0
+level_datas = Array[ExtResource("1_gbty6")]([SubResource("Resource_x2jn0"), SubResource("Resource_i3x81"), SubResource("Resource_wd631"), SubResource("Resource_dgoic"), SubResource("Resource_x4hpb"), SubResource("Resource_rw7se")])

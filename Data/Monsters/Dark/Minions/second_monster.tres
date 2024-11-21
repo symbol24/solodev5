@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=6 format=3 uid="uid://5citwksh2rsw"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_ex6yy"]
+[ext_resource type="Resource" uid="uid://dj2y0cs4cxgf5" path="res://Data/Monsters/Dark/Minions/Damages/second_monster_damage.tres" id="2_f45ij"]
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="2_fiew4"]
+[ext_resource type="Script" path="res://Code/Monsters/monster_data.gd" id="3_8sfb2"]
+[ext_resource type="PackedScene" uid="uid://cei0y8uwmtqvv" path="res://Scenes/Monsters/second_test_monster.tscn" id="5_2noj1"]
+
+[resource]
+script = ExtResource("3_8sfb2")
+to_spawn = ExtResource("5_2noj1")
+damages = Array[ExtResource("1_ex6yy")]([ExtResource("2_f45ij")])
+is_flyer = false
+id = "monster_two"
+owner_type = 0
+level_datas = Array[ExtResource("2_fiew4")]([])

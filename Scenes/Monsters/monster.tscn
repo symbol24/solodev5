@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://vw1f6bwm15wd"]
+[gd_scene load_steps=13 format=3 uid="uid://vw1f6bwm15wd"]
 
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_jjqfh"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_3y0lg"]
 [ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_5s4gb"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_7k3cy"]
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="5_egk2c"]
 [ext_resource type="Texture2D" uid="uid://63ivvac1yycm" path="res://Textures/Enemies/34x15 Monster 1 without shadows.png" id="5_gw4wh"]
-[ext_resource type="Resource" uid="uid://blsdobkjsnro3" path="res://Data/Monsters/Damages/test_monster_damage.tres" id="6_yu4be"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kemp"]
 radius = 3.0
@@ -79,9 +77,6 @@ collision_layer = 4
 collision_mask = 4
 motion_mode = 1
 script = ExtResource("1_jjqfh")
-id = "first"
-starting_hp = 1
-damages = Array[ExtResource("5_egk2c")]([ExtResource("6_yu4be")])
 attack_area = NodePath("AttackArea")
 packed_hp_bar = ExtResource("4_5s4gb")
 

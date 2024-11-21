@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MonsterSkillData" load_steps=5 format=3 uid="uid://cc08dcoqg1mea"]
+
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_bktsq"]
+[ext_resource type="Script" path="res://Code/Player/Skills/monster_skill_data.gd" id="1_urvi7"]
+[ext_resource type="PackedScene" uid="uid://cei0y8uwmtqvv" path="res://Scenes/Monsters/second_test_monster.tscn" id="3_fin11"]
+[ext_resource type="Texture2D" uid="uid://cmfmd6gugq6tu" path="res://Textures/Ui/skill_icons_monster_2.png" id="3_suqme"]
+
+[resource]
+script = ExtResource("1_urvi7")
+to_spawn = ExtResource("3_fin11")
+skill_path = "res://Scenes/Player/Skills/monster_two_spawning_skill.tscn"
+title = "monster_two_title"
+description = "monster_two_desc"
+ui_texture = ExtResource("3_suqme")
+id = "monster_two"
+owner_type = 0
+level_datas = Array[ExtResource("1_bktsq")]([])

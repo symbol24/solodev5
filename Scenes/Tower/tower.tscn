@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7812wy4hcle3"]
+[gd_scene load_steps=9 format=3 uid="uid://b7812wy4hcle3"]
 
 [ext_resource type="Script" path="res://Code/Tower/tower.gd" id="1_d06k4"]
-[ext_resource type="Script" path="res://Code/Tower/Weapons/tower_weapon_data.gd" id="2_tj2tc"]
-[ext_resource type="Resource" uid="uid://3sxbco0o384" path="res://Data/Tower/WeaponData/sweeping_light_data.tres" id="3_oobyp"]
+[ext_resource type="Resource" uid="uid://dccwrrv8y5cx3" path="res://Data/Tower/Towers/tower_01.tres" id="2_8m5eu"]
 [ext_resource type="Texture2D" uid="uid://bwlepvi67n8tj" path="res://Textures/Tower/tower_light_circle.png" id="4_psetr"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="5_ikdop"]
 [ext_resource type="Texture2D" uid="uid://cgkdtbgf7xv28" path="res://Textures/Tower/tower_orb.png" id="7_nk46k"]
@@ -19,7 +18,7 @@ radius = 24.0
 [node name="Tower" type="Area2D"]
 process_mode = 1
 script = ExtResource("1_d06k4")
-starter_weapons = Array[ExtResource("2_tj2tc")]([ExtResource("3_oobyp")])
+tower_data = ExtResource("2_8m5eu")
 metadata/_edit_horizontal_guides_ = [-32.0]
 
 [node name="tower_light_circle" type="Sprite2D" parent="."]

@@ -11,6 +11,8 @@ const SPAWNMANAGER = preload("res://Scenes/Utilities/Managers/spawn_manager.tscn
 
 @export var audio_list:AudioList
 
+var player_data:PlayerData
+
 var active_tower:Tower = null
 var tower_ready:bool = false
 var player_manager:PlayerManager = null
@@ -22,6 +24,7 @@ var spawn_manager:SpawnManager
 var spawn_manager_ready:bool = false
 var lup_ready:bool = false
 var last_round_result:bool = false
+
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS

@@ -6,9 +6,9 @@ class_name AutoSpawner extends Node2D
 @onready var spawn_point: Marker2D = %spawn_point
 @onready var spawn_progress_bar: TextureProgressBar = %spawn_progress_bar
 
-var skill_data:AutoSpawnerSkillData
+var data:AutoSpawnerSkillData
 var skill_id:String:
-	get: return skill_data.id if skill_data else str(self.name)
+	get: return data.id if data else str(self.name)
 var is_active:bool = false
 var current_delay:float:
 	get: return _get_current_spawn_delay()
@@ -18,9 +18,9 @@ var timer:float = 0.0:
 		timer = value
 		if timer >= current_delay:
 			timer = 0.0
-			_spawn_for_count(skill_data.spawn_count)
+			_spawn_for_count(data.spawn_count)
 		spawn_progress_bar.value = (timer/current_delay)*100
-var spawned_json:String = skill_data.paresed_json["spawned_json"] if skill_data and not skill_data.is_empty() else ""
+var spawned_json:String = data.paresed_json["spawned_json"] if data and not data.is_empty() else ""
 
 
 func _process(delta: float) -> void:
@@ -28,9 +28,11 @@ func _process(delta: float) -> void:
 
 
 func setup_auto_spawner(_data:SkillData) -> void:
-	skill_data = _data
+	data = _data
+	Debug.log(data.monster_data)
+	
 	is_active = true
-	_spawn_for_count(skill_data.spawn_count)
+	_spawn_for_count(data.spawn_count)
 
 
 func _spawn_for_count(_count:int = 1) -> void:
@@ -42,21 +44,20 @@ func _spawn_for_count(_count:int = 1) -> void:
 
 
 func _spawn_one() -> void:
-	var new = Game.spawn_manager.get_thing_to_spawn(skill_data.monster_data)
+	Debug.log(data.monster_data)
+	var new = Game.spawn_manager.get_thing_to_spawn(data.monster_data)
 	if new:
-		var monster_skill_data:SkillData = SkillData.new()
-		monster_skill_data = skill_data.monster_data.duplicate(true)
-		monster_skill_data.current_level = skill_data.current_level
-		new.setup_stats(monster_skill_data)
+		data.monster_data.current_level = data.current_level
+		new.setup_stats(data.monster_data)
 		new.global_position = spawn_point.global_position
-		new.name = name + "_" + monster_skill_data.id + "_0" + str(spawn_count)
+		new.name = name + "_" + data.monster_data.id + "_0" + str(spawn_count)
 		#Debug.log("monster ", new.name, " spawned")
 		spawn_count += 1
 		Audio.play_audio(Game.audio_list.get_audio_file("monster_spawn"))
 
 
 func _get_current_spawn_delay() -> float:
-	if skill_data:
-		return skill_data.spawn_delay
+	if data:
+		return data.spawn_delay
 	else:
 		return 100

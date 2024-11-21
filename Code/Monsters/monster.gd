@@ -1,14 +1,7 @@
 class_name Monster extends CharacterBody2D
 
 
-@export var id:String
-
-@export_group("Stats")
-@export var starting_hp:int = 10
-@export var speed:float = 10
-
-@export_group("Attack and Damage")
-@export var damages:Array[Damage] = []
+@export_group("Attack")
 @export var attack_area:AttackArea
 
 @export_group("Other")
@@ -19,14 +12,7 @@ class_name Monster extends CharacterBody2D
 @onready var animator: AnimationPlayer = %animator
 @onready var sprite: Sprite2D = %sprite
 
-# Stats
-var current_hp:int = 0:
-	set(value):
-		current_hp = value
-		if current_hp <= 0: _death()
-
-var is_dead:bool = false
-var data:MonsterSkillData
+var data:MonsterData
 var hp_bar:TextureProgressBar
 var flippables:Array = []
 var flipped:bool = false
@@ -37,23 +23,25 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if not is_dead:
+	if not data.is_dead:
 		var direction:Vector2 = global_position.direction_to(target)
 		_flip(direction)
-		velocity = direction * speed
+		velocity = direction * data.speed
 
 		move_and_slide()
 
 
 func receive_damage(received:Array[Damage]) -> void:
-	if not received.is_empty() and not is_dead:
+	if not received.is_empty() and not data.is_dead:
 		Audio.play_audio(Game.audio_list.get_audio_file("hit"))
 		for each in received:
 			var amount:int = each.get_damage()
-			current_hp -= amount
+			data.current_hp -= amount
 			if hp_bar != null: 
-				hp_bar.value = current_hp
+				hp_bar.value = data.current_hp
 			Signals.DamageNumber.emit(amount, global_position, "light")
+			if data.is_dead:
+				_death()
 			#Debug.log("Monster ", name, " received damage: ", amount)
 
 
@@ -61,24 +49,20 @@ func entered_light_pool() -> void:
 	_death()
 
 
-func setup_stats(_data:SkillData) -> void:
-	if not _data is MonsterSkillData:
-		Debug.error("Monster has received not Monster Skill Data")
-		return
-	is_dead = false
-	data = _data
-	speed = data.speed
-	current_hp = data.hp
+func setup_stats(_data:MonsterData) -> void:
+	data = _data.duplicate()
+	data.level_datas.clear()
+	data.level_datas = _data.get_duplicate_levels()
+	data.setup_data()
 	if packed_hp_bar:
 		hp_bar = packed_hp_bar.instantiate()
 		add_child(hp_bar)
 		hp_bar.position = hp_point.position
 		hp_bar.step = 1
-		hp_bar.max_value = data.hp
-		hp_bar.value = current_hp
+		hp_bar.max_value = data.starting_hp
+		hp_bar.value = data.current_hp
 	if attack_area:
-		attack_area.set_attack_owner(self)
-		attack_area.set_damages(damages.duplicate())
+		attack_area.set_attack_owner(data)
 	else:
 		Debug.error("Attack area not set in ", name, " monster.")
 	animator.play("RESET")
@@ -87,7 +71,6 @@ func setup_stats(_data:SkillData) -> void:
 
 func _death() -> void:
 	Audio.play_audio(Game.audio_list.get_audio_file("death"))
-	is_dead = true
 	animator.play("death")
 	Signals.SpawnCurrency.emit(global_position)
 	await animator.animation_finished

@@ -1,4 +1,4 @@
-class_name SellSLD extends SkillLevelData
+class_name SpellSLD extends SkillLevelData
 
 
 @export var damage:int

@@ -1,8 +1,17 @@
-[gd_resource type="Resource" script_class="TowerWeaponData" load_steps=2 format=3 uid="uid://3sxbco0o384"]
+[gd_resource type="Resource" script_class="TowerWeaponData" load_steps=5 format=3 uid="uid://3sxbco0o384"]
 
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_n7iia"]
 [ext_resource type="Script" path="res://Code/Tower/Weapons/tower_weapon_data.gd" id="1_uy56y"]
+[ext_resource type="Resource" uid="uid://b772xfrm8u57v" path="res://Data/Tower/WeaponDamages/sweeping_light_damage.tres" id="2_pl4y7"]
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="3_8kfoa"]
 
 [resource]
 script = ExtResource("1_uy56y")
-id = "sweeping_light"
 path = "res://Scenes/Tower/Weapons/sweeping_light.tscn"
+damages = Array[ExtResource("1_n7iia")]([ExtResource("2_pl4y7")])
+extra = {
+"starting_rotation_speed": 0.5
+}
+id = "sweeping_light"
+owner_type = 1
+level_datas = Array[ExtResource("3_8kfoa")]([])

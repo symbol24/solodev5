@@ -1,4 +1,4 @@
-class_name MonsterSLD extends SkillLevelData
+class_name MonsterSLD extends SytoLevelData
 
 
 @export var hp:int

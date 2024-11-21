@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_idicf"]
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_ybli0"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_xwklx"]
-[ext_resource type="Resource" uid="uid://dj2y0cs4cxgf5" path="res://Data/Monsters/Damages/second_monster_damage.tres" id="3_ysjkd"]
+[ext_resource type="Resource" uid="uid://dj2y0cs4cxgf5" path="res://Data/Monsters/Dark/Minions/Damages/second_monster_damage.tres" id="3_ysjkd"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_b1x8p"]
 [ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_cfowe"]
 [ext_resource type="Texture2D" uid="uid://d2d4pwlei2fct" path="res://Textures/Enemies/50x31 Monster 2 spritesheet without shadows.png" id="5_t7wbo"]

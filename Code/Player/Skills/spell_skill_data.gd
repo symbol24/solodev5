@@ -2,12 +2,12 @@ class_name SpellSkillData extends SkillData
 
 
 var damage:int:
-	get: return _get_data("damage")
+	get: return get_parameter("damage")
 var target_count:int:
-	get: return _get_data("target_count")
+	get: return get_parameter("target_count")
 var attack_area_size:float:
-	get: return _get_data("attack_area_size")
+	get: return get_parameter("attack_area_size")
 var projectile_speed:float:
-	get: return _get_data("projectile_speed")
+	get: return get_parameter("projectile_speed")
 var status_effect_delay:float:
-	get: return _get_data("status_effect_delay")
+	get: return get_parameter("status_effect_delay")

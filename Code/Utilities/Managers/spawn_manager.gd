@@ -13,20 +13,20 @@ func _ready() -> void:
 	Signals.ManagerReady.emit(self)
 
 
-func get_thing_to_spawn(_data:SkillData) -> Node2D:
+func get_thing_to_spawn(_data:SytoData) -> Node2D:
 	if use_pool:
 		var check = _get_from_pool(_data.id)
 		if check:
 			add_child(check)
 			return check
 	
-	if (_data is AutoSpawnerSkillData or _data is MonsterSkillData) and _data.to_spawn != null:
+	if _data != null and _data.get("to_spawn") != null:
 		var new = _data.to_spawn.instantiate()
 		if new.get_parent() == null:
 			add_child(new)
 		return new
 	else:
-		Debug.error("Data sent to spawn Manager does not contain spawnable object.")
+		Debug.error("Data sent to spawnable is either null or does not contain spawnable object.")
 		return null
 
 

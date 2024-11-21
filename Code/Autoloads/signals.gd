@@ -66,3 +66,7 @@ signal ReturnCurrencyToPool(currency:CurrencyObject)
 
 # Spawn Manager
 signal ReturnToPool(item)
+
+
+# Minions/Boss
+signal MonsterDeath(monster_data:MonsterData)
