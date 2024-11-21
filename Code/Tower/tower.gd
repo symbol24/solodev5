@@ -17,7 +17,7 @@ func _ready() -> void:
 	Signals.SetupTower.connect(_setup_tower)
 	Signals.ActivateTower.connect(_activate)
 	Signals.StopRound.connect(_tower_stop)
-	Signals.UpdatePushbackRadius.connect(_update_dark_radius)
+	Signals.UpdateDarkRadius.connect(_update_dark_radius)
 	radius_timer.timeout.connect(_timer_timeout)
 	light_area.mouse_entered.connect(_mouse_entered_light)
 	light_area.mouse_exited.connect(_mouse_exited_light)
@@ -33,7 +33,7 @@ func receive_damage(received:Array[Damage]) -> void:
 				Signals.DamageNumber.emit(amount, global_position, "dark")
 				if data.light_radius == data.starting_light_radius:
 					data.dark_radius -= amount 
-					Signals.UpdatePushbackRadius.emit(amount)
+					Signals.UpdateDarkRadius.emit(amount)
 					Signals.CheckMatchEnd.emit(data.starting_light_radius, data.light_radius, data.dark_radius)
 
 

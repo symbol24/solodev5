@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 
 func set_data(_new_data:SkillData) -> void:
 	data = _new_data
-	Debug.log(data.monster_data)
 	data.current_level += 1
 
 

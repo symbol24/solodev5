@@ -32,7 +32,7 @@ func get_parameter(_param:String):
 		if owner_type == Type.PLAYER and Game.player_data != null: result += Game.player_data.get_parameter(_param)
 		return result
 	else:
-		Debug.error("Level data of ", id, " does not have a key for ", _param, " at level ", current_level)
+		if owner_type == Type.PLAYER: Debug.error("Level data of ", id, " does not have a key for ", _param, " at level ", current_level)
 		return 0
 
 

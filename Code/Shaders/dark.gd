@@ -12,7 +12,7 @@ var height:float
 
 func _ready() -> void:
 	Signals.ToggleDark.connect(_toggle_dark)
-	Signals.UpdatePushbackRadius.connect(_update_radius)
+	Signals.UpdateDarkRadius.connect(_update_radius)
 	Signals.ClearPlayerUi.connect(_reset_members)
 	_reset_members()
 	width = ProjectSettings.get_setting("display/window/size/viewport_width")

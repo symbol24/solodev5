@@ -10,7 +10,7 @@ script = ExtResource("1_uy56y")
 path = "res://Scenes/Tower/Weapons/sweeping_light.tscn"
 damages = Array[ExtResource("1_n7iia")]([ExtResource("2_pl4y7")])
 extra = {
-"starting_rotation_speed": 0.5
+"starting_rotation_speed": 50.0
 }
 id = "sweeping_light"
 owner_type = 1

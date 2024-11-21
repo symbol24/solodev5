@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 
 func setup_auto_spawner(_data:SkillData) -> void:
 	data = _data
-	Debug.log(data.monster_data)
 	
 	is_active = true
 	_spawn_for_count(data.spawn_count)
@@ -44,7 +43,6 @@ func _spawn_for_count(_count:int = 1) -> void:
 
 
 func _spawn_one() -> void:
-	Debug.log(data.monster_data)
 	var new = Game.spawn_manager.get_thing_to_spawn(data.monster_data)
 	if new:
 		data.monster_data.current_level = data.current_level

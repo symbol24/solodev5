@@ -9,6 +9,11 @@
 			"uuid": "db9adcce-d8f6-44a5-b044-baaafc804c0c",
 			"title": "Bug",
 			"color": "b81414"
+		},
+		{
+			"uuid": "04539711-fe69-47f1-a842-086fe9dacfac",
+			"title": "Backlog",
+			"color": "91917d"
 		}
 	],
 	"stages": [
@@ -45,7 +50,8 @@
 				"51fdbce9-8172-44ce-a82b-49a0c520ced9",
 				"edd94d0f-0f4f-424a-aa27-954bce95912c",
 				"2ccdb1a4-f09f-43b8-a6cc-d201569af3a8",
-				"5515f502-a240-4fc7-a928-8be3ac550a1b"
+				"5515f502-a240-4fc7-a928-8be3ac550a1b",
+				"e0fb01cc-4a8a-4115-8b7a-35c38ee56599"
 			]
 		}
 	],
@@ -179,6 +185,13 @@
 		{
 			"uuid": "51fdbce9-8172-44ce-a82b-49a0c520ced9",
 			"title": "refactor tower to move damges into a tower data",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "e0fb01cc-4a8a-4115-8b7a-35c38ee56599",
+			"title": "make data for levels of current skills and monsters",
 			"description": "",
 			"category": "07a8c403-507d-408a-aa41-9acae9042451",
 			"steps": []

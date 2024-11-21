@@ -11,22 +11,24 @@ var rotation_speed:float:
 
 
 func _ready() -> void:
-	Signals.UpdatePushbackRadius.connect(_reduce_collider_size)
+	Signals.UpdateDarkRadius.connect(_reduce_collider_size)
 	starting_length = attack_collider.shape.size.x
 
 
 func _process(delta: float) -> void:
 	if tower.is_active and is_active:
-		light.points[1].x = tower.data.dark_radius
-		rotate(rotation_speed * delta)
+		rotation_degrees += (rotation_speed * delta)
+		if rotation_degrees >= 360: rotation_degrees = 0
 
 
 func setup_attack_area() -> void:
 	attack_area.set_attack_owner(data)
 	attack_area.set_damages(data.damages)
+	Debug.log(rotation_speed)
 
 
 func _reduce_collider_size(new_length:float) -> void:
+	light.points[1].x = new_length
 	attack_collider.shape.size.x -= new_length
 	var x:float = new_length/2
 	attack_collider.position.x -= x

@@ -42,7 +42,7 @@ signal ActivateTower()
 signal SetupTower()
 signal StopRound()
 signal UpdateTowerLightArea(value:float)
-signal UpdatePushbackRadius(value:float)
+signal UpdateDarkRadius(value:float)
 
 
 # Player

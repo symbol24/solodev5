@@ -1,10 +1,95 @@
-[gd_resource type="Resource" script_class="MonsterData" load_steps=6 format=3 uid="uid://0uu5na754dq5"]
+[gd_resource type="Resource" script_class="MonsterData" load_steps=13 format=3 uid="uid://0uu5na754dq5"]
 
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_ba0hu"]
 [ext_resource type="Resource" uid="uid://blsdobkjsnro3" path="res://Data/Monsters/Dark/Minions/Damages/test_monster_damage.tres" id="2_ep34e"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="2_lnrne"]
 [ext_resource type="Script" path="res://Code/Monsters/monster_data.gd" id="3_gk5jw"]
+[ext_resource type="Script" path="res://Code/Player/Skills/monster_sld.gd" id="4_1xe7t"]
 [ext_resource type="PackedScene" uid="uid://vw1f6bwm15wd" path="res://Scenes/Monsters/monster.tscn" id="4_w383q"]
+
+[sub_resource type="Resource" id="Resource_a7lth"]
+script = ExtResource("4_1xe7t")
+hp = 1
+speed = 10
+armor = 0
+hit_shield = 0
+damage = 3
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 1
+
+[sub_resource type="Resource" id="Resource_fcmws"]
+script = ExtResource("4_1xe7t")
+hp = 2
+speed = 12
+armor = 0
+hit_shield = 0
+damage = 4
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 2
+
+[sub_resource type="Resource" id="Resource_eqif4"]
+script = ExtResource("4_1xe7t")
+hp = 4
+speed = 14
+armor = 0
+hit_shield = 0
+damage = 5
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 3
+
+[sub_resource type="Resource" id="Resource_6kaki"]
+script = ExtResource("4_1xe7t")
+hp = 5
+speed = 18
+armor = 0
+hit_shield = 0
+damage = 7
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 4
+
+[sub_resource type="Resource" id="Resource_jkaa8"]
+script = ExtResource("4_1xe7t")
+hp = 6
+speed = 18
+armor = 0
+hit_shield = 0
+damage = 8
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 5
+
+[sub_resource type="Resource" id="Resource_nxspa"]
+script = ExtResource("4_1xe7t")
+hp = 8
+speed = 20
+armor = 0
+hit_shield = 0
+damage = 10
+attack_area_size = 0.0
+attack_range = 0.0
+attack_delay = 0.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+level = 6
 
 [resource]
 script = ExtResource("3_gk5jw")
@@ -13,4 +98,4 @@ damages = Array[ExtResource("1_ba0hu")]([ExtResource("2_ep34e")])
 is_flyer = false
 id = "monster_one"
 owner_type = 0
-level_datas = Array[ExtResource("2_lnrne")]([])
+level_datas = Array[ExtResource("2_lnrne")]([SubResource("Resource_a7lth"), SubResource("Resource_fcmws"), SubResource("Resource_eqif4"), SubResource("Resource_6kaki"), SubResource("Resource_jkaa8"), SubResource("Resource_nxspa")])
