@@ -57,7 +57,9 @@ func get_damage() -> int:
 	cd += over
 
 	var check:float = randf()
-	if check <= cc:
-		final_value = floori(start * (1 + cd))
+	var final_cd:float = 1
+	if check <= cc: final_cd += cd
+		
+	final_value = floori(start * final_cd)
 	
 	return final_value

@@ -38,10 +38,10 @@ func _process(delta: float) -> void:
 func _area_entered(area: Area2D ) -> void:
 	if area is AttackArea:
 		if area.attack_owner.owner_type == SytoData.Type.PLAYER and tower != null:
-			tower.receive_damage(area.damages.duplicate())
-			area.attack_owner.entered_light_pool()
+			tower.receive_damage(area.attack_owner.damages.duplicate())
+			area.get_parent().entered_light_pool()
 		elif area.attack_owner.owner_type == SytoData.Type.ENEMY and monster != null:
-			monster.receive_damage(area.damages.duplicate())
+			monster.receive_damage(area.attack_owner.damages)
 			is_active = false
 
 

@@ -70,6 +70,7 @@ func setup_stats(_data:MonsterData) -> void:
 
 
 func _death() -> void:
+	if not data.is_dead: data.is_dead = true
 	Audio.play_audio(Game.audio_list.get_audio_file("death"))
 	animator.play("death")
 	Signals.SpawnCurrency.emit(global_position)
@@ -82,7 +83,7 @@ func _flip(_direction:Vector2) -> void:
 	if not flipped and _direction.x < 0:
 		flip = true
 	elif flipped and _direction.x >= 0:
-		flip  =true
+		flip = true
 	
 	if flip:
 		for each in flippables:

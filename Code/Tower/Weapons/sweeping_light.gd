@@ -7,7 +7,7 @@ class_name SweepingLight extends TowerWeapon
 
 var starting_length:float
 var rotation_speed:float:
-	get: return tower.data.get_leveled_value(data.extra["starting_rotation_speed"]) if data and data.extra.has("starting_rotation_speed") else 0.1
+	get: return data.get_leveled_value(data.extra["starting_rotation_speed"]) if data and data.extra.has("starting_rotation_speed") else 0.1
 
 
 func _ready() -> void:
@@ -23,8 +23,6 @@ func _process(delta: float) -> void:
 
 func setup_attack_area() -> void:
 	attack_area.set_attack_owner(data)
-	attack_area.set_damages(data.damages)
-	Debug.log(rotation_speed)
 
 
 func _reduce_collider_size(new_length:float) -> void:

@@ -1,4 +1,4 @@
-class_name TowerData extends SytoData
+class_name TowerData extends TowerSytoData
 
 
 @export var starting_level:int = 1
@@ -54,7 +54,3 @@ func _check_level_up() -> void:
 	if current_exp >= level_exp:
 		current_exp = 0
 		current_level += 1
-
-
-func get_leveled_value(value):
-	return floor(value * (current_level * 0.5)) if current_level > 1 else value
