@@ -1,8 +1,6 @@
 class_name Skill extends Node2D
 
 
-@export var skill_data:SkillData
-
 var data:SkillData
 var used:bool = false
 var current_used_delay:float:
@@ -25,8 +23,8 @@ func set_data(_new_data:SkillData) -> void:
 	data.current_level += 1
 
 
-func trigger_skill(_pos:Vector2) -> void:
-	if not used:
+func trigger_skill(_pos:Vector2, _in_light:bool = true) -> void:
+	if not used and not _in_light:
 		used = true
 
 

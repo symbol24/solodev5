@@ -1,9 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cei0y8uwmtqvv"]
+[gd_scene load_steps=13 format=3 uid="uid://cei0y8uwmtqvv"]
 
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_idicf"]
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_ybli0"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_xwklx"]
-[ext_resource type="Resource" uid="uid://dj2y0cs4cxgf5" path="res://Data/Monsters/Dark/Minions/Damages/second_monster_damage.tres" id="3_ysjkd"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_b1x8p"]
 [ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_cfowe"]
 [ext_resource type="Texture2D" uid="uid://d2d4pwlei2fct" path="res://Textures/Enemies/50x31 Monster 2 spritesheet without shadows.png" id="5_t7wbo"]
@@ -79,10 +77,6 @@ _data = {
 [node name="SecondTestMonster" type="CharacterBody2D" node_paths=PackedStringArray("attack_area")]
 process_mode = 1
 script = ExtResource("1_idicf")
-id = "second"
-starting_hp = 1
-speed = 15.0
-damages = Array[ExtResource("2_ybli0")]([ExtResource("3_ysjkd")])
 attack_area = NodePath("AttackArea")
 packed_hp_bar = ExtResource("4_cfowe")
 
@@ -114,6 +108,7 @@ collision_layer = 8
 script = ExtResource("4_b1x8p")
 
 [node name="attack_collider" type="CollisionShape2D" parent="AttackArea"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_ebnx2")

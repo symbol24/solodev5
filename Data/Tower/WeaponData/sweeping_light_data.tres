@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("1_uy56y")
 path = "res://Scenes/Tower/Weapons/sweeping_light.tscn"
+start_damage = 1
 damages = Array[ExtResource("1_n7iia")]([ExtResource("2_pl4y7")])
 extra = {
 "starting_rotation_speed": 25.0

@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcvw8d345wk2q"]
+[gd_scene load_steps=6 format=3 uid="uid://dcvw8d345wk2q"]
 
 [ext_resource type="Script" path="res://Code/Utilities/Managers/player_manager.gd" id="1_mfvle"]
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="2_62xsi"]
+[ext_resource type="Resource" uid="uid://bgoxdt11gf0pa" path="res://Data/Skills/Spells/test_spell.tres" id="3_n1krg"]
 [ext_resource type="Resource" uid="uid://bytqu832gvuva" path="res://Data/Skills/autospawner_two_data.tres" id="4_2b5et"]
 [ext_resource type="Resource" uid="uid://bl6hfu8twtu16" path="res://Data/Skills/autospawner_one_data.tres" id="4_kt4t6"]
 
 [node name="PlayerManager" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_mfvle")
-starting_skill = Array[ExtResource("2_62xsi")]([ExtResource("4_kt4t6")])
-all_skills = Array[ExtResource("2_62xsi")]([ExtResource("4_kt4t6"), ExtResource("4_2b5et")])
+starting_skill = Array[ExtResource("2_62xsi")]([ExtResource("3_n1krg")])
+all_skills = Array[ExtResource("2_62xsi")]([ExtResource("4_kt4t6"), ExtResource("4_2b5et"), ExtResource("3_n1krg")])

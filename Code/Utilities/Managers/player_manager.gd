@@ -20,8 +20,8 @@ var is_active:bool = false
 # if area breaks again, maybe change to check if mouse distance from the center  is larger than radius of light
 func _input(event: InputEvent) -> void:
 	if not get_tree().paused and is_active:
-		if not mouse_in_no_click and active_skill and event.is_action_pressed("mouse_left"):
-			active_skill.trigger_skill(event.position)
+		if active_skill and event.is_action_pressed("mouse_left"):
+			active_skill.trigger_skill(event.position, mouse_in_no_click)
 
 		if event.is_action_pressed("pause"):
 			get_tree().paused = true
@@ -38,6 +38,8 @@ func _input(event: InputEvent) -> void:
 
 		if event.is_action_pressed("4"):
 			_set_active_skill_by_key(3)
+
+		get_viewport().set_input_as_handled()
 
 		
 

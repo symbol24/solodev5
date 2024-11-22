@@ -108,6 +108,7 @@ collision_layer = 8
 script = ExtResource("4_7k3cy")
 
 [node name="attack_collider" type="CollisionShape2D" parent="AttackArea"]
+unique_name_in_owner = true
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_b3jq4")
 debug_color = Color(0.42843, 0, 0.0318467, 0.42)

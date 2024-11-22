@@ -60,6 +60,7 @@ script = ExtResource("1_7b01k")
 to_spawn = ExtResource("1_w1of6")
 monster_data = ExtResource("3_mnei2")
 skill_path = "res://Scenes/Player/Skills/autospawner_one_skill.tscn"
+skill_type = 0
 title = "autospawner_one_title"
 description = "autospawner_one_desc"
 ui_texture = ExtResource("3_3p750")

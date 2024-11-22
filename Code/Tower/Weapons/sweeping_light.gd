@@ -3,7 +3,7 @@ class_name SweepingLight extends TowerWeapon
 
 @onready var light: Line2D = %light
 @onready var attack_area: AttackArea = %AttackArea
-@onready var attack_collider: CollisionShape2D = %collider
+@onready var attack_collider: CollisionShape2D = %attack_collider
 
 var starting_length:float
 var rotation_speed:float:

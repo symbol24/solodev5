@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://m648hpp0vbo"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://m648hpp0vbo"]
 
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_04ulf"]
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="1_n7528"]
 [ext_resource type="Texture2D" uid="uid://irry3veg474v" path="res://Textures/Ui/skill_icons_progress_bar.png" id="2_qbq0m"]
 
 [resource]
 script = ExtResource("1_n7528")
-id = "no_skill"
-starting_delay = 0.0
 skill_path = ""
-json_path = ""
+skill_type = 3
 title = "empty_kills_for_upgrades_title"
 description = "empty_kills_for_upgrades_desc"
 ui_texture = ExtResource("2_qbq0m")
+id = "no_skill"
+owner_type = 0
+level_datas = Array[ExtResource("1_04ulf")]([])

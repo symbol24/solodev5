@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MonsterSkillData" load_steps=5 format=3 uid="uid://bo1cq3t60dexi"]
+[gd_resource type="Resource" script_class="ManualSpawnerSkillData" load_steps=5 format=3 uid="uid://bo1cq3t60dexi"]
 
 [ext_resource type="Script" path="res://Code/Player/Skills/monster_skill_data.gd" id="1_7rpo5"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_bgoyy"]
@@ -9,6 +9,7 @@
 script = ExtResource("1_7rpo5")
 to_spawn = ExtResource("3_sb2t5")
 skill_path = "res://Scenes/Player/Skills/monster_one_spawner.tscn"
+skill_type = 1
 title = "monster_one_spawner_title"
 description = "monster_one_spawner_desc"
 ui_texture = ExtResource("3_em27l")
