@@ -1,6 +1,9 @@
 class_name SpellSkillData extends SkillData
 
 
+@export var to_spawn:PackedScene
+@export var damages:Array[Damage]
+
 var damage:int:
 	get: return get_parameter("damage")
 var target_count:int:

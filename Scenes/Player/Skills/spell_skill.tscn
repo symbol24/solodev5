@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc3qe0ogtlt6v"]
+
+[ext_resource type="Script" path="res://Code/Player/Skills/spell_skill.gd" id="1_eija6"]
+
+[node name="SpellSkill" type="Node2D"]
+script = ExtResource("1_eija6")

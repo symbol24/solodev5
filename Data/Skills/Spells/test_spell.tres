@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="SpellSkillData" load_steps=14 format=3 uid="uid://bgoxdt11gf0pa"]
+
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_djhko"]
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_xswiw"]
+[ext_resource type="Script" path="res://Code/Player/Skills/spell_sld.gd" id="2_a3sqg"]
+[ext_resource type="Script" path="res://Code/Player/Skills/spell_skill_data.gd" id="2_fr3hs"]
+[ext_resource type="Resource" uid="uid://ds30lhp6lhqx8" path="res://Data/Skills/Spells/Damages/test_spell_damage.tres" id="2_vju73"]
+[ext_resource type="PackedScene" uid="uid://c3x18nwgpudm6" path="res://Scenes/Player/Projectiles/Spells/test_spell_projectile.tscn" id="4_q3o3a"]
+[ext_resource type="Texture2D" uid="uid://cmfmd6gugq6tu" path="res://Textures/Ui/skill_icons_monster_2.png" id="7_ve1uv"]
+
+[sub_resource type="Resource" id="Resource_dql0o"]
+script = ExtResource("2_a3sqg")
+damage = 5
+target_count = 0
+attack_area_size = 12.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+use_delay = 20.0
+level = 1
+
+[sub_resource type="Resource" id="Resource_5nca8"]
+script = ExtResource("2_a3sqg")
+damage = 5
+target_count = 0
+attack_area_size = 15.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+use_delay = 19.0
+level = 2
+
+[sub_resource type="Resource" id="Resource_3icj4"]
+script = ExtResource("2_a3sqg")
+damage = 7
+target_count = 0
+attack_area_size = 18.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+use_delay = 18.0
+level = 3
+
+[sub_resource type="Resource" id="Resource_8yt6o"]
+script = ExtResource("2_a3sqg")
+damage = 10
+target_count = 0
+attack_area_size = 21.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+use_delay = 17.0
+level = 4
+
+[sub_resource type="Resource" id="Resource_kocpw"]
+script = ExtResource("2_a3sqg")
+damage = 13
+target_count = 0
+attack_area_size = 21.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+use_delay = 16.0
+level = 5
+
+[sub_resource type="Resource" id="Resource_foomm"]
+script = ExtResource("2_a3sqg")
+damage = 16
+target_count = 0
+attack_area_size = 24.0
+projectile_speed = 0.0
+status_effect_delay = 0.0
+use_delay = 15.0
+level = 6
+
+[resource]
+script = ExtResource("2_fr3hs")
+to_spawn = ExtResource("4_q3o3a")
+damages = Array[ExtResource("1_xswiw")]([ExtResource("2_vju73")])
+skill_path = "res://Scenes/Player/Skills/spell_skill.tscn"
+skill_type = 2
+title = "spell skill"
+description = "spell skill go boom"
+ui_texture = ExtResource("7_ve1uv")
+id = "test_spell"
+owner_type = 0
+level_datas = Array[ExtResource("1_djhko")]([SubResource("Resource_dql0o"), SubResource("Resource_5nca8"), SubResource("Resource_3icj4"), SubResource("Resource_8yt6o"), SubResource("Resource_kocpw"), SubResource("Resource_foomm")])
