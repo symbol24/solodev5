@@ -112,8 +112,11 @@ locale/translations=PackedStringArray("res://Data/Loc/localization.en.translatio
 
 2d_physics/layer_1="tower"
 2d_physics/layer_2="tower attacks"
-2d_physics/layer_3="monsters"
-2d_physics/layer_4="monster attacks"
+2d_physics/layer_3="player monsters"
+2d_physics/layer_4="player monster attacks"
+2d_physics/layer_5="tower monsters"
+2d_physics/layer_6="tower monster attacks"
+2d_physics/layer_7="player spell attacks"
 
 [rendering]
 
