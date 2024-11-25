@@ -24,20 +24,16 @@ func setup_data() -> void:
 func get_parameter(_param:String):
 	#Debug.log("Getting ", _param ," in Syto Data")
 	var result = 0
-
-	if not level_datas.is_empty():
-		var level_data:SytoLevelData = _get_data_for_level(current_level)
-		result = level_data.get(_param) if level_data.get(_param) != null else 0
-	else:
-		if owner_type == Type.PLAYER: Debug.error("Level data of ", id, " does not have a key for ", _param, " at level ", current_level)
-	
 	if owner_type == Type.PLAYER:
+		if not level_datas.is_empty():
+			var level_data:SytoLevelData = _get_data_for_level(current_level)
+			result = level_data.get(_param) if level_data.get(_param) != null else 0
+		else:
+			if owner_type == Type.PLAYER: Debug.error("Level data of ", id, " does not have a key for ", _param, " at level ", current_level)
+	
 		result += Game.selected_leader.get_parameter(_param) if Game.selected_leader != null else 0
 		result += Game.player_manager.get_parameter_from_boosters(_param) if Game.player_manager != null and Game.player_manager.player_data != null else 0
 		result += Game.save_load.get_parameter_from_permas(_param) if Game.save_load != null and Game.save_load.active_save != null else 0
-
-
-
 	return result
 
 

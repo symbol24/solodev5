@@ -10,4 +10,5 @@ class_name SaveData extends Resource
 @export var score_history:Dictionary = {}
 @export var unlocked_permas:Array[PermaData]
 @export var unlocked_skills:Array[SkillData]
+@export var unlocked_boosters:Array[BoosterData]
 @export var unlocked_leaders:Array[LeaderData]

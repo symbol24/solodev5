@@ -11,7 +11,7 @@ var active_skill:Skill
 var all_active_skills:Array[Skill] = []
 
 # Boosters
-var all_active_boosters:Array
+var all_active_boosters:Array[BoosterData]
 
 var mouse_in_no_click:bool = false
 var is_active:bool = false
@@ -72,6 +72,16 @@ func has_active_skill(_id:String) -> bool:
 	return false
 
 
+func get_parameter_from_boosters(_param:String):
+	var result = 0
+
+	# for each in all boosters add to result
+	for booster in all_active_boosters:
+		result += booster.get_parameter(_param) if booster.get_parameter(_param) != null else 0
+
+	return result
+
+
 func _toggle_mouse_entered(value:bool) -> void:
 	mouse_in_no_click = value
 	#Debug.log("Mouse in no click: ", mouse_in_no_click)
@@ -125,11 +135,3 @@ func _activate_player() -> void:
 
 func _stop_player() -> void:
 	is_active = false
-
-
-func get_parameter_from_boosters(_param:String):
-	var result = 0
-
-	# for each in all boosters add to result
-
-	return result
