@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Tower Offense"
+config/name="Last Light"
 config/description="The Dark is hunting the last source of light."
 run/main_scene="res://Scenes/Worlds/boot.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="LastLight"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

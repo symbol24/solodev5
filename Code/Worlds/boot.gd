@@ -6,6 +6,7 @@ class_name Boot extends Node2D
 var current:String = "godot"
 var skipped: bool = false
 
+
 func _ready() -> void:
 	Signals.LoadScene.emit("ui")
 	animator.animation_finished.connect(_anim_finished)

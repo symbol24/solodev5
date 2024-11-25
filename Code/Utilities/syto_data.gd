@@ -20,20 +20,25 @@ var current_level:int = 0:
 func setup_data() -> void:
 	pass
 
+
 func get_parameter(_param:String):
-	if level_datas.is_empty(): 
-		Debug.error("Level data for ", id ," does not contain any level datas")
-		return 0
+	#Debug.log("Getting ", _param ," in Syto Data")
+	var result = 0
 
-	var level_data:SytoLevelData = _get_data_for_level(current_level)
-
-	if level_data.stld_has(_param):
-		var result = level_data.get(_param) if level_data.get(_param) != null else 0
-		if owner_type == Type.PLAYER and Game.player_data != null: result += Game.player_data.get_parameter(_param)
-		return result
+	if not level_datas.is_empty():
+		var level_data:SytoLevelData = _get_data_for_level(current_level)
+		result = level_data.get(_param) if level_data.get(_param) != null else 0
 	else:
 		if owner_type == Type.PLAYER: Debug.error("Level data of ", id, " does not have a key for ", _param, " at level ", current_level)
-		return 0
+	
+	if owner_type == Type.PLAYER:
+		result += Game.selected_leader.get_parameter(_param) if Game.selected_leader != null else 0
+		result += Game.player_manager.get_parameter_from_boosters(_param) if Game.player_manager != null and Game.player_manager.player_data != null else 0
+		result += Game.save_load.get_parameter_from_permas(_param) if Game.save_load != null and Game.save_load.active_save != null else 0
+
+
+
+	return result
 
 
 func get_duplicate_levels() -> Array[SytoLevelData]:

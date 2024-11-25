@@ -25,7 +25,7 @@ func _ready() -> void:
 
 
 func receive_damage(received:Array[Damage]) -> void:
-	Debug.log("Received damages: ", received)
+	#Debug.log("Received damages: ", received)
 	if is_active and not data.is_dead and not received.is_empty():
 		for each in received:
 			if not data.is_dead:

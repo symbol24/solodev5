@@ -10,3 +10,4 @@ var attack_owner:SytoData
 
 func set_attack_owner(new_owner) -> void:
 	attack_owner = new_owner
+	#Debug.log("Attack owner set to: ", attack_owner.id)

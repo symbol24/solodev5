@@ -27,6 +27,6 @@ func start_tween() -> void:
 
 
 func _finished() -> void:
-	Signals.AddCurrency.emit(value)
+	Signals.AddExp.emit(value)
 	Signals.ReturnCurrencyToPool.emit(self)
 

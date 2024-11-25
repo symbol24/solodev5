@@ -6,9 +6,9 @@ class_name LeaderData extends SytoData
 @export var luck:float = 0
 
 @export_category("Damage")
-@export var unholy:float = 0
-@export var corruption:float = 0
-@export var backlight_enabled:float = 0
+@export var unholy_damage:float = 0
+@export var corruption_damage:float = 0
+@export var blight_damage:float = 0
 @export var crit_chance:float = 0
 @export var crit_damage:float = 0
 
@@ -26,3 +26,9 @@ class_name LeaderData extends SytoData
 @export var hit_shield:int = 0
 @export var attack_range:float = 0
 @export var attack_delay:float = 0
+
+
+func get_parameter(_param:String):
+	#Debug.log("Getting ", _param ," Leader Data")
+	if get(_param) != null: return get(_param)
+	return 0

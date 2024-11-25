@@ -1,9 +1,6 @@
 class_name PlayerManager extends Node2D
 
 
-const DEBUGLEADER = preload("res://Data/Leaders/test_leader.tres")
-
-
 @export var starting_skill:Array[SkillData]
 @export var all_skills:Array[SkillData]
 
@@ -12,6 +9,9 @@ var player_data:PlayerData
 # Skills
 var active_skill:Skill
 var all_active_skills:Array[Skill] = []
+
+# Boosters
+var all_active_boosters:Array
 
 var mouse_in_no_click:bool = false
 var is_active:bool = false
@@ -52,7 +52,6 @@ func _ready() -> void:
 	Signals.AddNewSkill.connect(_create_skill)
 	Signals.UpdateActiveSkill.connect(_update_active_skill)
 	player_data = PlayerData.new()
-	player_data.selected_leader = DEBUGLEADER.duplicate(true)
 	Signals.UpdatePlayerExp.emit(player_data.current_exp, player_data.get_level_exp_ceiling())
 	Signals.ManagerReady.emit(self)
 
@@ -126,3 +125,11 @@ func _activate_player() -> void:
 
 func _stop_player() -> void:
 	is_active = false
+
+
+func get_parameter_from_boosters(_param:String):
+	var result = 0
+
+	# for each in all boosters add to result
+
+	return result

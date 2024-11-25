@@ -9,6 +9,8 @@ const LEVELUPMANAGER = preload("res://Scenes/Utilities/Managers/level_up_manager
 const SPAWNMANAGER = preload("res://Scenes/Utilities/Managers/spawn_manager.tscn")
 const SAVELOADMANAGER = preload("res://Scenes/Utilities/Managers/save_load_manager.tscn")
 
+const DEBUGLEADER = preload("res://Data/Leaders/test_leader.tres")
+
 
 @export var audio_list:AudioList
 
@@ -30,6 +32,7 @@ var lup_ready:bool = false
 # Round stuff
 var last_round_result:bool = false
 var last_round_player_data:PlayerData
+var selected_leader:LeaderData
 
 
 func _ready() -> void:

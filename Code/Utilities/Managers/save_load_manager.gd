@@ -83,3 +83,17 @@ func _create_save_file() -> void:
 func _end_run_data_update(player_data:PlayerData) -> void:
 	active_save.score_history[Time.get_datetime_string_from_system()] = player_data.current_score
 	active_save.total_currency += player_data.run_currency
+
+
+func get_parameter_from_permas(_param:String):
+	if active_save == null:
+		Debug.error("No active save to get perma parameter from.")
+		return 0
+	
+	if active_save.unlocked_permas.is_empty(): return 0
+
+	var result = 0
+	for perma in active_save.unlocked_permas:
+		result += perma.get_parameter(_param)
+	
+	return result

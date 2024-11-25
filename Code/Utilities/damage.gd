@@ -26,9 +26,6 @@ func set_damage_owner(new_owner) -> void:
 
 
 func get_damage() -> int:
-	var start:float = base_value + damage_owner.get_parameter("damage")
-	var cc:float = crit_chance + damage_owner.get_parameter("crit_chance")
-	var cd:float = crit_damage + damage_owner.get_parameter("crit_damage")
 	var prefix:String = ""
 	match type:
 		Type.UNHOLY:
@@ -47,6 +44,11 @@ func get_damage() -> int:
 			prefix = "heal"
 		_:
 			pass
+	
+	var damage_param:String = prefix + "damage"
+	var start:float = base_value + damage_owner.get_parameter("damage") + damage_owner.get_parameter(damage_param)
+	var cc:float = crit_chance + damage_owner.get_parameter("crit_chance")
+	var cd:float = crit_damage + damage_owner.get_parameter("crit_damage")
 	
 	var cc_param:String = prefix + "_crit_chance"
 	var cd_param:String = prefix + "_crit_damage"
