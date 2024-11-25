@@ -7,12 +7,15 @@ const PLAYERMANAGER = preload("res://Scenes/Utilities/Managers/player_manager.ts
 const CURRENCYMANAGER = preload("res://Scenes/Utilities/Managers/currency_manager.tscn")
 const LEVELUPMANAGER = preload("res://Scenes/Utilities/Managers/level_up_manager.tscn")
 const SPAWNMANAGER = preload("res://Scenes/Utilities/Managers/spawn_manager.tscn")
+const SAVELOADMANAGER = preload("res://Scenes/Utilities/Managers/save_load_manager.tscn")
 
 
 @export var audio_list:AudioList
 
-var player_data:PlayerData
+# Game start managers
+var save_load:SaveLoadManager
 
+# Managers when a world is active
 var active_tower:Tower = null
 var tower_ready:bool = false
 var player_manager:PlayerManager = null
@@ -33,6 +36,8 @@ func _ready() -> void:
 	Signals.CheckMatchEnd.connect(_chech_end_match)
 	Signals.ClearActiveScene.connect(_clear_tower)
 	Signals.ManagerReady.connect(_set_manager_ready)
+	save_load = SAVELOADMANAGER.instantiate()
+	add_child(save_load)
 
 
 func parse_json_data(_json:String) -> Dictionary:

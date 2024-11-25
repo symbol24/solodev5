@@ -47,7 +47,7 @@ signal UpdateDarkRadius(value:float)
 
 # Player
 signal PlayerReady()
-signal AddCurrency(value:int)
+signal AddExp(value:int)
 signal ActivateSkill(id:String)
 signal ToggleMouseEnteredNoClickArea(in_area:bool)
 signal ActivatePlayer()
@@ -70,3 +70,9 @@ signal ReturnToPool(item)
 
 # Minions/Boss
 signal MonsterDeath(monster_data:MonsterData)
+
+
+# Save/Load
+signal SaveLoadManagerReady()
+signal Save(id:int)
+signal Load(id:int)
