@@ -26,7 +26,10 @@ var level_up_manager:LevelUpManager
 var spawn_manager:SpawnManager
 var spawn_manager_ready:bool = false
 var lup_ready:bool = false
+
+# Round stuff
 var last_round_result:bool = false
+var last_round_player_data:PlayerData
 
 
 func _ready() -> void:
@@ -145,5 +148,6 @@ func _chech_end_match(_starting_light_radius:float, _current_light_radius:float,
 		get_tree().paused = true
 		Signals.StopRound.emit()
 		Signals.ToggleUi.emit("result_screen")
+		last_round_player_data = player_manager.player_data.duplicate()
 
 

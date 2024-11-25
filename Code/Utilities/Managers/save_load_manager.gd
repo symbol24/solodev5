@@ -78,3 +78,8 @@ func _create_save_file() -> void:
 	new_save.save_count += 1
 	Debug.log(FOLDER + PREFIX + str(save_id) + SUFFIX)
 	ResourceSaver.save(new_save, FOLDER + PREFIX + str(save_id) + SUFFIX)
+
+
+func _end_run_data_update(player_data:PlayerData) -> void:
+	active_save.score_history[Time.get_datetime_string_from_system()] = player_data.current_score
+	active_save.total_currency += player_data.run_currency

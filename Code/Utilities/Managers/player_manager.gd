@@ -1,14 +1,13 @@
 class_name PlayerManager extends Node2D
 
 
-@export var starting_level_cap:int = 5
+const DEBUGLEADER = preload("res://Data/Leaders/test_leader.tres")
+
+
 @export var starting_skill:Array[SkillData]
 @export var all_skills:Array[SkillData]
 
-# Stats
-var player_level:int = 1
-var current_exp:int = 0
-var total_exp:int = 0
+var player_data:PlayerData
 
 # Skills
 var active_skill:Skill
@@ -16,6 +15,7 @@ var all_active_skills:Array[Skill] = []
 
 var mouse_in_no_click:bool = false
 var is_active:bool = false
+
 
 # if area breaks again, maybe change to check if mouse distance from the center  is larger than radius of light
 func _input(event: InputEvent) -> void:
@@ -41,19 +41,19 @@ func _input(event: InputEvent) -> void:
 
 		get_viewport().set_input_as_handled()
 
-		
-
 
 func _ready() -> void:
 	Signals.ToggleMouseEnteredNoClickArea.connect(_toggle_mouse_entered)
-	Signals.AddCurrency.connect(_add_currency)
-	Signals.UpdatePlayerExp.emit(current_exp, _get_level_exp_ceiling())
+	Signals.AddExp.connect(_add_exp)
 	Signals.PlayerUiReady.connect(_create_starter_skills)
 	Signals.ActivateSkill.connect(_set_active_skill)
 	Signals.StopRound.connect(_stop_player)
 	Signals.ActivatePlayer.connect(_activate_player)
 	Signals.AddNewSkill.connect(_create_skill)
 	Signals.UpdateActiveSkill.connect(_update_active_skill)
+	player_data = PlayerData.new()
+	player_data.selected_leader = DEBUGLEADER.duplicate(true)
+	Signals.UpdatePlayerExp.emit(player_data.current_exp, player_data.get_level_exp_ceiling())
 	Signals.ManagerReady.emit(self)
 
 
@@ -78,23 +78,12 @@ func _toggle_mouse_entered(value:bool) -> void:
 	#Debug.log("Mouse in no click: ", mouse_in_no_click)
 
 
-func _add_currency(value:int) -> void:
-	total_exp += value
-	current_exp += value
-	if current_exp >= _get_level_exp_ceiling():
-		current_exp -= _get_level_exp_ceiling()
-		_level_up()
-	Signals.UpdatePlayerExp.emit(current_exp, _get_level_exp_ceiling())
+func _add_exp(value:int) -> void:
+	player_data.add_exp(value)
 
 
-func _get_level_exp_ceiling() -> int:
-	return floori(starting_level_cap * (player_level * 0.5)) if player_level > 1 else starting_level_cap
-
-
-func _level_up() -> void:
-	player_level += 1
-	Debug.log("Player Level up! ", player_level)
-	Signals.PlayerlevelUp.emit(player_level)
+func _add_run_currency(value:int) -> void:
+	player_data.run_currency += value
 
 
 func _create_starter_skills() -> void:

@@ -14,6 +14,11 @@
 			"uuid": "04539711-fe69-47f1-a842-086fe9dacfac",
 			"title": "Backlog",
 			"color": "91917d"
+		},
+		{
+			"uuid": "bf19be7e-12b4-4306-9d97-00cd5baa8c0d",
+			"title": "Suggestion",
+			"color": "44d9af"
 		}
 	],
 	"stages": [
@@ -21,14 +26,27 @@
 			"uuid": "690edf9a-1811-41a8-a470-8a64adaae110",
 			"title": "Todo",
 			"tasks": [
+				"c0e83853-be9a-4e24-896e-6d01b88c7848",
+				"d21f8932-48a4-48cc-9b9a-f0ad135f2070",
+				"55d1e482-e6e2-42a4-9b1a-21d8fc30c4ae",
 				"ee60026c-f2c6-4ef6-85a3-881011583f93",
 				"29245892-1d69-4f71-b2a4-8c789d547c0c",
 				"5a076180-1fc3-41f6-8ee6-8f3949a45abf",
 				"97ca4a4a-1d0c-4880-9b3a-e23d76055b1e",
 				"dbe5b7ff-0bdf-476e-bbd4-5b8e72558307",
-				"c0e83853-be9a-4e24-896e-6d01b88c7848",
 				"eb248245-5c2b-41ec-a597-593885e54183",
-				"92d36f3c-6989-45b2-b26b-560961a3aac3"
+				"92d36f3c-6989-45b2-b26b-560961a3aac3",
+				"3eedd96c-9a82-441b-b5aa-52e4214059f9",
+				"7b5f8941-55f1-4b86-847b-aae4980d2ca4",
+				"d71819af-0e79-4b71-b23d-c896b1a40cff",
+				"88e5b01e-7089-414d-a715-59cd629b0273",
+				"4f58c068-e883-4a5c-b763-ce305d182cf7",
+				"97f88d85-1fab-4b0d-881a-95ead8028b94",
+				"93d0e403-f20a-4e2f-a405-a084e589efa8",
+				"266b98f3-e539-467a-a0f8-919403ad6317",
+				"c2fc6a62-253f-4341-8f98-af8ab3dbdc62",
+				"698a59d5-76ae-4f41-873d-5bd1c65a16b8",
+				"cf217e54-6720-4f17-898a-5acfe35b81a9"
 			]
 		},
 		{
@@ -51,7 +69,10 @@
 				"2ccdb1a4-f09f-43b8-a6cc-d201569af3a8",
 				"5515f502-a240-4fc7-a928-8be3ac550a1b",
 				"e0fb01cc-4a8a-4115-8b7a-35c38ee56599",
-				"35f5982b-cfaf-490c-9173-14880a967465"
+				"35f5982b-cfaf-490c-9173-14880a967465",
+				"2d1bdca0-aed6-4b53-8752-036ffec07cd9",
+				"a8aa2be3-4601-4a65-bfef-206715814678",
+				"b673daee-f8f6-4b33-ab5b-531fb02f7a8e"
 			]
 		}
 	],
@@ -192,6 +213,118 @@
 		{
 			"uuid": "e0fb01cc-4a8a-4115-8b7a-35c38ee56599",
 			"title": "make data for levels of current skills and monsters",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "3eedd96c-9a82-441b-b5aa-52e4214059f9",
+			"title": "create Light minion/boss framework",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "b673daee-f8f6-4b33-ab5b-531fb02f7a8e",
+			"title": "refactor player manager to use player data",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "2d1bdca0-aed6-4b53-8752-036ffec07cd9",
+			"title": "Add leader to player data",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "a8aa2be3-4601-4a65-bfef-206715814678",
+			"title": "create save and load flow",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "d21f8932-48a4-48cc-9b9a-f0ad135f2070",
+			"title": "can click level choice by mistake",
+			"description": "",
+			"category": "db9adcce-d8f6-44a5-b044-baaafc804c0c",
+			"steps": []
+		},
+		{
+			"uuid": "266b98f3-e539-467a-a0f8-919403ad6317",
+			"title": "pickups that minions can pickup",
+			"description": "",
+			"category": "bf19be7e-12b4-4306-9d97-00cd5baa8c0d",
+			"steps": []
+		},
+		{
+			"uuid": "c2fc6a62-253f-4341-8f98-af8ab3dbdc62",
+			"title": "clicking can autoswitch to next available skill?",
+			"description": "",
+			"category": "bf19be7e-12b4-4306-9d97-00cd5baa8c0d",
+			"steps": []
+		},
+		{
+			"uuid": "55d1e482-e6e2-42a4-9b1a-21d8fc30c4ae",
+			"title": "exp is not paused",
+			"description": "",
+			"category": "db9adcce-d8f6-44a5-b044-baaafc804c0c",
+			"steps": []
+		},
+		{
+			"uuid": "7b5f8941-55f1-4b86-847b-aae4980d2ca4",
+			"title": "Leader framework",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "d71819af-0e79-4b71-b23d-c896b1a40cff",
+			"title": "booster data framework",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "88e5b01e-7089-414d-a715-59cd629b0273",
+			"title": "booster framework",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "698a59d5-76ae-4f41-873d-5bd1c65a16b8",
+			"title": "Secret unlock: tower talks to player and is super \"offensive\"",
+			"description": "",
+			"category": "bf19be7e-12b4-4306-9d97-00cd5baa8c0d",
+			"steps": []
+		},
+		{
+			"uuid": "cf217e54-6720-4f17-898a-5acfe35b81a9",
+			"title": "Batch exp gain",
+			"description": "",
+			"category": "04539711-fe69-47f1-a842-086fe9dacfac",
+			"steps": []
+		},
+		{
+			"uuid": "4f58c068-e883-4a5c-b763-ce305d182cf7",
+			"title": "Design score system",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "93d0e403-f20a-4e2f-a405-a084e589efa8",
+			"title": "score system data framework",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "97f88d85-1fab-4b0d-881a-95ead8028b94",
+			"title": "score system framework",
 			"description": "",
 			"category": "07a8c403-507d-408a-aa41-9acae9042451",
 			"steps": []
