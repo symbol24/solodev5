@@ -85,15 +85,16 @@ func _end_run_data_update(player_data:PlayerData) -> void:
 	active_save.total_currency += player_data.run_currency
 
 
-func get_parameter_from_permas(_param:String):
+func get_parameter_from_permas(_param:String) -> Array[Parameter]:
 	if active_save == null:
 		Debug.error("No active save to get perma parameter from.")
-		return 0
+		return []
 	
-	if active_save.unlocked_permas.is_empty(): return 0
+	if active_save.unlocked_permas.is_empty(): return []
 
-	var result = 0
+	var result:Array[Parameter] = []
 	for perma in active_save.unlocked_permas:
-		result += perma.get_parameter(_param)
+		if perma.get_perma_parameter(_param) != null:
+			result.append(perma.get_perma_parameter(_param))
 	
 	return result

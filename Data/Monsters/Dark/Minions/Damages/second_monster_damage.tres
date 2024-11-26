@@ -5,3 +5,6 @@
 [resource]
 script = ExtResource("1_3a0by")
 base_value = 1
+type = 2
+crit_chance = 0.0
+crit_damage = 0.0

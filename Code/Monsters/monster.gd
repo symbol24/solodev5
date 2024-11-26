@@ -62,8 +62,6 @@ func setup_stats(_data:MonsterData) -> void:
 		hp_bar.max_value = data.starting_hp
 		hp_bar.value = data.current_hp
 	if attack_area:
-		for each in data.damages:
-			each.damage_owner = data
 		attack_area.set_attack_owner(data)
 	else:
 		Debug.error("Attack area not set in ", name, " monster.")

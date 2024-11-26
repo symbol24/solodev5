@@ -72,12 +72,13 @@ func has_active_skill(_id:String) -> bool:
 	return false
 
 
-func get_parameter_from_boosters(_param:String):
-	var result = 0
+func get_parameters_from_boosters(_param:String) -> Array[Parameter]:
+	var result:Array[Parameter] = []
 
 	# for each in all boosters add to result
 	for booster in all_active_boosters:
-		result += booster.get_parameter(_param) if booster.get_parameter(_param) != null else 0
+		if booster.get_parameter(_param) != null:
+			result.append(booster.get_booster_parameter(_param))
 
 	return result
 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BoosterData" load_steps=3 format=3 uid="uid://l4lhq6o2j56f"]
+
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_fmhu8"]
+[ext_resource type="Script" path="res://Code/Boosters/booster_data.gd" id="2_jhptu"]
+
+[resource]
+script = ExtResource("2_jhptu")
+stats = {}
+id = ""
+owner_type = 0
+level_datas = Array[ExtResource("1_fmhu8")]([])

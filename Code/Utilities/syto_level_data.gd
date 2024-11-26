@@ -2,9 +2,11 @@ class_name SytoLevelData extends Resource
 
 
 @export var level:int = 0
+@export var stats:Array[Parameter]
 
 
-func stld_has(_name:String) -> bool:
-	var result = get(_name)
-	if result == null: return false
-	return true
+func get_parameter(_param:String) -> Parameter:
+	for each in stats:
+		if each.id == _param:
+			return each
+	return null

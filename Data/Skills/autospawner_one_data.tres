@@ -1,59 +1,186 @@
-[gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=13 format=3 uid="uid://bl6hfu8twtu16"]
+[gd_resource type="Resource" script_class="AutoSpawnerSkillData" load_steps=38 format=3 uid="uid://bl6hfu8twtu16"]
 
 [ext_resource type="Script" path="res://Code/Player/Skills/autospawner_skill_data.gd" id="1_7b01k"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_gbty6"]
 [ext_resource type="PackedScene" uid="uid://d2l2pa0ap3rp3" path="res://Scenes/Autospawners/auto_spawner_one.tscn" id="1_w1of6"]
 [ext_resource type="Script" path="res://Code/Player/Skills/autospawner_sld.gd" id="2_uwqu3"]
 [ext_resource type="Texture2D" uid="uid://dxfsghsxvh82j" path="res://Textures/Ui/skill_icons_spawner_1.png" id="3_3p750"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="3_hauj4"]
 [ext_resource type="Resource" uid="uid://0uu5na754dq5" path="res://Data/Monsters/Dark/Minions/first_monster.tres" id="3_mnei2"]
+
+[sub_resource type="Resource" id="Resource_pe8pb"]
+script = ExtResource("3_hauj4")
+id = "use_delay"
+value = 30.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_3df2k"]
+script = ExtResource("3_hauj4")
+id = "spawn_delay"
+value = 10.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_h67vc"]
+script = ExtResource("3_hauj4")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ys5wu"]
+script = ExtResource("3_hauj4")
+id = "extra_spawn_chance"
+value = 0.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_x2jn0"]
 script = ExtResource("2_uwqu3")
-spawn_delay = 15.0
-spawn_count = 1
-extra_spawn_chance = 0.0
-use_delay = 35.0
 level = 1
+stats = Array[ExtResource("3_hauj4")]([SubResource("Resource_pe8pb"), SubResource("Resource_3df2k"), SubResource("Resource_h67vc"), SubResource("Resource_ys5wu")])
+
+[sub_resource type="Resource" id="Resource_gjbdd"]
+script = ExtResource("3_hauj4")
+id = "use_delay"
+value = 25.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_330p3"]
+script = ExtResource("3_hauj4")
+id = "spawn_delay"
+value = 9.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_5dfum"]
+script = ExtResource("3_hauj4")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_sc121"]
+script = ExtResource("3_hauj4")
+id = "extra_spawn_chance"
+value = 0.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_i3x81"]
 script = ExtResource("2_uwqu3")
-spawn_delay = 14.0
-spawn_count = 1
-extra_spawn_chance = 0.0
-use_delay = 30.0
 level = 2
+stats = Array[ExtResource("3_hauj4")]([SubResource("Resource_gjbdd"), SubResource("Resource_330p3"), SubResource("Resource_5dfum"), SubResource("Resource_sc121")])
+
+[sub_resource type="Resource" id="Resource_ihpo0"]
+script = ExtResource("3_hauj4")
+id = "use_delay"
+value = 25.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_dekqr"]
+script = ExtResource("3_hauj4")
+id = "spawn_delay"
+value = 8.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ngudu"]
+script = ExtResource("3_hauj4")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ofp5f"]
+script = ExtResource("3_hauj4")
+id = "extra_spawn_chance"
+value = 0.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_wd631"]
 script = ExtResource("2_uwqu3")
-spawn_delay = 13.0
-spawn_count = 1
-extra_spawn_chance = 0.15
-use_delay = 30.0
 level = 3
+stats = Array[ExtResource("3_hauj4")]([SubResource("Resource_ihpo0"), SubResource("Resource_dekqr"), SubResource("Resource_ngudu"), SubResource("Resource_ofp5f")])
+
+[sub_resource type="Resource" id="Resource_4kf4l"]
+script = ExtResource("3_hauj4")
+id = "use_delay"
+value = 20.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_nkmcf"]
+script = ExtResource("3_hauj4")
+id = "spawn_delay"
+value = 8.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_gafj1"]
+script = ExtResource("3_hauj4")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_u5im4"]
+script = ExtResource("3_hauj4")
+id = "extra_spawn_chance"
+value = 0.25
+type = 0
 
 [sub_resource type="Resource" id="Resource_dgoic"]
 script = ExtResource("2_uwqu3")
-spawn_delay = 12.0
-spawn_count = 1
-extra_spawn_chance = 0.2
-use_delay = 12.0
 level = 4
+stats = Array[ExtResource("3_hauj4")]([SubResource("Resource_4kf4l"), SubResource("Resource_nkmcf"), SubResource("Resource_gafj1"), SubResource("Resource_u5im4")])
+
+[sub_resource type="Resource" id="Resource_v1eh3"]
+script = ExtResource("3_hauj4")
+id = "use_delay"
+value = 20.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_xjm1w"]
+script = ExtResource("3_hauj4")
+id = "spawn_delay"
+value = 7.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_fsi4k"]
+script = ExtResource("3_hauj4")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ab0ci"]
+script = ExtResource("3_hauj4")
+id = "extra_spawn_chance"
+value = 0.5
+type = 0
 
 [sub_resource type="Resource" id="Resource_x4hpb"]
 script = ExtResource("2_uwqu3")
-spawn_delay = 11.0
-spawn_count = 1
-extra_spawn_chance = 0.4
-use_delay = 25.0
 level = 5
+stats = Array[ExtResource("3_hauj4")]([SubResource("Resource_v1eh3"), SubResource("Resource_xjm1w"), SubResource("Resource_fsi4k"), SubResource("Resource_ab0ci")])
+
+[sub_resource type="Resource" id="Resource_n3kgd"]
+script = ExtResource("3_hauj4")
+id = "use_delay"
+value = 15.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_qqvf2"]
+script = ExtResource("3_hauj4")
+id = "spawn_delay"
+value = 6.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_x33e3"]
+script = ExtResource("3_hauj4")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_svejs"]
+script = ExtResource("3_hauj4")
+id = "extra_spawn_chance"
+value = 0.75
+type = 0
 
 [sub_resource type="Resource" id="Resource_rw7se"]
 script = ExtResource("2_uwqu3")
-spawn_delay = 10.0
-spawn_count = 1
-extra_spawn_chance = 0.6
-use_delay = 20.0
 level = 6
+stats = Array[ExtResource("3_hauj4")]([SubResource("Resource_n3kgd"), SubResource("Resource_qqvf2"), SubResource("Resource_x33e3"), SubResource("Resource_svejs")])
 
 [resource]
 script = ExtResource("1_7b01k")

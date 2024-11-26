@@ -11,12 +11,17 @@ enum Type {
 			HEAL = 6,
 			}
 
+var types:Array[String] = [
+							"unholy_damage",
+							"corruption_damage",
+							"blight_damage",
+							"holy_damage",
+							"righteous_damage",
+							"grace_damage",
+							"heal",
+							]
 
-@export var base_value:int = 1
-@export var type:Type
-@export var crit_chance:float = 0
-@export var crit_damage:float = 0
-
+var type:Type
 var final_value:int = 0
 var damage_owner:SytoData
 
@@ -29,26 +34,27 @@ func get_damage() -> int:
 	var prefix:String = ""
 	match type:
 		Type.UNHOLY:
-			prefix = "unholy"
+			prefix = "unholy_"
 		Type.CORRUPTION:
-			prefix = "corruption"
+			prefix = "corruption_"
 		Type.BLIGHT:
-			prefix = "blight"
+			prefix = "blight_"
 		Type.HOLY:
-			prefix = "holy"
+			prefix = "holy_"
 		Type.RIGHTEOUS:
-			prefix = "righteous"
+			prefix = "righteous_"
 		Type.GRACE:
-			prefix = "grace"
+			prefix = "grace_"
 		Type.HEAL:
-			prefix = "heal"
+			prefix = "heal_"
 		_:
 			pass
 	
 	var damage_param:String = prefix + "damage"
-	var start:float = base_value + damage_owner.get_parameter("damage") + damage_owner.get_parameter(damage_param)
-	var cc:float = crit_chance + damage_owner.get_parameter("crit_chance")
-	var cd:float = crit_damage + damage_owner.get_parameter("crit_damage")
+	#Debug.log("Damage: ", damage_owner.get_parameter("damage"), " ", damage_param, ": ", damage_owner.get_parameter(damage_param))
+	var start:float = damage_owner.get_parameter("damage") + damage_owner.get_parameter(damage_param)
+	var cc:float = damage_owner.get_parameter("crit_chance")
+	var cd:float = damage_owner.get_parameter("crit_damage")
 	
 	var cc_param:String = prefix + "_crit_chance"
 	var cd_param:String = prefix + "_crit_damage"

@@ -1,100 +1,152 @@
-[gd_resource type="Resource" script_class="MonsterData" load_steps=13 format=3 uid="uid://0uu5na754dq5"]
+[gd_resource type="Resource" script_class="MonsterData" load_steps=30 format=3 uid="uid://0uu5na754dq5"]
 
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_ba0hu"]
-[ext_resource type="Resource" uid="uid://blsdobkjsnro3" path="res://Data/Monsters/Dark/Minions/Damages/test_monster_damage.tres" id="2_ep34e"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="2_lnrne"]
 [ext_resource type="Script" path="res://Code/Monsters/monster_data.gd" id="3_gk5jw"]
 [ext_resource type="Script" path="res://Code/Player/Skills/monster_sld.gd" id="4_1xe7t"]
 [ext_resource type="PackedScene" uid="uid://vw1f6bwm15wd" path="res://Scenes/Monsters/monster.tscn" id="4_w383q"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="5_3e1su"]
+
+[sub_resource type="Resource" id="Resource_8d8tj"]
+script = ExtResource("5_3e1su")
+id = "unholy_damage"
+value = 3.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_uhjnk"]
+script = ExtResource("5_3e1su")
+id = "hp"
+value = 1.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_i6j70"]
+script = ExtResource("5_3e1su")
+id = "speed"
+value = 10.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_a7lth"]
 script = ExtResource("4_1xe7t")
-hp = 1
-speed = 10
-armor = 0
-hit_shield = 0
-damage = 3
-attack_area_size = 0.0
-attack_range = 0.0
-attack_delay = 0.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
 level = 1
+stats = Array[ExtResource("5_3e1su")]([SubResource("Resource_8d8tj"), SubResource("Resource_uhjnk"), SubResource("Resource_i6j70")])
+
+[sub_resource type="Resource" id="Resource_01l4w"]
+script = ExtResource("5_3e1su")
+id = "unholy_damage"
+value = 4.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_cxe1l"]
+script = ExtResource("5_3e1su")
+id = "hp"
+value = 2.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_w1wom"]
+script = ExtResource("5_3e1su")
+id = "speed"
+value = 12.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_fcmws"]
 script = ExtResource("4_1xe7t")
-hp = 2
-speed = 12
-armor = 0
-hit_shield = 0
-damage = 4
-attack_area_size = 0.0
-attack_range = 0.0
-attack_delay = 0.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
 level = 2
+stats = Array[ExtResource("5_3e1su")]([SubResource("Resource_01l4w"), SubResource("Resource_cxe1l"), SubResource("Resource_w1wom")])
+
+[sub_resource type="Resource" id="Resource_naukb"]
+script = ExtResource("5_3e1su")
+id = "unholy_damage"
+value = 5.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ygwh7"]
+script = ExtResource("5_3e1su")
+id = "hp"
+value = 4.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_dx7dl"]
+script = ExtResource("5_3e1su")
+id = "speed"
+value = 14.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_eqif4"]
 script = ExtResource("4_1xe7t")
-hp = 4
-speed = 14
-armor = 0
-hit_shield = 0
-damage = 5
-attack_area_size = 0.0
-attack_range = 0.0
-attack_delay = 0.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
 level = 3
+stats = Array[ExtResource("5_3e1su")]([SubResource("Resource_naukb"), SubResource("Resource_ygwh7"), SubResource("Resource_dx7dl")])
+
+[sub_resource type="Resource" id="Resource_adlhu"]
+script = ExtResource("5_3e1su")
+id = "unholy_damage"
+value = 7.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_2h17g"]
+script = ExtResource("5_3e1su")
+id = "hp"
+value = 5.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_pb7rx"]
+script = ExtResource("5_3e1su")
+id = "speed"
+value = 16.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_6kaki"]
 script = ExtResource("4_1xe7t")
-hp = 5
-speed = 18
-armor = 0
-hit_shield = 0
-damage = 7
-attack_area_size = 0.0
-attack_range = 0.0
-attack_delay = 0.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
 level = 4
+stats = Array[ExtResource("5_3e1su")]([SubResource("Resource_adlhu"), SubResource("Resource_2h17g"), SubResource("Resource_pb7rx")])
+
+[sub_resource type="Resource" id="Resource_1opvp"]
+script = ExtResource("5_3e1su")
+id = "unholy_damage"
+value = 8.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_snxmd"]
+script = ExtResource("5_3e1su")
+id = "hp"
+value = 6.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_qk2k0"]
+script = ExtResource("5_3e1su")
+id = "speed"
+value = 18.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_jkaa8"]
 script = ExtResource("4_1xe7t")
-hp = 6
-speed = 18
-armor = 0
-hit_shield = 0
-damage = 8
-attack_area_size = 0.0
-attack_range = 0.0
-attack_delay = 0.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
 level = 5
+stats = Array[ExtResource("5_3e1su")]([SubResource("Resource_1opvp"), SubResource("Resource_snxmd"), SubResource("Resource_qk2k0")])
+
+[sub_resource type="Resource" id="Resource_vtfru"]
+script = ExtResource("5_3e1su")
+id = "unholy_damage"
+value = 10.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_amhxv"]
+script = ExtResource("5_3e1su")
+id = "hp"
+value = 8.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_2kr3k"]
+script = ExtResource("5_3e1su")
+id = "speed"
+value = 20.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_nxspa"]
 script = ExtResource("4_1xe7t")
-hp = 8
-speed = 20
-armor = 0
-hit_shield = 0
-damage = 10
-attack_area_size = 0.0
-attack_range = 0.0
-attack_delay = 0.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
 level = 6
+stats = Array[ExtResource("5_3e1su")]([SubResource("Resource_vtfru"), SubResource("Resource_amhxv"), SubResource("Resource_2kr3k")])
 
 [resource]
 script = ExtResource("3_gk5jw")
 to_spawn = ExtResource("4_w383q")
-damages = Array[ExtResource("1_ba0hu")]([ExtResource("2_ep34e")])
 is_flyer = false
 id = "monster_one"
 owner_type = 0

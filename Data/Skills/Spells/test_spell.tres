@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellSkillData" load_steps=14 format=3 uid="uid://bgoxdt11gf0pa"]
+[gd_resource type="Resource" script_class="SpellSkillData" load_steps=45 format=3 uid="uid://bgoxdt11gf0pa"]
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_djhko"]
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_xswiw"]
@@ -6,67 +6,218 @@
 [ext_resource type="Script" path="res://Code/Player/Skills/spell_skill_data.gd" id="2_fr3hs"]
 [ext_resource type="Resource" uid="uid://ds30lhp6lhqx8" path="res://Data/Skills/Spells/Damages/test_spell_damage.tres" id="2_vju73"]
 [ext_resource type="PackedScene" uid="uid://c3x18nwgpudm6" path="res://Scenes/Player/Projectiles/Spells/test_spell_projectile.tscn" id="4_q3o3a"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="5_gggsj"]
 [ext_resource type="Texture2D" uid="uid://cmfmd6gugq6tu" path="res://Textures/Ui/skill_icons_monster_2.png" id="7_ve1uv"]
+
+[sub_resource type="Resource" id="Resource_6g0ft"]
+script = ExtResource("5_gggsj")
+id = "use_delay"
+value = 15.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_1dw5l"]
+script = ExtResource("5_gggsj")
+id = "corruption_damage"
+value = 5.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_66ayj"]
+script = ExtResource("5_gggsj")
+id = "crit_chance"
+value = 0.05
+type = 0
+
+[sub_resource type="Resource" id="Resource_gpoya"]
+script = ExtResource("5_gggsj")
+id = "crit_damage"
+value = 0.25
+type = 0
+
+[sub_resource type="Resource" id="Resource_tvth3"]
+script = ExtResource("5_gggsj")
+id = "attack_area_size"
+value = 16.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_dql0o"]
 script = ExtResource("2_a3sqg")
-damage = 5
-target_count = 0
-attack_area_size = 12.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
-use_delay = 20.0
 level = 1
+stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_6g0ft"), SubResource("Resource_1dw5l"), SubResource("Resource_66ayj"), SubResource("Resource_gpoya"), SubResource("Resource_tvth3")])
+
+[sub_resource type="Resource" id="Resource_t15kf"]
+script = ExtResource("5_gggsj")
+id = "use_delay"
+value = 13.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_duj3l"]
+script = ExtResource("5_gggsj")
+id = "corruption_damage"
+value = 6.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ko5jk"]
+script = ExtResource("5_gggsj")
+id = "crit_chance"
+value = 0.1
+type = 0
+
+[sub_resource type="Resource" id="Resource_noau4"]
+script = ExtResource("5_gggsj")
+id = "crit_damage"
+value = 0.25
+type = 0
+
+[sub_resource type="Resource" id="Resource_qhrit"]
+script = ExtResource("5_gggsj")
+id = "attack_area_size"
+value = 20.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_5nca8"]
 script = ExtResource("2_a3sqg")
-damage = 5
-target_count = 0
-attack_area_size = 15.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
-use_delay = 19.0
 level = 2
+stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_t15kf"), SubResource("Resource_duj3l"), SubResource("Resource_ko5jk"), SubResource("Resource_noau4"), SubResource("Resource_qhrit")])
+
+[sub_resource type="Resource" id="Resource_7mydq"]
+script = ExtResource("5_gggsj")
+id = "use_delay"
+value = 13.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_h6sif"]
+script = ExtResource("5_gggsj")
+id = "corruption_damage"
+value = 7.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_r8csm"]
+script = ExtResource("5_gggsj")
+id = "crit_chance"
+value = 0.15
+type = 0
+
+[sub_resource type="Resource" id="Resource_c1k64"]
+script = ExtResource("5_gggsj")
+id = "crit_damage"
+value = 0.35
+type = 0
+
+[sub_resource type="Resource" id="Resource_6eqn7"]
+script = ExtResource("5_gggsj")
+id = "attack_area_size"
+value = 24.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_3icj4"]
 script = ExtResource("2_a3sqg")
-damage = 7
-target_count = 0
-attack_area_size = 18.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
-use_delay = 18.0
 level = 3
+stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_7mydq"), SubResource("Resource_h6sif"), SubResource("Resource_r8csm"), SubResource("Resource_c1k64"), SubResource("Resource_6eqn7")])
+
+[sub_resource type="Resource" id="Resource_wyf34"]
+script = ExtResource("5_gggsj")
+id = "use_delay"
+value = 11.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_5xjav"]
+script = ExtResource("5_gggsj")
+id = "corruption_damage"
+value = 8.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_il1qd"]
+script = ExtResource("5_gggsj")
+id = "crit_chance"
+value = 0.2
+type = 0
+
+[sub_resource type="Resource" id="Resource_yuu3c"]
+script = ExtResource("5_gggsj")
+id = "crit_damage"
+value = 0.45
+type = 0
+
+[sub_resource type="Resource" id="Resource_ywu74"]
+script = ExtResource("5_gggsj")
+id = "attack_area_size"
+value = 28.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_8yt6o"]
 script = ExtResource("2_a3sqg")
-damage = 10
-target_count = 0
-attack_area_size = 21.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
-use_delay = 17.0
 level = 4
+stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_wyf34"), SubResource("Resource_5xjav"), SubResource("Resource_il1qd"), SubResource("Resource_yuu3c"), SubResource("Resource_ywu74")])
+
+[sub_resource type="Resource" id="Resource_yl7ia"]
+script = ExtResource("5_gggsj")
+id = "use_delay"
+value = 11.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_osh6p"]
+script = ExtResource("5_gggsj")
+id = "corruption_damage"
+value = 9.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_1eiwp"]
+script = ExtResource("5_gggsj")
+id = "crit_chance"
+value = 0.25
+type = 0
+
+[sub_resource type="Resource" id="Resource_yxh32"]
+script = ExtResource("5_gggsj")
+id = "crit_damage"
+value = 0.55
+type = 0
+
+[sub_resource type="Resource" id="Resource_3wnq5"]
+script = ExtResource("5_gggsj")
+id = "attack_area_size"
+value = 32.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_kocpw"]
 script = ExtResource("2_a3sqg")
-damage = 13
-target_count = 0
-attack_area_size = 21.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
-use_delay = 16.0
 level = 5
+stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_yl7ia"), SubResource("Resource_osh6p"), SubResource("Resource_1eiwp"), SubResource("Resource_yxh32"), SubResource("Resource_3wnq5")])
+
+[sub_resource type="Resource" id="Resource_mrrwv"]
+script = ExtResource("5_gggsj")
+id = "use_delay"
+value = 8.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_76gf7"]
+script = ExtResource("5_gggsj")
+id = "corruption_damage"
+value = 11.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_fwi5i"]
+script = ExtResource("5_gggsj")
+id = "crit_chance"
+value = 0.35
+type = 0
+
+[sub_resource type="Resource" id="Resource_2rty2"]
+script = ExtResource("5_gggsj")
+id = "crit_damage"
+value = 0.75
+type = 0
+
+[sub_resource type="Resource" id="Resource_853wr"]
+script = ExtResource("5_gggsj")
+id = "attack_area_size"
+value = 36.0
+type = 0
 
 [sub_resource type="Resource" id="Resource_foomm"]
 script = ExtResource("2_a3sqg")
-damage = 16
-target_count = 0
-attack_area_size = 24.0
-projectile_speed = 0.0
-status_effect_delay = 0.0
-use_delay = 15.0
 level = 6
+stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_mrrwv"), SubResource("Resource_76gf7"), SubResource("Resource_fwi5i"), SubResource("Resource_2rty2"), SubResource("Resource_853wr")])
 
 [resource]
 script = ExtResource("2_fr3hs")

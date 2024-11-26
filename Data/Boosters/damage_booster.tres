@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BoosterData" load_steps=3 format=3 uid="uid://5ixpowwj1qht"]
+
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_3rq1d"]
+[ext_resource type="Script" path="res://Code/Boosters/booster_data.gd" id="2_m37nj"]
+
+[resource]
+script = ExtResource("2_m37nj")
+id = "damage_booster"
+owner_type = 0
+level_datas = Array[ExtResource("1_3rq1d")]([null])
