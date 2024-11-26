@@ -112,6 +112,7 @@ func _create_skill(skill_data:SkillData, is_disabled:bool = false) -> void:
 
 
 func _update_active_skill(_id:String) -> void:
+	#Debug.log("Receiving level up for skill:", _id)
 	for each in all_active_skills:
 		if each.data.id == _id:
 			each.data.current_level += 1

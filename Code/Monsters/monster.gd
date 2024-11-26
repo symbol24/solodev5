@@ -53,7 +53,7 @@ func setup_stats(_data:MonsterData) -> void:
 	data = _data.duplicate()
 	data.level_datas.clear()
 	data.level_datas = _data.get_duplicate_levels()
-	data.setup_data()
+	data.setup_data(_data.current_level)
 	if packed_hp_bar:
 		hp_bar = packed_hp_bar.instantiate()
 		add_child(hp_bar)

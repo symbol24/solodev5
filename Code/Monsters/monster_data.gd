@@ -25,8 +25,8 @@ var projectile_speed:float
 var status_effect_delay:float
 
 
-func setup_data() -> void:
-	current_level = 1
+func setup_data(_level:int = 1) -> void:
+	current_level = _level
 	is_dead = false
 	starting_hp = get_parameter("hp")
 	current_hp = get_parameter("hp")
@@ -46,25 +46,9 @@ func get_damages() -> Array[Damage]:
 	var level:SytoLevelData = _get_data_for_level(current_level)
 	if level != null:
 		for stat in level.stats:
-			dmg = Damage.new()
-			dmg.damage_owner = self
-			for each in dmg.types:
-				var found:bool = false
-				if not found and level.get_parameter(each):
-					match each:
-						"unholy_damage":
-							dmg.type = Damage.Type.UNHOLY
-							found = true
-						"corruption_damage":
-							dmg.type = Damage.Type.CORRUPTION
-							found = true
-						"blight_damage":
-							dmg.type = Damage.Type.BLIGHT
-							found = true
-						"heal":
-							dmg.type = Damage.Type.HEAL
-							found = true
-						_:
-							pass
-			damages.append(dmg)
+			if stat.id.contains("_damage") or stat.id.contains("heal"):
+				dmg = Damage.new()
+				dmg.damage_owner = self
+				dmg.type = dmg.types[stat.id]
+				damages.append(dmg)
 	return damages

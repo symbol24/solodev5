@@ -69,6 +69,7 @@ func _level_up_complete() -> void:
 
 func _level_up_selection(_id:String) -> void:
 	if Game.player_manager.has_active_skill(_id):
+		#Debug.log("Emitting level up for skill: ", _id)
 		Signals.UpdateActiveSkill.emit(_id)
 	else:
 		Signals.AddNewSkill.emit(Game.player_manager.get_data_by_id(_id))

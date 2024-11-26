@@ -59,7 +59,6 @@ func get_duplicate_levels() -> Array[SytoLevelData]:
 	var result:Array[SytoLevelData] = []
 	for each in level_datas:
 		result.append(each.duplicate(true))
-
 	return result
 
 
