@@ -16,7 +16,7 @@ func set_data(_data:TowerWeaponData) -> void:
 	data.damages.clear()
 	for each in _data.damages:
 		var new:Damage = each.duplicate(true)
-		new.damage_owner = data
+		new.type = data.damage_type
 		data.damages.append(new)
 	data.extra.clear()
 	for k in _data.extra.keys():
