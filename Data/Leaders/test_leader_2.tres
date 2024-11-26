@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LeaderData" load_steps=5 format=3 uid="uid://cr6ww87h2mlo"]
+
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_anps0"]
+[ext_resource type="Script" path="res://Code/Leaders/leader_data.gd" id="2_63sgs"]
+[ext_resource type="Script" path="res://Code/Utilities/syto_data.gd" id="3_8ht1y"]
+[ext_resource type="Resource" uid="uid://bytqu832gvuva" path="res://Data/Skills/autospawner_two_data.tres" id="4_42n4y"]
+
+[resource]
+script = ExtResource("2_63sgs")
+starting_skills = Array[ExtResource("3_8ht1y")]([ExtResource("4_42n4y")])
+id = "test_leader_2"
+owner_type = 0
+level_datas = Array[ExtResource("1_anps0")]([])

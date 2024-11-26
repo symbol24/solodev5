@@ -2,6 +2,7 @@ class_name LeaderData extends SytoData
 
 
 # General
+@export var starting_skills:Array[SytoData]
 @export var use_delay:Parameter
 @export var luck:Parameter
 
@@ -38,7 +39,7 @@ class_name LeaderData extends SytoData
 @export var status_effect_delay:Parameter
 
 
-func get_parameter(_param:String):
+func get_leader_parameter(_param:String) -> Parameter:
 	#Debug.log("Getting ", _param ," Leader Data")
 	if get(_param) != null: return get(_param)
-	return 0
+	return null
