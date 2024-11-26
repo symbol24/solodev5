@@ -1,11 +1,82 @@
-[gd_resource type="Resource" script_class="BoosterData" load_steps=3 format=3 uid="uid://l4lhq6o2j56f"]
+[gd_resource type="Resource" script_class="BoosterData" load_steps=18 format=3 uid="uid://l4lhq6o2j56f"]
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_fmhu8"]
+[ext_resource type="Script" path="res://Code/Boosters/booster_sld.gd" id="2_50bgx"]
 [ext_resource type="Script" path="res://Code/Boosters/booster_data.gd" id="2_jhptu"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="3_cu76e"]
+[ext_resource type="Texture2D" uid="uid://irry3veg474v" path="res://Textures/Ui/skill_icons_progress_bar.png" id="5_m6lvj"]
+
+[sub_resource type="Resource" id="Resource_bn2ax"]
+script = ExtResource("3_cu76e")
+id = "hp"
+value = 0.2
+type = 2
+
+[sub_resource type="Resource" id="Resource_m6cx4"]
+script = ExtResource("2_50bgx")
+level = 1
+stats = Array[ExtResource("3_cu76e")]([SubResource("Resource_bn2ax")])
+
+[sub_resource type="Resource" id="Resource_18gai"]
+script = ExtResource("3_cu76e")
+id = "hp"
+value = 0.4
+type = 2
+
+[sub_resource type="Resource" id="Resource_ugpsx"]
+script = ExtResource("2_50bgx")
+level = 2
+stats = Array[ExtResource("3_cu76e")]([SubResource("Resource_18gai")])
+
+[sub_resource type="Resource" id="Resource_up0m2"]
+script = ExtResource("3_cu76e")
+id = "hp"
+value = 0.6
+type = 2
+
+[sub_resource type="Resource" id="Resource_c76j1"]
+script = ExtResource("2_50bgx")
+level = 3
+stats = Array[ExtResource("3_cu76e")]([SubResource("Resource_up0m2")])
+
+[sub_resource type="Resource" id="Resource_cswfy"]
+script = ExtResource("3_cu76e")
+id = "hp"
+value = 0.8
+type = 2
+
+[sub_resource type="Resource" id="Resource_qpqq6"]
+script = ExtResource("2_50bgx")
+level = 4
+stats = Array[ExtResource("3_cu76e")]([SubResource("Resource_cswfy")])
+
+[sub_resource type="Resource" id="Resource_pigxx"]
+script = ExtResource("3_cu76e")
+id = "hp"
+value = 1.0
+type = 2
+
+[sub_resource type="Resource" id="Resource_uvv3j"]
+script = ExtResource("2_50bgx")
+level = 5
+stats = Array[ExtResource("3_cu76e")]([SubResource("Resource_pigxx")])
+
+[sub_resource type="Resource" id="Resource_dh5ee"]
+script = ExtResource("3_cu76e")
+id = "hp"
+value = 1.5
+type = 2
+
+[sub_resource type="Resource" id="Resource_qerbr"]
+script = ExtResource("2_50bgx")
+level = 6
+stats = Array[ExtResource("3_cu76e")]([SubResource("Resource_dh5ee")])
 
 [resource]
 script = ExtResource("2_jhptu")
-stats = {}
-id = ""
+title = "hp_booster_title"
+description = "hp_booster_desc"
+ui_texture = ExtResource("5_m6lvj")
+id = "hp_booster"
 owner_type = 0
-level_datas = Array[ExtResource("1_fmhu8")]([])
+level_datas = Array[ExtResource("1_fmhu8")]([SubResource("Resource_m6cx4"), SubResource("Resource_ugpsx"), SubResource("Resource_c76j1"), SubResource("Resource_qpqq6"), SubResource("Resource_uvv3j"), SubResource("Resource_qerbr")])

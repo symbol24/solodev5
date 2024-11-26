@@ -1,6 +1,12 @@
 class_name BoosterData extends SytoData
 
 
+@export_group("Level Up")
+@export var title:String
+@export var description:String
+@export var ui_texture:CompressedTexture2D
+
+
 func get_booster_parameter(_param:String) -> Parameter:
 	if level_datas.is_empty():
 		Debug.warning("Booster ", id, " does not have any level datas.")

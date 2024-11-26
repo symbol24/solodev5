@@ -1,11 +1,82 @@
-[gd_resource type="Resource" script_class="BoosterData" load_steps=3 format=3 uid="uid://dthn1g6noyq4h"]
+[gd_resource type="Resource" script_class="BoosterData" load_steps=18 format=3 uid="uid://dthn1g6noyq4h"]
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_gxf74"]
+[ext_resource type="Script" path="res://Code/Boosters/booster_sld.gd" id="2_ry8ft"]
 [ext_resource type="Script" path="res://Code/Boosters/booster_data.gd" id="2_vd2jl"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="3_p625f"]
+[ext_resource type="Texture2D" uid="uid://irry3veg474v" path="res://Textures/Ui/skill_icons_progress_bar.png" id="5_t8iqi"]
+
+[sub_resource type="Resource" id="Resource_3f6xs"]
+script = ExtResource("3_p625f")
+id = "speed"
+value = 0.15
+type = 2
+
+[sub_resource type="Resource" id="Resource_g22ge"]
+script = ExtResource("2_ry8ft")
+level = 1
+stats = Array[ExtResource("3_p625f")]([SubResource("Resource_3f6xs")])
+
+[sub_resource type="Resource" id="Resource_trd2d"]
+script = ExtResource("3_p625f")
+id = "speed"
+value = 0.3
+type = 2
+
+[sub_resource type="Resource" id="Resource_m0gqs"]
+script = ExtResource("2_ry8ft")
+level = 2
+stats = Array[ExtResource("3_p625f")]([SubResource("Resource_trd2d")])
+
+[sub_resource type="Resource" id="Resource_u6lle"]
+script = ExtResource("3_p625f")
+id = "speed"
+value = 0.45
+type = 2
+
+[sub_resource type="Resource" id="Resource_dpdxd"]
+script = ExtResource("2_ry8ft")
+level = 3
+stats = Array[ExtResource("3_p625f")]([SubResource("Resource_u6lle")])
+
+[sub_resource type="Resource" id="Resource_bum6h"]
+script = ExtResource("3_p625f")
+id = "speed"
+value = 0.6
+type = 2
+
+[sub_resource type="Resource" id="Resource_g0v4n"]
+script = ExtResource("2_ry8ft")
+level = 4
+stats = Array[ExtResource("3_p625f")]([SubResource("Resource_bum6h")])
+
+[sub_resource type="Resource" id="Resource_3itg0"]
+script = ExtResource("3_p625f")
+id = "speed"
+value = 0.75
+type = 2
+
+[sub_resource type="Resource" id="Resource_243ap"]
+script = ExtResource("2_ry8ft")
+level = 5
+stats = Array[ExtResource("3_p625f")]([SubResource("Resource_3itg0")])
+
+[sub_resource type="Resource" id="Resource_ex417"]
+script = ExtResource("3_p625f")
+id = "speed"
+value = 0.9
+type = 2
+
+[sub_resource type="Resource" id="Resource_hu0tn"]
+script = ExtResource("2_ry8ft")
+level = 6
+stats = Array[ExtResource("3_p625f")]([SubResource("Resource_ex417")])
 
 [resource]
 script = ExtResource("2_vd2jl")
-stats = {}
-id = ""
+title = "speed_booster_title"
+description = "speed_booster_desc"
+ui_texture = ExtResource("5_t8iqi")
+id = "speed_booster"
 owner_type = 0
-level_datas = Array[ExtResource("1_gxf74")]([])
+level_datas = Array[ExtResource("1_gxf74")]([SubResource("Resource_g22ge"), SubResource("Resource_m0gqs"), SubResource("Resource_dpdxd"), SubResource("Resource_g0v4n"), SubResource("Resource_243ap"), SubResource("Resource_hu0tn")])
