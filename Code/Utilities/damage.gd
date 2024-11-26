@@ -47,7 +47,7 @@ func get_damage() -> int:
 			pass
 	
 	var damage_param:String = prefix + "damage"
-	Debug.log("Attacker Level:", damage_owner.current_level, " Damage: ", damage_owner.get_parameter("damage"), " ", damage_param, ": ", damage_owner.get_parameter(damage_param))
+	#Debug.log("Attacker Level:", damage_owner.current_level, " Damage: ", damage_owner.get_parameter("damage"), " ", damage_param, ": ", damage_owner.get_parameter(damage_param))
 	var start:float = damage_owner.get_parameter("damage") + damage_owner.get_parameter(damage_param)
 	var cc:float = damage_owner.get_parameter("crit_chance")
 	var cd:float = damage_owner.get_parameter("crit_damage")
