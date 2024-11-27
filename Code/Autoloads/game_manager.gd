@@ -8,6 +8,7 @@ const CURRENCYMANAGER = preload("res://Scenes/Utilities/Managers/currency_manage
 const LEVELUPMANAGER = preload("res://Scenes/Utilities/Managers/level_up_manager.tscn")
 const SPAWNMANAGER = preload("res://Scenes/Utilities/Managers/spawn_manager.tscn")
 const SAVELOADMANAGER = preload("res://Scenes/Utilities/Managers/save_load_manager.tscn")
+const DATAMANAGER = preload("res://Scenes/Utilities/Managers/data_manager.tscn")
 
 const DEBUGLEADER = preload("res://Data/Leaders/test_leader.tres")
 
@@ -16,6 +17,7 @@ const DEBUGLEADER = preload("res://Data/Leaders/test_leader.tres")
 
 # Game start managers
 var save_load:SaveLoadManager
+var data_manager:DataManager
 
 # Managers when a world is active
 var active_tower:Tower = null
@@ -32,7 +34,7 @@ var lup_ready:bool = false
 # Round stuff
 var last_round_result:bool = false
 var last_round_player_data:PlayerData
-var selected_leader:LeaderData
+var selected_leader:LeaderData = DEBUGLEADER
 
 
 func _ready() -> void:
@@ -42,6 +44,7 @@ func _ready() -> void:
 	Signals.CheckMatchEnd.connect(_chech_end_match)
 	Signals.ClearActiveScene.connect(_clear_tower)
 	Signals.ManagerReady.connect(_set_manager_ready)
+	Signals.LoadDataManager.connect(_load_data_manager)
 	save_load = SAVELOADMANAGER.instantiate()
 	add_child(save_load)
 
@@ -154,3 +157,6 @@ func _chech_end_match(_starting_light_radius:float, _current_light_radius:float,
 		last_round_player_data = player_manager.player_data.duplicate()
 
 
+func _load_data_manager() -> void:
+	data_manager = DATAMANAGER.instantiate()
+	add_child(data_manager)
