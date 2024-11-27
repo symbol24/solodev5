@@ -2,6 +2,7 @@ class_name LevelUpManager extends Node2D
 
 
 @export var no_skill:SkillData
+@export var card_disabled_timer:float = 0.5
 
 var levels_to_do:int = 0
 var level_up_in_progress:bool = false

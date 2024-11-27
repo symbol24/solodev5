@@ -10,7 +10,10 @@ var card_data:SytoData
 
 
 func _ready() -> void:
+	level_up_btn.disabled = true
 	level_up_btn.pressed.connect(_level_up_btn_pressed)
+	await get_tree().create_timer(Game.level_up_manager.card_disabled_timer).timeout
+	level_up_btn.disabled = false
 
 
 func set_data(_data:SytoData) -> void:
