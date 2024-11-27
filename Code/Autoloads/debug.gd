@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var commands:Array[String] = []
+@export var commands:Array[DebugCommand] = []
 @export var active:bool = true
 @export var null_text:String = "<null>"
 
@@ -54,13 +54,43 @@ func warning(_value1 = "", _value2 = "", _value3 = "", _value4 = "", _value5 = "
 
 
 func do_command(_inputs:Array[String] = []):
-	var command = _inputs.pop_front()
+	var command:String = _inputs.pop_front()
 	match command:
 		"commands":
 			var text:=""
 			if commands.is_empty(): text = "No commands available."
 			for each in commands:
-				text += each + " "
+				text += each.id + " "
 			Debug.log(text)
 		_:
-			Debug.log("Use 'commands' to see all available commands")
+			var to_do:DebugCommand = _get_command(command)
+			if to_do != null:
+				if  _inputs.size() != to_do.value_count:
+					Debug.warning(to_do.error_message)
+					return
+
+				var to_parse:String = "" + to_do.signal_name + ".emit("
+				if _inputs.size() > 0:
+					var x:int = 0
+					for each in _inputs:
+						to_parse += each
+						x += 1
+						if x < _inputs.size():
+							to_parse += ", "
+				to_parse += ")"
+				
+				var exp:Expression = Expression.new()
+				var _error = exp.parse(to_parse)
+				if _error != OK:
+					error("Error ", exp.get_error_text(), " while parsing debug command.")
+					return
+				
+				var result = exp.execute([], Signals)
+				if exp.has_execute_failed():
+					error(exp.get_error_text())
+
+
+func _get_command(input:String) -> DebugCommand:
+	for each in commands:
+		if each.id == input: return each
+	return null

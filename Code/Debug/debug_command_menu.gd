@@ -14,6 +14,7 @@ var output_line_count:int = 0
 
 
 func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
 	Signals.DebugPrint.connect(_debug_print)
 	input.text_changed.connect(_check_input)
 
@@ -24,13 +25,16 @@ func _input(event: InputEvent) -> void:
 		_toggle_debug()
 		
 	if visible and event.is_action_pressed("debug_enter"):
+		get_viewport().set_input_as_handled()
 		Debug.do_command(input.text.split(" ", false))
 		command_log.append(input.text)
 		input.text = ""
 		command_log_pos = 0
 	elif visible and event.is_action_pressed("ui_up"):
+		get_viewport().set_input_as_handled()
 		_update_input_text_from_command_log(-1)
 	elif visible and event.is_action_pressed("ui_down"):
+		get_viewport().set_input_as_handled()
 		_update_input_text_from_command_log(1)
 
 
