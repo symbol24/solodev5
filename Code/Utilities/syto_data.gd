@@ -14,6 +14,7 @@ enum Type {
 var current_level:int = 0:
 	set(value): 
 		current_level = min(value, Game.SKILLLEVELCAP)
+		#Debug.log("Sending level up for ", id, " with level ", current_level)
 		Signals.SkillLevelUpdated.emit(id, current_level)
 
 
@@ -30,11 +31,12 @@ func get_parameter(_param:String) -> float:
 	if owner_type == Type.PLAYER:
 		if not level_datas.is_empty():
 			var level_data:SytoLevelData = _get_data_for_level(current_level)
-			params.append(level_data.get_parameter(_param))
+			if level_data != null:
+				params.append(level_data.get_parameter(_param))
 		else:
 			if owner_type == Type.PLAYER: Debug.error("Level data of ", id, " does not have a key for ", _param, " at level ", current_level)
 
-		if Game.selected_leader != null: params.append(Game.selected_leader.get_parameter(_param))
+		if Game.selected_leader != null: params.append(Game.selected_leader.get_leader_parameter(_param))
 
 		if Game.player_manager != null: params.append_array(Game.player_manager.get_parameters_from_boosters(_param))
 

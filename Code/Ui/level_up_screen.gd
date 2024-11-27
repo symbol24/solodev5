@@ -17,7 +17,7 @@ func toggle_panel(display:bool, _previous:String = "") -> void:
 		_clear_choices()
 
 
-func _setup_cards(_datas:Array[SkillData]) -> void:
+func _setup_cards(_datas:Array) -> void:
 	for each in _datas:
 		var new:LevelUpCard = level_card.instantiate()
 		choices.add_child(new)

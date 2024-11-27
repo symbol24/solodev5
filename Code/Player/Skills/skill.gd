@@ -19,7 +19,9 @@ func _process(delta: float) -> void:
 
 
 func set_data(_new_data:SkillData) -> void:
-	data = _new_data
+	data = _new_data.duplicate(true)
+	data.level_datas.clear()
+	data.level_datas = _new_data.get_duplicate_levels()
 	data.current_level += 1
 
 

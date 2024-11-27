@@ -20,7 +20,8 @@ signal SyButtonPressed(destination:String)
 signal ToggleUi(id:String, previous:String)
 signal UpdatePlayerExp(value:int, max:int)
 signal UpdateSkillTimer(id:String, value:float)
-signal ConstructSkillBox(data:SkillData)
+signal ConstructSkillBox(data:SkillData, is_disabled:bool)
+signal ConstructBoosterBox(data:BoosterData)
 signal PlayerUiReady()
 signal ClearPlayerUi()
 signal PressFirstSkillButton()
@@ -35,6 +36,7 @@ signal TowerReady(tower:Tower)
 signal TowerClear()
 signal ManagerReady(manager)
 signal CheckMatchEnd(light_radius:float, push_back_radius:float)
+signal LoadDataManager()
 
 
 # Tower / Light area
@@ -53,9 +55,9 @@ signal ToggleMouseEnteredNoClickArea(in_area:bool)
 signal ActivatePlayer()
 signal PlayerlevelUp(level:int)
 signal LevelUpComplete()
-signal LevelUpSelection(id:String)
+signal LevelUpSelection(data:SytoData)
 signal AddNewSkill(data:SkillData)
-signal UpdateActiveSkill(id:String)
+signal UpdateActiveSkill(id:String, is_booster:bool)
 
 
 # Currency

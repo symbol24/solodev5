@@ -30,19 +30,15 @@ func _input(event: InputEvent) -> void:
 			Signals.ToggleUi.emit("pause_menu")
 		
 		if event.is_action_pressed("1"):
-			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(0)
 
 		if event.is_action_pressed("2"):
-			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(1)
 
 		if event.is_action_pressed("3"):
-			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(2)
 
 		if event.is_action_pressed("4"):
-			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(3)
 
 
@@ -53,7 +49,7 @@ func _ready() -> void:
 	Signals.ActivateSkill.connect(_set_active_skill)
 	Signals.StopRound.connect(_stop_player)
 	Signals.ActivatePlayer.connect(_activate_player)
-	Signals.AddNewSkill.connect(_create_skill)
+	Signals.AddNewSkill.connect(_add_new_selection)
 	Signals.UpdateActiveSkill.connect(_update_active_skill)
 	player_data = PlayerData.new()
 	Signals.UpdatePlayerExp.emit(player_data.current_exp, player_data.get_level_exp_ceiling())
@@ -64,6 +60,8 @@ func get_data_by_id(_id:String) -> SkillData:
 	for each in all_active_skills:
 		if each.data.id == _id: return each.data
 	
+
+
 	for each in all_skills:
 		if each.id == _id: return each
 	
@@ -76,12 +74,18 @@ func has_active_skill(_id:String) -> bool:
 	return false
 
 
+func has_booster(_id:String) -> bool:
+	for each in all_active_boosters:
+		if each.id == _id: return true
+	return false
+
+
 func get_parameters_from_boosters(_param:String) -> Array[Parameter]:
 	var result:Array[Parameter] = []
 
 	# for each in all boosters add to result
 	for booster in all_active_boosters:
-		if booster.get_parameter(_param) != null:
+		if booster.get_booster_parameter(_param) != null:
 			result.append(booster.get_booster_parameter(_param))
 
 	return result
@@ -103,24 +107,41 @@ func _add_run_currency(value:int) -> void:
 func _create_starter_skills() -> void:
 	if Game.selected_leader != null:
 		for each in Game.selected_leader.starting_skills:
-			_create_skill(each, true)
+			_add_new_selection(each, true)
 
 
-func _create_skill(skill_data:SkillData, is_disabled:bool = false) -> void:
-	var new:Skill = load(skill_data.skill_path).instantiate() as Skill
-	add_child(new)
-	if not new.is_node_ready():
-		await new.ready
-	new.set_data(skill_data)
-	all_active_skills.append(new)
-	Signals.ConstructSkillBox.emit(skill_data, is_disabled)
+func _add_new_selection(new_data:SytoData, is_disabled:bool = false) -> void:
+	var new
+	if new_data is SkillData:
+		new = load(new_data.skill_path).instantiate() as Skill
+		add_child(new)
+		if not new.is_node_ready():
+			await new.ready
+		new.set_data(new_data)
+		all_active_skills.append(new)
+		Signals.ConstructSkillBox.emit(new_data, is_disabled)
+	elif new_data is BoosterData:
+		#Debug.log("Received booster data")
+		var new_booster:BoosterData = new_data.duplicate(true)
+		new_booster.level_datas.clear()
+		new_booster.level_datas = new_data.get_duplicate_levels()
+		new_booster.current_level = 1
+		all_active_boosters.append(new_booster)
+		Signals.ConstructBoosterBox.emit(new_data)
 
 
-func _update_active_skill(_id:String) -> void:
-	#Debug.log("Receiving level up for skill:", _id)
+func _update_active_skill(_id:String, is_booster:bool = false) -> void:
+	#Debug.log("Receiving level up for skill:", _id, " and is booster ", is_booster)
+	if is_booster:
+		for each in all_active_boosters:
+			if each.id == _id: 
+				each.current_level += 1
+				return
+		return
 	for each in all_active_skills:
 		if each.data.id == _id:
 			each.data.current_level += 1
+			return
 
 
 func _set_active_skill(_id:String) -> void:

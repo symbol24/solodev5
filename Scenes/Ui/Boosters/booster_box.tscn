@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://2bh7m4jbskwd"]
+
+[ext_resource type="Script" path="res://Code/Ui/booster_box.gd" id="1_dtb20"]
+[ext_resource type="Texture2D" uid="uid://qw1iapmcdy4w" path="res://Textures/Ui/skill_icons_monster_1.png" id="1_q3wpn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecelo"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.172833, 0.172833, 0.172833, 1)
+
+[node name="BoosterBox" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dtb20")
+
+[node name="texture_rect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_q3wpn")
+
+[node name="outline_panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecelo")
+
+[node name="level" type="Label" parent="."]
+unique_name_in_owner = true
+process_mode = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -17.0
+offset_right = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1"
+horizontal_alignment = 2

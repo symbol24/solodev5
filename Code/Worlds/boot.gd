@@ -8,6 +8,7 @@ var skipped: bool = false
 
 
 func _ready() -> void:
+	Signals.LoadDataManager.emit()
 	Signals.LoadScene.emit("ui")
 	animator.animation_finished.connect(_anim_finished)
 	animator.play(current)

@@ -21,9 +21,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Signals="*res://Code/Autoloads/signals.gd"
+Debug="*res://Scenes/Autoloads/debug.tscn"
 SM="*res://Scenes/Autoloads/scene_manager.tscn"
 Game="*res://Scenes/Autoloads/game_manager.tscn"
-Debug="*res://Scenes/Autoloads/debug.tscn"
 Audio="*res://addons/AudioBySymbol/Code/Autoloads/audio_autoload.gd"
 
 [debug]

@@ -43,6 +43,15 @@ offset_right = -40.0
 offset_bottom = 70.0
 grow_horizontal = 0
 
+[node name="boosters" type="VBoxContainer" parent="control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 70.0
+
 [node name="exp_bar" type="TextureProgressBar" parent="control"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 300)
