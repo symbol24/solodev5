@@ -21,25 +21,29 @@ var is_active:bool = false
 func _input(event: InputEvent) -> void:
 	if not get_tree().paused and is_active:
 		if active_skill and event.is_action_pressed("mouse_left"):
+			get_viewport().set_input_as_handled()
 			active_skill.trigger_skill(event.position, mouse_in_no_click)
 
 		if event.is_action_pressed("pause"):
+			get_viewport().set_input_as_handled()
 			get_tree().paused = true
 			Signals.ToggleUi.emit("pause_menu")
 		
 		if event.is_action_pressed("1"):
+			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(0)
 
 		if event.is_action_pressed("2"):
+			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(1)
 
 		if event.is_action_pressed("3"):
+			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(2)
 
 		if event.is_action_pressed("4"):
+			get_viewport().set_input_as_handled()
 			_set_active_skill_by_key(3)
-
-		get_viewport().set_input_as_handled()
 
 
 func _ready() -> void:
@@ -97,8 +101,9 @@ func _add_run_currency(value:int) -> void:
 
 
 func _create_starter_skills() -> void:
-	for each in starting_skill:
-		_create_skill(each, true)
+	if Game.selected_leader != null:
+		for each in Game.selected_leader.starting_skills:
+			_create_skill(each, true)
 
 
 func _create_skill(skill_data:SkillData, is_disabled:bool = false) -> void:
