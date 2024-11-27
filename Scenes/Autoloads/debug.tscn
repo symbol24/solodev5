@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd2km2dfdyr5r"]
+[gd_scene load_steps=4 format=3 uid="uid://bd2km2dfdyr5r"]
 
 [ext_resource type="Script" path="res://Code/Autoloads/debug.gd" id="1_it7cy"]
+[ext_resource type="Script" path="res://Code/Debug/debug_command.gd" id="2_s3pd2"]
+
+[sub_resource type="Resource" id="Resource_4lwuy"]
+script = ExtResource("2_s3pd2")
+id = "addexp"
+value_count = 1
+error_message = "Command addexp requires a value, example: addexp 1"
+signal_name = "AddExp"
 
 [node name="Debug" type="Node2D"]
 script = ExtResource("1_it7cy")
+commands = Array[ExtResource("2_s3pd2")]([SubResource("Resource_4lwuy")])
