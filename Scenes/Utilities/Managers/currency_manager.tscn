@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0s3kecqne8dn"]
+[gd_scene load_steps=2 format=3 uid="uid://d0s3kecqne8dn"]
 
 [ext_resource type="Script" path="res://Code/Utilities/Managers/currency_manager.gd" id="1_y5j5p"]
-[ext_resource type="PackedScene" uid="uid://p56ijj03hx8l" path="res://Scenes/Objects/currency.tscn" id="2_73fgl"]
 
 [node name="CurrencyManager" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_y5j5p")
-currency = ExtResource("2_73fgl")

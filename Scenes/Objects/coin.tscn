@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://frot1smetoj"]
+
+[ext_resource type="Script" path="res://Code/Objects/currency.gd" id="1_brgix"]
+[ext_resource type="Texture2D" uid="uid://decen6du78mr1" path="res://Textures/Objects/drops - 16x16 spritesheet.png" id="1_wlf3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iut1"]
+atlas = ExtResource("1_wlf3w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2658s"]
+atlas = ExtResource("1_wlf3w")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdnf3"]
+atlas = ExtResource("1_wlf3w")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57xqs"]
+atlas = ExtResource("1_wlf3w")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_268sj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iut1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2658s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdnf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57xqs")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 7.0
+}]
+
+[node name="Coin" type="Node2D"]
+script = ExtResource("1_brgix")
+type = 1
+wait_before_tween = 2.0
+tween_time = 0.5
+height = 16
+
+[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_268sj")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.298999

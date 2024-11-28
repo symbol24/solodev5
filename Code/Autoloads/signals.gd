@@ -18,7 +18,8 @@ signal ToggleDark(show:bool)
 signal DamageNumber(value:int, pos:Vector2, type:String)
 signal SyButtonPressed(destination:String)
 signal ToggleUi(id:String, previous:String)
-signal UpdatePlayerExp(value:int, max:int)
+signal UpdatePlayerExp(value:float, max:float)
+signal UpdatePlayerCurrency(value:float)
 signal UpdateSkillTimer(id:String, value:float)
 signal ConstructSkillBox(data:SkillData, is_disabled:bool)
 signal ConstructBoosterBox(data:BoosterData)
@@ -49,7 +50,8 @@ signal UpdateDarkRadius(value:float)
 
 # Player
 signal PlayerReady()
-signal AddExp(value:int)
+signal AddExp(value:float)
+signal AddCurrency(type:CurrencyObject.Type, value:float)
 signal ActivateSkill(id:String)
 signal ToggleMouseEnteredNoClickArea(in_area:bool)
 signal ActivatePlayer()
@@ -61,7 +63,7 @@ signal UpdateActiveSkill(id:String, is_booster:bool)
 
 
 # Currency
-signal SpawnCurrency(pos:Vector2)
+signal SpawnCurrency(type:CurrencyObject.Type, amount:int, pos:Vector2)
 signal CMReady()
 signal ReturnCurrencyToPool(currency:CurrencyObject)
 

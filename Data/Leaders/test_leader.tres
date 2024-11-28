@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="LeaderData" load_steps=5 format=3 uid="uid://dp221r83i8j7w"]
+[gd_resource type="Resource" script_class="LeaderData" load_steps=9 format=3 uid="uid://dp221r83i8j7w"]
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_wkb3j"]
 [ext_resource type="Script" path="res://Code/Leaders/leader_data.gd" id="2_fktkt"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="2_jqwlm"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_data.gd" id="3_0efss"]
 [ext_resource type="Resource" uid="uid://bl6hfu8twtu16" path="res://Data/Skills/autospawner_one_data.tres" id="4_20u8v"]
+
+[sub_resource type="Resource" id="Resource_a77ch"]
+script = ExtResource("2_jqwlm")
+id = ""
+value = 0.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_ojphs"]
+script = ExtResource("2_jqwlm")
+id = "coin_chance"
+value = 0.05
+type = 0
+
+[sub_resource type="Resource" id="Resource_il7dp"]
+script = ExtResource("2_jqwlm")
+id = "luck"
+value = 1.0
+type = 1
 
 [resource]
 script = ExtResource("2_fktkt")
 starting_skills = Array[ExtResource("3_0efss")]([ExtResource("4_20u8v")])
+luck = SubResource("Resource_il7dp")
+coin_chance = SubResource("Resource_ojphs")
+coin_amount_bonus = SubResource("Resource_a77ch")
 id = "test leader"
 owner_type = 0
 level_datas = Array[ExtResource("1_wkb3j")]([])

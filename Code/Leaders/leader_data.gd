@@ -38,6 +38,11 @@ class_name LeaderData extends SytoData
 @export_category("Status Effects")
 @export var status_effect_delay:Parameter
 
+@export_category("Exp/Coins")
+@export var coin_chance:Parameter
+@export var coin_amount_bonus:Parameter
+@export var exp_value_bonus:Parameter
+
 
 func get_leader_parameter(_param:String) -> Parameter:
 	#Debug.log("Getting ", _param ," Leader Data")

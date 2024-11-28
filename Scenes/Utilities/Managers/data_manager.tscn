@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://pao8f1dagljd"]
+[gd_scene load_steps=19 format=3 uid="uid://pao8f1dagljd"]
 
 [ext_resource type="Script" path="res://Code/Utilities/Managers/data_manager.gd" id="1_r7uli"]
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="2_7xqek"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://2bh7m4jbskwd" path="res://Scenes/Ui/Boosters/booster_box.tscn" id="14_1f12c"]
 [ext_resource type="PackedScene" uid="uid://dx3builap6b86" path="res://Scenes/Ui/damage_number.tscn" id="14_rtx1l"]
 [ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="16_6waah"]
+[ext_resource type="PackedScene" uid="uid://frot1smetoj" path="res://Scenes/Objects/coin.tscn" id="17_lj1b8"]
+[ext_resource type="PackedScene" uid="uid://p56ijj03hx8l" path="res://Scenes/Objects/exp.tscn" id="17_ny8wd"]
 
 [node name="DataManager" type="Node"]
 script = ExtResource("1_r7uli")
@@ -29,3 +31,5 @@ skill_box = ExtResource("13_2v0go")
 booster_box = ExtResource("14_1f12c")
 damage_number = ExtResource("14_rtx1l")
 packed_hp_bar = ExtResource("16_6waah")
+currency = ExtResource("17_lj1b8")
+experience = ExtResource("17_ny8wd")

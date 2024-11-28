@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://p56ijj03hx8l"]
+
+[ext_resource type="Script" path="res://Code/Objects/currency.gd" id="1_5o45c"]
+[ext_resource type="Texture2D" uid="uid://decen6du78mr1" path="res://Textures/Objects/drops - 16x16 spritesheet.png" id="2_j6kja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5ovq"]
+atlas = ExtResource("2_j6kja")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjn4"]
+atlas = ExtResource("2_j6kja")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr3ta"]
+atlas = ExtResource("2_j6kja")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68fs6"]
+atlas = ExtResource("2_j6kja")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64ubk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5ovq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr3ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68fs6")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 7.0
+}]
+
+[node name="Currency" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_5o45c")
+wait_before_tween = 2.0
+tween_time = 0.5
+height = 16
+
+[node name="animated" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2, -3)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_64ubk")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.571959

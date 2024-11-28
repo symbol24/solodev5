@@ -44,7 +44,7 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	Signals.ToggleMouseEnteredNoClickArea.connect(_toggle_mouse_entered)
-	Signals.AddExp.connect(_add_exp)
+	Signals.AddCurrency.connect(_add_currency)
 	Signals.PlayerUiReady.connect(_create_starter_skills)
 	Signals.ActivateSkill.connect(_set_active_skill)
 	Signals.StopRound.connect(_stop_player)
@@ -80,6 +80,29 @@ func has_booster(_id:String) -> bool:
 	return false
 
 
+func get_value_of(_param:String) -> float:
+	var result:float = 0
+	var bonus:float = 0
+	var percent:float = 1
+	var params:Array[Parameter] = get_parameters_from_boosters(_param)
+	params.append(Game.selected_leader.get_leader_parameter(_param))
+	params.append_array(Game.save_load.get_parameter_from_permas(_param))
+
+	for each in params:
+		if each != null:
+			match each.type:
+				Parameter.Type.FLAT:
+					result = each.value
+				Parameter.Type.FLAT_BONUS:
+					bonus += each.value
+				Parameter.Type.PERCENT_BONUS:
+					percent += each.value
+
+	result = (result + bonus) * percent
+
+	return result
+
+
 func get_parameters_from_boosters(_param:String) -> Array[Parameter]:
 	var result:Array[Parameter] = []
 
@@ -96,8 +119,11 @@ func _toggle_mouse_entered(value:bool) -> void:
 	#Debug.log("Mouse in no click: ", mouse_in_no_click)
 
 
-func _add_exp(value:int) -> void:
-	player_data.add_exp(value)
+func _add_currency(type:CurrencyObject.Type, value:float) -> void:
+	if type == CurrencyObject.Type.EXP:
+		player_data.add_exp(value)
+	else:
+		player_data.add_currency(value)
 
 
 func _add_run_currency(value:int) -> void:
