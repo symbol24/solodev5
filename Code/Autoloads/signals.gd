@@ -78,3 +78,7 @@ signal MonsterDeath(monster_data:MonsterData)
 signal SaveLoadManagerReady()
 signal Save(id:int)
 signal Load(id:int)
+
+
+# Tower Monster
+signal TowerMonsterDeath(_name:String, is_unique:bool)

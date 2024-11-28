@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://vw1f6bwm15wd"]
+[gd_scene load_steps=12 format=3 uid="uid://vw1f6bwm15wd"]
 
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_jjqfh"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_3y0lg"]
-[ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_5s4gb"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_7k3cy"]
 [ext_resource type="Texture2D" uid="uid://63ivvac1yycm" path="res://Textures/Enemies/34x15 Monster 1 without shadows.png" id="5_gw4wh"]
 
@@ -78,7 +77,6 @@ collision_mask = 4
 motion_mode = 1
 script = ExtResource("1_jjqfh")
 attack_area = NodePath("AttackArea")
-packed_hp_bar = ExtResource("4_5s4gb")
 
 [node name="sprite" type="Sprite2D" parent="." groups=["flippable"]]
 unique_name_in_owner = true

@@ -17,3 +17,4 @@ class_name DataManager extends Node
 @export var skill_box:PackedScene
 @export var booster_box:PackedScene
 @export var damage_number:PackedScene
+@export var packed_hp_bar:PackedScene

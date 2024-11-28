@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://pao8f1dagljd"]
+[gd_scene load_steps=17 format=3 uid="uid://pao8f1dagljd"]
 
 [ext_resource type="Script" path="res://Code/Utilities/Managers/data_manager.gd" id="1_r7uli"]
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="2_7xqek"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c8s2rl5xmi84s" path="res://Scenes/Ui/Skills/skill_ui_box.tscn" id="13_2v0go"]
 [ext_resource type="PackedScene" uid="uid://2bh7m4jbskwd" path="res://Scenes/Ui/Boosters/booster_box.tscn" id="14_1f12c"]
 [ext_resource type="PackedScene" uid="uid://dx3builap6b86" path="res://Scenes/Ui/damage_number.tscn" id="14_rtx1l"]
+[ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="16_6waah"]
 
 [node name="DataManager" type="Node"]
 script = ExtResource("1_r7uli")
@@ -27,3 +28,4 @@ leaders = Array[ExtResource("8_0opb4")]([ExtResource("12_jpb1s")])
 skill_box = ExtResource("13_2v0go")
 booster_box = ExtResource("14_1f12c")
 damage_number = ExtResource("14_rtx1l")
+packed_hp_bar = ExtResource("16_6waah")

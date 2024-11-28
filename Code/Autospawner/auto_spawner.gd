@@ -20,7 +20,7 @@ var timer:float = 0.0:
 			timer = 0.0
 			_spawn_for_count(data.spawn_count)
 		spawn_progress_bar.value = (timer/current_delay)*100
-var spawned_json:String = data.paresed_json["spawned_json"] if data and not data.is_empty() else ""
+var unique_monster:Monster = null
 
 
 func _process(delta: float) -> void:
@@ -35,14 +35,15 @@ func setup_auto_spawner(_data:SkillData) -> void:
 
 
 func _spawn_for_count(_count:int = 1) -> void:
-	var x:int = 0
-	while x < _count:
-		_spawn_one()
-		x += 1
-		await get_tree().create_timer(0.2).timeout
+	if not data.to_spawn.is_unique or(data.to_spawn.is_unique and unique_monster == null):
+		var x:int = 0
+		while x < _count:
+			_spawn_one()
+			x += 1
+			await get_tree().create_timer(0.2).timeout
 
 
-func _spawn_one() -> void:
+func _spawn_one() -> Monster:
 	var new = Game.spawn_manager.get_thing_to_spawn(data.monster_data)
 	if new:
 		data.monster_data.current_level = data.current_level
@@ -52,6 +53,8 @@ func _spawn_one() -> void:
 		#Debug.log("monster ", new.name, " spawned")
 		spawn_count += 1
 		Audio.play_audio(Game.audio_list.get_audio_file("monster_spawn"))
+		return new
+	return null
 
 
 func _get_current_spawn_delay() -> float:

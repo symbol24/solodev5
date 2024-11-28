@@ -79,15 +79,15 @@ func do_command(_inputs:Array[String] = []):
 							to_parse += ", "
 				to_parse += ")"
 				
-				var exp:Expression = Expression.new()
-				var _error = exp.parse(to_parse)
+				var expr:Expression = Expression.new()
+				var _error = expr.parse(to_parse)
 				if _error != OK:
-					error("Error ", exp.get_error_text(), " while parsing debug command.")
+					error("Error ", expr.get_error_text(), " while parsing debug command.")
 					return
 				
-				var result = exp.execute([], Signals)
-				if exp.has_execute_failed():
-					error(exp.get_error_text())
+				var _result = expr.execute([], Signals)
+				if expr.has_execute_failed():
+					error(expr.get_error_text())
 
 
 func _get_command(input:String) -> DebugCommand:

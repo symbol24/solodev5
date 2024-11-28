@@ -6,7 +6,6 @@ class_name Monster extends CharacterBody2D
 
 @export_group("Other")
 @export var target:Vector2 = Vector2(320, 180)
-@export var packed_hp_bar:PackedScene
 
 @onready var hp_point: Marker2D = %hp_point
 @onready var animator: AnimationPlayer = %animator
@@ -54,8 +53,8 @@ func setup_stats(_data:MonsterData) -> void:
 	data.level_datas.clear()
 	data.level_datas = _data.get_duplicate_levels()
 	data.setup_data(_data.current_level)
-	if packed_hp_bar:
-		hp_bar = packed_hp_bar.instantiate()
+	if Game.data_manager.packed_hp_bar:
+		hp_bar = Game.data_manager.packed_hp_bar.instantiate()
 		add_child(hp_bar)
 		hp_bar.position = hp_point.position
 		hp_bar.step = 1
@@ -71,6 +70,7 @@ func setup_stats(_data:MonsterData) -> void:
 
 func _death() -> void:
 	if not data.is_dead: data.is_dead = true
+	hp_bar.hide()
 	Audio.play_audio(Game.audio_list.get_audio_file("death"))
 	animator.play("death")
 	Signals.SpawnCurrency.emit(global_position)
