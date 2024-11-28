@@ -5,9 +5,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ngdb"]
 
-[sub_resource type="Animation" id="Animation_41p41"]
-resource_name = "whatever"
-length = 0.3
+[sub_resource type="Animation" id="Animation_r0oty"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,8 +20,9 @@ tracks/0/keys = {
 "values": [ExtResource("2_7dirg")]
 }
 
-[sub_resource type="Animation" id="Animation_r0oty"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_41p41"]
+resource_name = "whatever"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

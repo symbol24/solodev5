@@ -2,6 +2,7 @@ class_name Tower extends Area2D
 
 
 @export var tower_data:TowerData
+@export var spawner_points:Array[Marker2D]
 
 @onready var light_area: Area2D = %light_area
 @onready var light_area_collider: CollisionShape2D = %light_area_collider
@@ -51,20 +52,26 @@ func _setup_weapon(_data:TowerWeaponData) -> void:
 
 
 func _setup_spawner(_data:TowerAutospawnerData) -> void:
-	var spawner:TowerAutospawner = load(_data.path).instantiate() as TowerAutospawner
-	add_child(spawner)
-	if not spawner.is_node_ready():
-		await spawner.ready
-	spawner.position = attack_point.position
-	spawner.name = _data.id
-	spawner.set_data(_data)
-	data.active_spawners.append(spawner)
+	if data.active_spawners.size() < 2:
+		var spawner:TowerAutospawner = load(_data.path).instantiate() as TowerAutospawner
+		var point:Marker2D = spawner_points[1] if spawner_points[0].get_child_count() > 0 else spawner_points[0]
+		point.add_child(spawner)
+		if not spawner.is_node_ready():
+			await spawner.ready
+		spawner.position = Vector2.ZERO
+		spawner.name = _data.id
+		spawner.set_data(_data)
+		data.active_spawners.append(spawner)
+	else:
+		Debug.warning("Tower spawner count reached. No more spawners can be added.")
 
 
 func _activate() -> void:
 	is_active = true
 	for aw in data.active_weapons:
 		aw.activate()
+	for each in data.active_spawners:
+		each.activate()
 	radius_timer.start()
 	
 

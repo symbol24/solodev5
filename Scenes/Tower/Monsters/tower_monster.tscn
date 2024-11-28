@@ -282,17 +282,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjgru"]
 radius = 11.0
 
-[node name="TowerMonster" type="CharacterBody2D"]
+[node name="TowerMonster" type="CharacterBody2D" node_paths=PackedStringArray("attack_area")]
 collision_layer = 16
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_5nvbt")
+attack_area = NodePath("AttackArea")
 
-[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+[node name="animated_sprite" type="AnimatedSprite2D" parent="." groups=["flippable"]]
 unique_name_in_owner = true
 position = Vector2(0, -36)
 sprite_frames = SubResource("SpriteFrames_w5354")
-animation = &"death"
+animation = &"walk"
 autoplay = "walk"
 flip_h = true
 
@@ -303,6 +304,8 @@ shape = SubResource("CircleShape2D_mkuyy")
 
 [node name="HitBox" parent="." instance=ExtResource("2_6ikji")]
 visible = false
+collision_layer = 16
+collision_mask = 72
 
 [node name="hit_collider" parent="HitBox" index="0"]
 position = Vector2(0, -10)

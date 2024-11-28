@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_640lo"]
 script = ExtResource("3_7tvhd")
 id = "spawn_delay"
-value = 10.0
+value = 1.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_hd5eu"]

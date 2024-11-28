@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://gyvxcchpwu64"]
+[gd_scene load_steps=3 format=3 uid="uid://gyvxcchpwu64"]
 
 [ext_resource type="Script" path="res://Code/Tower/Autospawners/tower_autospawner.gd" id="1_la1yv"]
+[ext_resource type="Texture2D" uid="uid://bvn8y48pbna3s" path="res://Textures/Objects/chest 1.png" id="2_dqorc"]
 
 [node name="TowerAutospawner" type="Node2D"]
 script = ExtResource("1_la1yv")
+
+[node name="spawn_point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
+texture = ExtResource("2_dqorc")
