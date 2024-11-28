@@ -28,6 +28,7 @@ func get_parameter(_param:String) -> float:
 	var base:float = 0
 	var bonus:float = 0
 	var percent:float = 1
+
 	if owner_type == Type.PLAYER:
 		if not level_datas.is_empty():
 			var level_data:SytoLevelData = _get_data_for_level(current_level)
@@ -53,6 +54,7 @@ func get_parameter(_param:String) -> float:
 						percent += each.value
 		
 		result = (base + bonus) * percent
+
 
 	return result
 

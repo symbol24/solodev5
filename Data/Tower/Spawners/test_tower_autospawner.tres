@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TowerAutospawnerData" load_steps=7 format=3 uid="uid://cwabvlhj07hv8"]
+
+[ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_1t76r"]
+[ext_resource type="Script" path="res://Code/Tower/Autospawners/tower_autospawner_data.gd" id="2_naqhf"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="3_7tvhd"]
+[ext_resource type="Resource" uid="uid://dm5x5f01rxxuf" path="res://Data/Tower/Monsters/test_tower_monster.tres" id="4_bvjde"]
+
+[sub_resource type="Resource" id="Resource_640lo"]
+script = ExtResource("3_7tvhd")
+id = "spawn_delay"
+value = 10.0
+type = 0
+
+[sub_resource type="Resource" id="Resource_hd5eu"]
+script = ExtResource("3_7tvhd")
+id = "spawn_count"
+value = 1.0
+type = 0
+
+[resource]
+script = ExtResource("2_naqhf")
+to_spawn = ExtResource("4_bvjde")
+path = "res://Scenes/Tower/Autospawners/tower_autospawner.tscn"
+stats = Array[ExtResource("3_7tvhd")]([SubResource("Resource_640lo"), SubResource("Resource_hd5eu")])
+id = "test_tower_spawner"
+owner_type = 1
+level_datas = Array[ExtResource("1_1t76r")]([])

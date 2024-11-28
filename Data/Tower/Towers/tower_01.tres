@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_vt4dc"]
 [ext_resource type="Script" path="res://Code/Tower/tower_data.gd" id="2_fuen0"]
-[ext_resource type="Script" path="res://Code/Tower/Weapons/tower_weapon_data.gd" id="3_quwkt"]
-[ext_resource type="Script" path="res://Code/Utilities/syto_data.gd" id="4_88kfl"]
-[ext_resource type="Resource" uid="uid://3sxbco0o384" path="res://Data/Tower/WeaponData/sweeping_light_data.tres" id="4_m884r"]
+[ext_resource type="Script" path="res://Code/Tower/tower_syto_data.gd" id="3_tlle5"]
+[ext_resource type="Resource" uid="uid://cwabvlhj07hv8" path="res://Data/Tower/Spawners/test_tower_autospawner.tres" id="4_6l5at"]
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="5_vqxs2"]
 
 [resource]
 script = ExtResource("2_fuen0")
@@ -15,8 +15,10 @@ starting_light_increase_per_tic = 1
 starting_level_cap = 5
 exp_per_tic = 0.1
 base_damage = 1
-starter_weapons = Array[ExtResource("3_quwkt")]([ExtResource("4_m884r")])
-upgrade_choices = Array[ExtResource("4_88kfl")]([])
+starter_weapons = Array[ExtResource("3_tlle5")]([])
+starter_spawners = Array[ExtResource("3_tlle5")]([ExtResource("4_6l5at")])
+upgrade_choices = Array[ExtResource("3_tlle5")]([])
+stats = Array[ExtResource("5_vqxs2")]([])
 id = "tower_01"
 owner_type = 1
 level_datas = Array[ExtResource("1_vt4dc")]([])

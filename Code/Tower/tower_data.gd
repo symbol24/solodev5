@@ -10,14 +10,16 @@ class_name TowerData extends TowerSytoData
 @export var base_damage:int = 1
 
 @export_group("Weapons")
-@export var starter_weapons:Array[TowerWeaponData] = []
-@export var upgrade_choices:Array[SytoData] = []
+@export var starter_weapons:Array[TowerSytoData] = []
+@export var starter_spawners:Array[TowerSytoData]
+@export var upgrade_choices:Array[TowerSytoData] = []
 
 var current_increase_per_tic:int:
 	get: return get_leveled_value(starting_light_increase_per_tic)
 var dark_radius:float = 160
 var light_radius:float = 24
 var active_weapons:Array[TowerWeapon] = []
+var active_spawners:Array[TowerAutospawner] = []
 var is_dead:bool = false
 var current_exp:int = 0:
 	set(value):

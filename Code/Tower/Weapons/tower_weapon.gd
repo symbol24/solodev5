@@ -9,18 +9,7 @@ var data:TowerWeaponData
 
 
 func set_data(_data:TowerWeaponData) -> void:
-	data = _data.duplicate()
-	data.level_datas.clear()
-	for each in _data.level_datas:
-		data.level_datas.append(each.duplicate(true))
-	data.damages.clear()
-	for each in _data.damages:
-		var new:Damage = each.duplicate(true)
-		new.type = data.damage_type
-		data.damages.append(new)
-	data.extra.clear()
-	for k in _data.extra.keys():
-		data.extra[k] = _data.extra[k]
+	data = _data.duplicate(true)
 
 
 func activate() -> void:

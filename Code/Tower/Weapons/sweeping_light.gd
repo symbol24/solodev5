@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if tower.is_active and is_active:
-		rotation_degrees += (rotation_speed * delta)
+		rotation_degrees += (data.get_parameter("starting_rotation_speed") * delta)
 		if rotation_degrees >= 360: rotation_degrees = 0
 
 

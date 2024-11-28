@@ -7,6 +7,7 @@ class_name HitBox extends Area2D
 
 var monster:Monster
 var tower:Tower
+var tower_monster:TowerMonster
 var is_active:bool = false
 var timer:float = 0.0:
 	set(value):
@@ -26,6 +27,9 @@ func _ready() -> void:
 		is_active = true
 	elif parent is Tower:
 		tower = parent
+		is_active = true
+	elif parent is TowerMonster:
+		tower_monster = parent
 		is_active = true
 	else:
 		Debug.error("Parent ", parent.name, " is neither a Monster nor a Tower.")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gyvxcchpwu64"]
+
+[ext_resource type="Script" path="res://Code/Tower/Autospawners/tower_autospawner.gd" id="1_la1yv"]
+
+[node name="TowerAutospawner" type="Node2D"]
+script = ExtResource("1_la1yv")

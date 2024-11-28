@@ -50,6 +50,17 @@ func _setup_weapon(_data:TowerWeaponData) -> void:
 	data.active_weapons.append(new_weapon)
 
 
+func _setup_spawner(_data:TowerAutospawnerData) -> void:
+	var spawner:TowerAutospawner = load(_data.path).instantiate() as TowerAutospawner
+	add_child(spawner)
+	if not spawner.is_node_ready():
+		await spawner.ready
+	spawner.position = attack_point.position
+	spawner.name = _data.id
+	spawner.set_data(_data)
+	data.active_spawners.append(spawner)
+
+
 func _activate() -> void:
 	is_active = true
 	for aw in data.active_weapons:
@@ -76,6 +87,8 @@ func _setup_tower() -> void:
 	data.setup_data()
 	for each in data.starter_weapons:
 		_setup_weapon(each)
+	for each in data.starter_spawners:
+		_setup_spawner(each)
 	Signals.TowerReady.emit(self)
 		
 
