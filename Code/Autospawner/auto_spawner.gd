@@ -35,7 +35,7 @@ func setup_auto_spawner(_data:SkillData) -> void:
 
 
 func _spawn_for_count(_count:int = 1) -> void:
-	if not data.to_spawn.is_unique or(data.to_spawn.is_unique and unique_monster == null):
+	if not data.monster_data.is_unique or(data.monster_data.is_unique and unique_monster == null):
 		var x:int = 0
 		while x < _count:
 			_spawn_one()

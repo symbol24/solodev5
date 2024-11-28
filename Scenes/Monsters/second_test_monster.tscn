@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cei0y8uwmtqvv"]
+[gd_scene load_steps=12 format=3 uid="uid://cei0y8uwmtqvv"]
 
 [ext_resource type="Script" path="res://Code/Monsters/monster.gd" id="1_idicf"]
 [ext_resource type="PackedScene" uid="uid://cl3rcur1arhgu" path="res://Scenes/Utilities/hit_box.tscn" id="3_xwklx"]
 [ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="4_b1x8p"]
-[ext_resource type="PackedScene" uid="uid://bwpwy2a7m5gkg" path="res://Scenes/Ui/monster_health_bar.tscn" id="4_cfowe"]
 [ext_resource type="Texture2D" uid="uid://d2d4pwlei2fct" path="res://Textures/Enemies/50x31 Monster 2 spritesheet without shadows.png" id="5_t7wbo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mckh3"]
@@ -78,7 +77,6 @@ _data = {
 process_mode = 1
 script = ExtResource("1_idicf")
 attack_area = NodePath("AttackArea")
-packed_hp_bar = ExtResource("4_cfowe")
 
 [node name="sprite" type="Sprite2D" parent="." groups=["flippable"]]
 unique_name_in_owner = true
@@ -96,7 +94,7 @@ shape = SubResource("CircleShape2D_mckh3")
 [node name="HitBox" parent="." instance=ExtResource("3_xwklx")]
 visible = false
 collision_layer = 4
-collision_mask = 2
+collision_mask = 34
 
 [node name="hit_collider" parent="HitBox" index="0"]
 position = Vector2(0, -11)

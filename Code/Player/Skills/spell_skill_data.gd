@@ -2,7 +2,7 @@ class_name SpellSkillData extends SkillData
 
 
 @export var to_spawn:PackedScene
-@export var damages:Array[Damage]
+@export var damage_type:Damage.Type
 
 var damage:int:
 	get: return get_parameter("damage")
@@ -14,3 +14,11 @@ var projectile_speed:float:
 	get: return get_parameter("projectile_speed")
 var status_effect_delay:float:
 	get: return get_parameter("status_effect_delay")
+
+
+func get_damages() -> Array[Damage]:
+	var dmg:Damage = Damage.new()
+	dmg.type = damage_type
+	dmg.damage_owner = self
+
+	return [dmg]

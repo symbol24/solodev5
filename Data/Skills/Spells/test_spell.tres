@@ -1,10 +1,8 @@
-[gd_resource type="Resource" script_class="SpellSkillData" load_steps=45 format=3 uid="uid://bgoxdt11gf0pa"]
+[gd_resource type="Resource" script_class="SpellSkillData" load_steps=43 format=3 uid="uid://bgoxdt11gf0pa"]
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_djhko"]
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_xswiw"]
 [ext_resource type="Script" path="res://Code/Player/Skills/spell_sld.gd" id="2_a3sqg"]
 [ext_resource type="Script" path="res://Code/Player/Skills/spell_skill_data.gd" id="2_fr3hs"]
-[ext_resource type="Resource" uid="uid://ds30lhp6lhqx8" path="res://Data/Skills/Spells/Damages/test_spell_damage.tres" id="2_vju73"]
 [ext_resource type="PackedScene" uid="uid://c3x18nwgpudm6" path="res://Scenes/Player/Projectiles/Spells/test_spell_projectile.tscn" id="4_q3o3a"]
 [ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="5_gggsj"]
 [ext_resource type="Texture2D" uid="uid://cmfmd6gugq6tu" path="res://Textures/Ui/skill_icons_monster_2.png" id="7_ve1uv"]
@@ -12,12 +10,12 @@
 [sub_resource type="Resource" id="Resource_6g0ft"]
 script = ExtResource("5_gggsj")
 id = "use_delay"
-value = 15.0
+value = 2.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_1dw5l"]
 script = ExtResource("5_gggsj")
-id = "corruption_damage"
+id = "damage"
 value = 5.0
 type = 0
 
@@ -47,12 +45,12 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_6g0ft"), SubResourc
 [sub_resource type="Resource" id="Resource_t15kf"]
 script = ExtResource("5_gggsj")
 id = "use_delay"
-value = 13.0
+value = 2.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_duj3l"]
 script = ExtResource("5_gggsj")
-id = "corruption_damage"
+id = "damage"
 value = 6.0
 type = 0
 
@@ -82,12 +80,12 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_t15kf"), SubResourc
 [sub_resource type="Resource" id="Resource_7mydq"]
 script = ExtResource("5_gggsj")
 id = "use_delay"
-value = 13.0
+value = 2.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_h6sif"]
 script = ExtResource("5_gggsj")
-id = "corruption_damage"
+id = "damage"
 value = 7.0
 type = 0
 
@@ -117,12 +115,12 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_7mydq"), SubResourc
 [sub_resource type="Resource" id="Resource_wyf34"]
 script = ExtResource("5_gggsj")
 id = "use_delay"
-value = 11.0
+value = 2.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_5xjav"]
 script = ExtResource("5_gggsj")
-id = "corruption_damage"
+id = "damage"
 value = 8.0
 type = 0
 
@@ -152,12 +150,12 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_wyf34"), SubResourc
 [sub_resource type="Resource" id="Resource_yl7ia"]
 script = ExtResource("5_gggsj")
 id = "use_delay"
-value = 11.0
+value = 2.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_osh6p"]
 script = ExtResource("5_gggsj")
-id = "corruption_damage"
+id = "damage"
 value = 9.0
 type = 0
 
@@ -187,12 +185,12 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_yl7ia"), SubResourc
 [sub_resource type="Resource" id="Resource_mrrwv"]
 script = ExtResource("5_gggsj")
 id = "use_delay"
-value = 8.0
+value = 2.0
 type = 0
 
 [sub_resource type="Resource" id="Resource_76gf7"]
 script = ExtResource("5_gggsj")
-id = "corruption_damage"
+id = "damage"
 value = 11.0
 type = 0
 
@@ -222,7 +220,7 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_mrrwv"), SubResourc
 [resource]
 script = ExtResource("2_fr3hs")
 to_spawn = ExtResource("4_q3o3a")
-damages = Array[ExtResource("1_xswiw")]([ExtResource("2_vju73")])
+damage_type = 1
 skill_path = "res://Scenes/Player/Skills/spell_skill.tscn"
 skill_type = 2
 title = "spell skill"
