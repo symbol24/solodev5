@@ -45,6 +45,7 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	Signals.ToggleMouseEnteredNoClickArea.connect(_toggle_mouse_entered)
 	Signals.AddCurrency.connect(_add_currency)
+	Signals.AddExp.connect(_debug_add_exp)
 	Signals.PlayerUiReady.connect(_create_starter_skills)
 	Signals.ActivateSkill.connect(_set_active_skill)
 	Signals.StopRound.connect(_stop_player)
@@ -117,6 +118,10 @@ func get_parameters_from_boosters(_param:String) -> Array[Parameter]:
 func _toggle_mouse_entered(value:bool) -> void:
 	mouse_in_no_click = value
 	#Debug.log("Mouse in no click: ", mouse_in_no_click)
+
+
+func _debug_add_exp(value:float) -> void:
+	player_data.add_exp(value)
 
 
 func _add_currency(type:CurrencyObject.Type, value:float) -> void:

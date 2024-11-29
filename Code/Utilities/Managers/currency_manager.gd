@@ -81,5 +81,5 @@ func _get_if_spawn() -> Dictionary:
 
 func _get_exp_value() -> float:
 	var base:float = 1
-	var percent:float = Game.player_manager.get_value_of("exp_value_bonus")
+	var percent:float = Game.player_manager.get_value_of("exp_value_bonus") + 1
 	return base * percent
