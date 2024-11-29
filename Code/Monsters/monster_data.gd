@@ -7,6 +7,7 @@ class_name MonsterData extends SytoData
 @export_category("Stats")
 @export var is_flyer:bool = false
 @export var is_unique:bool = false
+@export var damage_type:Damage.Type
 
 var is_dead:bool = false
 var current_hp:int = 0:
@@ -50,6 +51,6 @@ func get_damages() -> Array[Damage]:
 			if stat.id.contains("_damage") or stat.id.contains("heal"):
 				dmg = Damage.new()
 				dmg.damage_owner = self
-				dmg.type = dmg.types[stat.id]
+				dmg.type = damage_type
 				damages.append(dmg)
 	return damages

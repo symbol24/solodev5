@@ -220,7 +220,7 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_mrrwv"), SubResourc
 [resource]
 script = ExtResource("2_fr3hs")
 to_spawn = ExtResource("4_q3o3a")
-damage_type = 1
+damage_type = 2
 skill_path = "res://Scenes/Player/Skills/spell_skill.tscn"
 skill_type = 2
 title = "spell skill"
