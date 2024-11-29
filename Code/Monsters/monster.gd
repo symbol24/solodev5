@@ -73,8 +73,8 @@ func _death() -> void:
 	hp_bar.hide()
 	Audio.play_audio(Game.audio_list.get_audio_file("death"))
 	animator.play("death")
-	Signals.SpawnCurrency.emit(CurrencyObject.Type.EXP ,1 , global_position)
-	Signals.SpawnCurrency.emit(CurrencyObject.Type.COIN ,1 , global_position)
+	Signals.SpawnCurrency.emit(CurrencyObject.Type.EXP, 1, global_position)
+	Signals.SpawnCurrency.emit(CurrencyObject.Type.COIN, 1, global_position)
 	await animator.animation_finished
 	Signals.ReturnToPool.emit(self)
 

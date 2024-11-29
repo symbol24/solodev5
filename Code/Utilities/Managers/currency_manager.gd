@@ -8,11 +8,11 @@ var currecy_pool:Array = []
 
 func _ready() -> void:
 	Signals.ReturnCurrencyToPool.connect(_return_to_pool)
-	Signals.SpawnCurrency.connect(_spawn_currency)
+	Signals.SpawnCurrency.connect(spawn_currency)
 	Signals.ManagerReady.emit(self)
 
 
-func _spawn_currency(type:CurrencyObject.Type, amount:int, pos:Vector2) -> void:
+func spawn_currency(type:CurrencyObject.Type, amount:int, pos:Vector2) -> void:
 	var spawn:bool = true
 	var result:Dictionary
 
@@ -57,7 +57,7 @@ func _return_to_pool(to_return:CurrencyObject) -> void:
 		remove_child.call_deferred(to_return)
 		currecy_pool.append(to_return)
 	else:
-		queue_free.call_deferred()
+		to_return.queue_free.call_deferred()
 
 
 func _get_if_spawn() -> Dictionary:
