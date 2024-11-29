@@ -2,6 +2,7 @@ class_name CurrencyManager extends Node2D
 
 
 @export var use_pooling:bool = false
+@export var spawn_range:float = 5
 
 var currecy_pool:Array = []
 
@@ -29,7 +30,7 @@ func spawn_currency(type:CurrencyObject.Type, amount:int, pos:Vector2) -> void:
 				if not new.is_node_ready():
 					await new.ready
 				if type == CurrencyObject.Type.EXP:	new.value = _get_exp_value()
-				new.global_position = Vector2(pos.x + randf_range(-3,3), pos.y + randf_range(-3,3))
+				new.global_position = Vector2(pos.x + randf_range(-spawn_range, spawn_range), pos.y + randf_range(-spawn_range, spawn_range))
 				new.start_tween()
 
 

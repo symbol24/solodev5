@@ -46,7 +46,8 @@ wait_before_tween = 2.0
 tween_time = 0.5
 height = 16
 
-[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+[node name="animated" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_268sj")
 animation = &"spin"
 autoplay = "spin"
