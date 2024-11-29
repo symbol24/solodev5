@@ -7,7 +7,7 @@ class_name MonsterData extends SytoData
 @export_category("Stats")
 @export var is_flyer:bool = false
 @export var is_unique:bool = false
-@export var damage_type:Damage.Type
+@export var damage_type:DamageType
 
 var is_dead:bool = false
 var current_hp:int = 0:

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="MonsterData" load_steps=30 format=3 uid="uid://0uu5na754dq5"]
+[gd_resource type="Resource" script_class="MonsterData" load_steps=31 format=3 uid="uid://0uu5na754dq5"]
 
+[ext_resource type="Resource" uid="uid://bwql7vhaf0ijl" path="res://Data/DamageTypes/unholy.tres" id="1_fjk82"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="2_lnrne"]
 [ext_resource type="Script" path="res://Code/Monsters/monster_data.gd" id="3_gk5jw"]
 [ext_resource type="Script" path="res://Code/Player/Skills/monster_sld.gd" id="4_1xe7t"]
@@ -149,6 +150,7 @@ script = ExtResource("3_gk5jw")
 to_spawn = ExtResource("4_w383q")
 is_flyer = false
 is_unique = false
+damage_type = ExtResource("1_fjk82")
 id = "monster_one"
 owner_type = 0
 level_datas = Array[ExtResource("2_lnrne")]([SubResource("Resource_a7lth"), SubResource("Resource_fcmws"), SubResource("Resource_eqif4"), SubResource("Resource_6kaki"), SubResource("Resource_jkaa8"), SubResource("Resource_nxspa")])

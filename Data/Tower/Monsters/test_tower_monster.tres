@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="TowerMonsterData" load_steps=8 format=3 uid="uid://dm5x5f01rxxuf"]
+[gd_resource type="Resource" script_class="TowerMonsterData" load_steps=9 format=3 uid="uid://dm5x5f01rxxuf"]
 
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_gnx08"]
+[ext_resource type="Resource" uid="uid://bapc5pfi6cs3" path="res://Data/DamageTypes/righteous.tres" id="1_rdhbn"]
 [ext_resource type="Script" path="res://Code/Tower/Monsters/tower_monster_data.gd" id="2_5iiiq"]
 [ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="3_8ni5r"]
 [ext_resource type="PackedScene" uid="uid://bnsdbr8hb3c4c" path="res://Scenes/Tower/Monsters/tower_monster.tscn" id="4_5r5jw"]
@@ -28,7 +29,7 @@ script = ExtResource("2_5iiiq")
 to_spawn = ExtResource("4_5r5jw")
 is_unique = true
 is_flyer = false
-damage_type = 3
+damage_type = ExtResource("1_rdhbn")
 stats = Array[ExtResource("3_8ni5r")]([SubResource("Resource_elh43"), SubResource("Resource_bkr2n"), SubResource("Resource_c015e")])
 id = "test_tower_monster"
 owner_type = 1

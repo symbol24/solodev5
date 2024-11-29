@@ -1,8 +1,9 @@
 class_name PlayerUi extends SyPanelContainer
 
 
-@export var skill_box:PackedScene
-@export var dmg_number:PackedScene
+const DMGNBRSUI = preload("res://Scenes/Ui/damage_numbers.tscn")
+
+
 @export var light_color:Color
 @export var dark_color:Color
 
@@ -15,7 +16,7 @@ var skill_boxes:Array = []
 var booster_boxes:Array = []
 # First time displayed on world loaded
 var not_displayed_yet:bool = true
-var dmg_nbr_pool:Array[DamageNumber] = []
+var dmg_nbrs_ui:DamageNumbers
 
 
 func _ready() -> void:
@@ -26,14 +27,19 @@ func _ready() -> void:
 	Signals.PressFirstSkillButton.connect(_press_first_skill_button)
 	Signals.ActivatePlayer.connect(_enable_starter_buttons)
 	Signals.ClearPlayerUi.connect(_clear_player_ui)
-	Signals.DamageNumber.connect(_display_damage_number)
-	Signals.ReturnDmgNbrToPool.connect(_return_to_pool)
 
 
 func _player_manager_ready(manager) -> void:
 	if manager is PlayerManager and not_displayed_yet:
 		not_displayed_yet = false
+		_load_dmg_nbrs_ui()
 		Signals.PlayerUiReady.emit()
+
+
+func _load_dmg_nbrs_ui() -> void:
+	var new:DamageNumbers = DMGNBRSUI.instantiate()
+	add_child(new)
+	dmg_nbrs_ui = new
 
 
 func _update_exp_bar(value:int, new_max:int) -> void:
@@ -90,22 +96,3 @@ func _press_first_skill_button() -> void:
 func _enable_starter_buttons() -> void:
 	for each in skill_boxes:
 		each.skill_button.disabled = false
-
-
-func _display_damage_number(value:int, pos:Vector2, type:String) -> void:
-	var new:DamageNumber = _get_dmg_number()
-	control.add_child(new)
-	var color:Color = light_color if type == "light" else dark_color
-	new.start(value, color, pos)
-
-
-func _get_dmg_number() -> DamageNumber:
-	if dmg_nbr_pool.is_empty():
-		return dmg_number.instantiate() as DamageNumber
-	else:
-		return dmg_nbr_pool.pop_front()
-
-
-func _return_to_pool(_dmg_nbr:DamageNumber) -> void:
-	control.remove_child(_dmg_nbr)
-	dmg_nbr_pool.append(_dmg_nbr)

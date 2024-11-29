@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SpellSkillData" load_steps=43 format=3 uid="uid://bgoxdt11gf0pa"]
+[gd_resource type="Resource" script_class="SpellSkillData" load_steps=44 format=3 uid="uid://bgoxdt11gf0pa"]
 
+[ext_resource type="Resource" uid="uid://dd6gaeqvuxex0" path="res://Data/DamageTypes/blight.tres" id="1_b3j2j"]
 [ext_resource type="Script" path="res://Code/Utilities/syto_level_data.gd" id="1_djhko"]
 [ext_resource type="Script" path="res://Code/Player/Skills/spell_sld.gd" id="2_a3sqg"]
 [ext_resource type="Script" path="res://Code/Player/Skills/spell_skill_data.gd" id="2_fr3hs"]
@@ -220,7 +221,7 @@ stats = Array[ExtResource("5_gggsj")]([SubResource("Resource_mrrwv"), SubResourc
 [resource]
 script = ExtResource("2_fr3hs")
 to_spawn = ExtResource("4_q3o3a")
-damage_type = 2
+damage_type = ExtResource("1_b3j2j")
 skill_path = "res://Scenes/Player/Skills/spell_skill.tscn"
 skill_type = 2
 title = "spell skill"

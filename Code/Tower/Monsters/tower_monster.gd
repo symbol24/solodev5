@@ -56,7 +56,7 @@ func receive_damage(received:Array[Damage]) -> void:
 			data.current_hp -= amount
 			if hp_bar != null: 
 				hp_bar.value = data.current_hp
-			Signals.DamageNumber.emit(amount, global_position, "dark")
+			Signals.DisplayDamageNumber.emit(amount, global_position, each.type)
 			if data.is_dead:
 				_death()
 

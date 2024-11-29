@@ -32,7 +32,7 @@ func receive_damage(received:Array[Damage]) -> void:
 			if not data.is_dead:
 				var amount:int = each.get_damage()
 				_update_light_radius(-amount)
-				Signals.DamageNumber.emit(amount, global_position, "dark")
+				Signals.DisplayDamageNumber.emit(amount, global_position, each.type)
 				if data.light_radius == data.starting_light_radius:
 					data.dark_radius -= amount 
 					Signals.UpdateDarkRadius.emit(amount)

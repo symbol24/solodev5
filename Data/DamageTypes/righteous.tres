@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DamageType" load_steps=2 format=3 uid="uid://bapc5pfi6cs3"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage_type.gd" id="1_shb0s"]
+
+[resource]
+script = ExtResource("1_shb0s")
+id = "righteous_damage"
+prefix = "righteous"
+damage_color = Color(0.69804, 0, 0.0496937, 1)

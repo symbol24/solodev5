@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bci10bx531v3k"]
+[gd_scene load_steps=8 format=3 uid="uid://bci10bx531v3k"]
 
 [ext_resource type="Script" path="res://Code/Ui/player_ui.gd" id="1_hia8p"]
 [ext_resource type="Texture2D" uid="uid://bes3byjr8r5cu" path="res://Textures/Ui/exp_bar_outline.png" id="2_crpe0"]
-[ext_resource type="PackedScene" uid="uid://c8s2rl5xmi84s" path="res://Scenes/Ui/Skills/skill_ui_box.tscn" id="2_wntxg"]
 [ext_resource type="Texture2D" uid="uid://ng0kq2ygxgox" path="res://Textures/Ui/exp_bar_fill.png" id="3_3mddq"]
-[ext_resource type="PackedScene" uid="uid://dx3builap6b86" path="res://Scenes/Ui/damage_number.tscn" id="3_aoemk"]
 [ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="6_w8yim"]
 [ext_resource type="Texture2D" uid="uid://cl5hkjsd6tjwh" path="res://Textures/Objects/coin.png" id="7_aoj21"]
 [ext_resource type="Script" path="res://Code/Ui/coins_lbl.gd" id="8_wo4xa"]
@@ -21,8 +19,6 @@ offset_bottom = 360.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_531id")
 script = ExtResource("1_hia8p")
-skill_box = ExtResource("2_wntxg")
-dmg_number = ExtResource("3_aoemk")
 light_color = Color(0.870543, 0.849439, 0.709633, 1)
 dark_color = Color(0.69804, 0, 0.0496937, 1)
 id = "player_ui"

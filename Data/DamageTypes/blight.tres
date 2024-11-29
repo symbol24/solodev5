@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DamageType" load_steps=2 format=3 uid="uid://dd6gaeqvuxex0"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage_type.gd" id="1_fd5il"]
+
+[resource]
+script = ExtResource("1_fd5il")
+id = "blight_damage"
+prefix = "blight"
+damage_color = Color(0.152616, 0.262214, 0.147167, 1)

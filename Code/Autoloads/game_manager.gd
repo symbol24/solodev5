@@ -13,6 +13,7 @@ const DATAMANAGER = preload("res://Scenes/Utilities/Managers/data_manager.tscn")
 const DEBUGLEADER = preload("res://Data/Leaders/test_leader.tres")
 
 
+@export var use_pooling:bool = false
 @export var audio_list:AudioList
 
 # Game start managers

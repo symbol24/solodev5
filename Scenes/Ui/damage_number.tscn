@@ -4,6 +4,8 @@
 
 [node name="DamageNumber" type="Label"]
 process_mode = 1
+z_index = 500
+z_as_relative = false
 custom_minimum_size = Vector2(32, 24)
 text = "000"
 horizontal_alignment = 1
