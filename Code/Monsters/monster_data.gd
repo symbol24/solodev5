@@ -44,13 +44,8 @@ func setup_data(_level:int = 1) -> void:
 
 func get_damages() -> Array[Damage]:
 	var damages:Array[Damage] = []
-	var dmg:Damage
-	var level:SytoLevelData = _get_data_for_level(current_level)
-	if level != null:
-		for stat in level.stats:
-			if stat.id.contains("_damage") or stat.id.contains("heal"):
-				dmg = Damage.new()
-				dmg.damage_owner = self
-				dmg.type = damage_type
-				damages.append(dmg)
+	var dmg:Damage = Damage.new()
+	dmg.damage_owner = self
+	dmg.type = damage_type
+	damages.append(dmg)
 	return damages
