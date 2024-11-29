@@ -40,6 +40,7 @@ animations = [{
 }]
 
 [node name="Coin" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_brgix")
 type = 1
 wait_before_tween = 2.0
@@ -52,3 +53,7 @@ sprite_frames = SubResource("SpriteFrames_268sj")
 animation = &"spin"
 autoplay = "spin"
 frame_progress = 0.298999
+
+[node name="timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

@@ -16,10 +16,13 @@ enum Type {
 @export var height:int = 8
 
 @onready var animated: AnimatedSprite2D = %animated
+@onready var timer: Timer = %timer
 
 
 func start_tween() -> void:
-	await get_tree().create_timer(wait_before_tween).timeout
+	timer.wait_time = wait_before_tween
+	timer.start()
+	await timer.timeout
 	var tween:Tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_STOP)
 	tween.finished.connect(_finished)
