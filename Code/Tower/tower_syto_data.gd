@@ -37,5 +37,5 @@ func get_tower_stat_parameter(_param:String) -> Parameter:
 	return null
 
 
-func get_leveled_value(value):
-	return floor(value * (current_level * 0.5)) if current_level > 1 else value
+func get_leveled_value(value) -> float:
+	return value * (current_level * 0.5) if current_level > 1 else value

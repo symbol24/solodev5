@@ -14,7 +14,7 @@ class_name TowerData extends TowerSytoData
 @export var starter_spawners:Array[TowerSytoData]
 @export var upgrade_choices:Array[TowerSytoData] = []
 
-var current_increase_per_tic:int:
+var current_increase_per_tic:float:
 	get: return get_leveled_value(starting_light_increase_per_tic)
 var dark_radius:float = 160
 var light_radius:float = 24
@@ -40,8 +40,6 @@ func setup_data() -> void:
 	is_dead = false
 	current_exp = 0
 	temp_exp = 0
-	current_level = starting_level
-	current_increase_per_tic = starting_light_increase_per_tic
 	current_level = starting_level
 	light_radius = starting_light_radius
 	dark_radius = starting_dark_radius
