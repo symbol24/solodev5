@@ -148,6 +148,7 @@ stats = Array[ExtResource("5_646f1")]([SubResource("Resource_3tgd0"), SubResourc
 script = ExtResource("3_8sfb2")
 to_spawn = ExtResource("5_2noj1")
 is_flyer = false
+is_unique = false
 id = "monster_two"
 owner_type = 0
 level_datas = Array[ExtResource("2_fiew4")]([SubResource("Resource_qpc1x"), SubResource("Resource_4gbg7"), SubResource("Resource_agg7y"), SubResource("Resource_mphp5"), SubResource("Resource_1dnlx"), SubResource("Resource_pql07")])
