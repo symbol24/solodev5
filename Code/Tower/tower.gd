@@ -36,8 +36,8 @@ func receive_damage(received:Array[Damage]) -> void:
 				if data.light_radius == data.starting_light_radius:
 					data.dark_radius -= amount 
 					Signals.UpdateDarkRadius.emit(amount)
-					Signals.CheckMatchEnd.emit(data.starting_light_radius, data.light_radius, data.dark_radius)
-
+					Signals.CheckMatchEnd.emit(data.starting_light_radius, data.light_radius, data.starting_dark_radius, data.dark_radius)
+ 
 
 func _setup_weapon(_data:TowerWeaponData) -> void:
 	var new_weapon:TowerWeapon = load(_data.path).instantiate() as TowerWeapon
@@ -120,7 +120,7 @@ func _update_light_radius(value:float) -> void:
 		var scale_value:float = data.light_radius/data.starting_light_radius
 		tower_light_circle.scale = Vector2(scale_value, scale_value)
 
-		Signals.CheckMatchEnd.emit(data.starting_light_radius, data.light_radius, data.dark_radius)
+		Signals.CheckMatchEnd.emit(data.starting_light_radius, data.light_radius, data.starting_dark_radius, data.dark_radius)
 
 
 func _update_dark_radius(radius:float) -> void:

@@ -140,14 +140,14 @@ func _check_all_ready() -> void:
 		Signals.ActivateTower.emit()
 
 
-func _chech_end_match(_starting_light_radius:float, _current_light_radius:float, _current_push_back_radius:float) -> void:
+func _chech_end_match(_starting_light_radius:float, _current_light_radius:float, starting_dark_radius:float, _current_dark_radius:float) -> void:
 	var ended:bool = false
 	if _current_light_radius > _starting_light_radius:
-		if _current_light_radius >= _current_push_back_radius:
+		if _current_light_radius >= starting_dark_radius:
 			last_round_result = false
 			ended = true
-	elif _current_light_radius <= _starting_light_radius:
-		if _current_push_back_radius <= _current_light_radius:
+	elif _current_light_radius <= (_starting_light_radius * 1.1):
+		if _current_dark_radius <= _current_light_radius:
 			last_round_result = true
 			ended = true
 	

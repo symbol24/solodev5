@@ -36,7 +36,7 @@ signal ToggleSkillFromKey(id:String)
 signal TowerReady(tower:Tower)
 signal TowerClear()
 signal ManagerReady(manager)
-signal CheckMatchEnd(light_radius:float, push_back_radius:float)
+signal CheckMatchEnd(start_light_radius:float, current_light_radius:float, starting_dark_radius:float, current_dark_radius:float)
 signal LoadDataManager()
 
 
