@@ -1,26 +1,6 @@
 class_name Damage extends Resource
 
 
-#enum Type {
-#			UNHOLY = 0,
-#			CORRUPTION = 1,
-#			BLIGHT = 2,
-#			HOLY = 3,
-#			RIGHTEOUS = 4,
-#			GRACE = 5,
-#			HEAL = 6,
-#			}
-
-#var types:Dictionary = {
-#						"unholy_damage":Type.UNHOLY,
-#						"corruption_damage":Type.CORRUPTION,
-#						"blight_damage":Type.BLIGHT,
-#						"holy_damage":Type.HOLY,
-#						"righteous_damage":Type.RIGHTEOUS,
-#						"grace_damage":Type.GRACE,
-#						"heal":Type.HEAL,
-#						}
-
 var type:DamageType
 var final_value:int = 0
 var damage_owner:SytoData
