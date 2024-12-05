@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx3o4kjjomjl3"]
+
+[ext_resource type="Script" path="res://Code/Ui/create_profile_btn.gd" id="1_nsckm"]
+
+[node name="CreateProfileBtn" type="Button"]
+custom_minimum_size = Vector2(30, 30)
+text = "+"
+script = ExtResource("1_nsckm")

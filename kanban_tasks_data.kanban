@@ -33,6 +33,8 @@
 				"4f58c068-e883-4a5c-b763-ce305d182cf7",
 				"97f88d85-1fab-4b0d-881a-95ead8028b94",
 				"93d0e403-f20a-4e2f-a405-a084e589efa8",
+				"a05e997b-cc82-4899-bf7c-a2172964551b",
+				"b1511136-e498-4c62-9213-1817728d3233",
 				"266b98f3-e539-467a-a0f8-919403ad6317",
 				"c2fc6a62-253f-4341-8f98-af8ab3dbdc62",
 				"698a59d5-76ae-4f41-873d-5bd1c65a16b8",
@@ -43,12 +45,17 @@
 		{
 			"uuid": "5c59d444-6109-45a0-9f44-ad4b0ca74b00",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"063cb3a8-1a03-4250-930f-8aefe1a013a5",
+				"c421b6d9-26d5-4957-8772-cac660cf71d3",
+				"4ed748e1-9dbb-4168-981e-06376b228166"
+			]
 		},
 		{
 			"uuid": "22fea728-0c33-4571-841d-cde6616d7d0f",
 			"title": "Done",
 			"tasks": [
+				"cbd8fc9e-7b6b-4916-9cec-ba072c2a2c85",
 				"ee60026c-f2c6-4ef6-85a3-881011583f93",
 				"714c0bcf-30e9-4e95-98b2-128f66dfa750",
 				"92d36f3c-6989-45b2-b26b-560961a3aac3",
@@ -398,6 +405,48 @@
 			"title": "exp and coin audio still runs when paused",
 			"description": "",
 			"category": "db9adcce-d8f6-44a5-b044-baaafc804c0c",
+			"steps": []
+		},
+		{
+			"uuid": "a05e997b-cc82-4899-bf7c-a2172964551b",
+			"title": "make save/load ui flow",
+			"description": "- each save file is a profile",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "b1511136-e498-4c62-9213-1817728d3233",
+			"title": "make leader choice flow",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "cbd8fc9e-7b6b-4916-9cec-ba072c2a2c85",
+			"title": "make new main menu / strip old",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "063cb3a8-1a03-4250-930f-8aefe1a013a5",
+			"title": "create popup system",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "c421b6d9-26d5-4957-8772-cac660cf71d3",
+			"title": "create profile save/load",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "4ed748e1-9dbb-4168-981e-06376b228166",
+			"title": "create profile new profile creation",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
 			"steps": []
 		}
 	],

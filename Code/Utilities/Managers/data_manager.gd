@@ -18,6 +18,8 @@ class_name DataManager extends Node
 @export var booster_box:PackedScene
 @export var damage_number:PackedScene
 @export var packed_hp_bar:PackedScene
+@export var profile_button:PackedScene
+@export var profile_create_button:PackedScene
 
 @export_category("Currencies")
 @export var currency:PackedScene

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba2lbo4ap6jyd"]
+
+[ext_resource type="Script" path="res://Code/Ui/profile_button.gd" id="1_3ggad"]
+
+[node name="ProfileButton" type="Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -610.0
+offset_bottom = -330.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_3ggad")
+
+[node name="button" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "00"
+text_overrun_behavior = 3
+clip_text = true

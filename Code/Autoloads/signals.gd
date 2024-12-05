@@ -32,6 +32,10 @@ signal ReturnDmgNbrToPool(dmg_number:DamageNumber)
 signal ToggleSkillFromKey(id:String)
 
 
+# Profiles Page
+signal ProfileSelected(profile_id:int)
+
+
 # Game Manager
 signal TowerReady(tower:Tower)
 signal TowerClear()

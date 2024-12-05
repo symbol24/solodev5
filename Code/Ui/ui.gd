@@ -54,6 +54,8 @@ func _button_dispatcher(destination:String, _previous:String = "") -> void:
 			_toggle_ui("main_menu", false)
 		"credits":
 			_toggle_ui("credits", true)
+		"profiles":
+			_toggle_ui("profiles", true)
 		"main_menu":
 			Signals.ClearActiveScene.emit()
 			if loading_screen and loading_screen.visible:

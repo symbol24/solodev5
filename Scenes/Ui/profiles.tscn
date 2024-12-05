@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu1xt6qyaxdpq"]
+
+[ext_resource type="Script" path="res://Code/Ui/profiles.gd" id="1_i55g1"]
+[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_px5u1"]
+
+[node name="Profiles" type="PanelContainer"]
+custom_minimum_size = Vector2(640, 360)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i55g1")
+
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="profile_title" type="Label" parent="vbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "profile_title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer2" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="spacer" type="Control" parent="vbox/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="vbox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="profile_grid" type="GridContainer" parent="vbox/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 17
+
+[node name="spacer2" type="Control" parent="vbox/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="spacer3" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="vbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="btn_load" type="Button" parent="vbox/HBoxContainer2"]
+layout_mode = 2
+text = "load"
+
+[node name="btn_save" type="Button" parent="vbox/HBoxContainer2"]
+layout_mode = 2
+text = "save"
+
+[node name="btn_main_menu" type="Button" parent="vbox/HBoxContainer2"]
+layout_mode = 2
+text = "back"
+script = ExtResource("2_px5u1")
+destination = "main_menu"
+
+[node name="spacer" type="Control" parent="vbox/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="spacer4" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
