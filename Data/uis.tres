@@ -12,6 +12,7 @@ levels = {
 "main_menu": "res://Scenes/Ui/main_menu.tscn",
 "pause_menu": "res://Scenes/Ui/pause_menu.tscn",
 "player_ui": "res://Scenes/Ui/player_ui.tscn",
+"popups": "res://Scenes/Ui/Popups/popups.tscn",
 "profiles": "res://Scenes/Ui/profiles.tscn",
 "result_screen": "res://Scenes/Ui/result_screen.tscn"
 }

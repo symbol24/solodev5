@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://gotbyo0iqgxw"]
+
+[ext_resource type="Script" path="res://Code/Ui/big_popup.gd" id="1_x7mou"]
+[ext_resource type="Texture2D" uid="uid://p0fb4g6lmnqs" path="res://Textures/Ui/Popup/popup_icon_error.png" id="2_4y8iu"]
+
+[node name="big_popup" type="PanelContainer"]
+custom_minimum_size = Vector2(240, 160)
+offset_right = 240.0
+offset_bottom = 160.0
+theme_type_variation = &"BigPopupPanel"
+script = ExtResource("1_x7mou")
+
+[node name="big_popup_vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="title_hbox" type="HBoxContainer" parent="big_popup_vbox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="big_texture" type="TextureRect" parent="big_popup_vbox/title_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_4y8iu")
+expand_mode = 3
+
+[node name="big_title" type="Label" parent="big_popup_vbox/title_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_type_variation = &"BigPopupTitle"
+text = "this is where the title goes and there sho"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="big_text" type="RichTextLabel" parent="big_popup_vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"BigPopupDescription"
+bbcode_enabled = true
+text = "this is where the description goes"
+
+[node name="bottom_hbox" type="HBoxContainer" parent="big_popup_vbox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="timer_rtl" type="RichTextLabel" parent="big_popup_vbox/bottom_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 15)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[center]00[/center]"
+scroll_active = false
+
+[node name="buttons_hbox" type="HBoxContainer" parent="big_popup_vbox/bottom_hbox"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 0
+
+[node name="popup_cancel_btn" type="Button" parent="big_popup_vbox/bottom_hbox/buttons_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../popup_confirm_btn")
+focus_neighbor_top = NodePath("../popup_confirm_btn")
+focus_neighbor_right = NodePath("../popup_confirm_btn")
+focus_neighbor_bottom = NodePath("../popup_confirm_btn")
+focus_next = NodePath("../popup_confirm_btn")
+focus_previous = NodePath("../popup_confirm_btn")
+mouse_force_pass_scroll_events = false
+text = "cancel_popup_btn"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="popup_confirm_btn" type="Button" parent="big_popup_vbox/bottom_hbox/buttons_hbox"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../popup_cancel_btn")
+focus_neighbor_top = NodePath("../popup_cancel_btn")
+focus_neighbor_right = NodePath("../popup_cancel_btn")
+focus_neighbor_bottom = NodePath("../popup_cancel_btn")
+focus_next = NodePath("../popup_cancel_btn")
+focus_previous = NodePath("../popup_cancel_btn")
+text = "confirm_popup_btn"
+text_overrun_behavior = 1

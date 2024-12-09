@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bws368e4h1rwq"]
+
+[ext_resource type="Script" path="res://Code/Ui/popups.gd" id="1_4qe4h"]
+[ext_resource type="PackedScene" uid="uid://gotbyo0iqgxw" path="res://Scenes/Ui/Popups/big_popup.tscn" id="2_tbu1i"]
+[ext_resource type="PackedScene" uid="uid://2c6itt1jvnro" path="res://Scenes/Ui/Popups/small_popup.tscn" id="3_gqsgg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4o01g"]
+
+[node name="Popups" type="PanelContainer"]
+visible = false
+z_index = 4096
+z_as_relative = false
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4o01g")
+script = ExtResource("1_4qe4h")
+
+[node name="control" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="big_popup" parent="control" instance=ExtResource("2_tbu1i")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 70.0
+offset_right = 440.0
+offset_bottom = 230.0
+
+[node name="small_popup" parent="control" instance=ExtResource("3_gqsgg")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 70.0
+offset_right = 440.0
+offset_bottom = 110.0

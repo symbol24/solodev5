@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://2c6itt1jvnro"]
+
+[ext_resource type="Script" path="res://Code/Ui/small_popup.gd" id="1_c4t7u"]
+[ext_resource type="Texture2D" uid="uid://soa58k4be5v3" path="res://Textures/Ui/Popup/popup_icon_warning.png" id="2_h1atq"]
+
+[node name="small_popup" type="PanelContainer"]
+custom_minimum_size = Vector2(240, 40)
+offset_right = 240.0
+offset_bottom = 40.0
+theme_type_variation = &"SmallPopupPanel"
+script = ExtResource("1_c4t7u")
+
+[node name="small_hbox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="small_texture" type="TextureRect" parent="small_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_h1atq")
+expand_mode = 3
+
+[node name="small_text" type="RichTextLabel" parent="small_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 13)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"SmallPopupDescription"
+bbcode_enabled = true
+text = "this is where the text goes"
+scroll_active = false

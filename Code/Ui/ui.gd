@@ -2,19 +2,24 @@ class_name UI extends CanvasLayer
 
 
 const LSPATH:String = "res://Scenes/Ui/loading_screen.tscn"
+const POPUPPATH:String = "res://Scenes/Ui/Popups/popups.tscn"
 
 
 @export var uis:LevelData
 
+@onready var menu_layer: Control = %menu_layer
+
 var ui_panels:Array[SyPanelContainer] = []
 var loading_screen:LoadingScreen
 var debug_ui:DebugUi
+
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	Signals.SyButtonPressed.connect(_button_dispatcher)
 	Signals.ToggleUi.connect(_toggle_ui)
 	Signals.ToggleLoadingScreen.connect(_toggle_loading_screen)
+	_load_popup()
 	if Debug.active:
 		debug_ui = _add_debug_ui()
 
@@ -40,7 +45,7 @@ func _toggle_ui(id:String, display:bool = true, _previous:String = "") -> void:
 		var to_load:String = uis.get_level_path(id)
 		if to_load != "":
 			var new_ui:SyPanelContainer = load(to_load).instantiate()
-			add_child(new_ui)
+			menu_layer.add_child(new_ui)
 			if not new_ui.is_node_ready:
 				await new_ui.ready
 			ui_panels.append(new_ui)
@@ -82,3 +87,8 @@ func _add_debug_ui() -> DebugUi:
 		add_child(new_ui)
 		return new_ui
 	return null
+
+
+func _load_popup() -> void:
+	var popups:PopupManager = load(POPUPPATH).instantiate()
+	add_child(popups)

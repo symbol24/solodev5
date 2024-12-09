@@ -36,6 +36,12 @@ signal ToggleSkillFromKey(id:String)
 signal ProfileSelected(profile_id:int)
 
 
+# Popups
+signal DisplaySmallPopup(level:PopupManager.Level, text:String, timer:int)
+signal DisplayBigPopup(new_popup_id:String, level:PopupManager.Level, title:String, text:String, timer:int)
+signal PopupResult(popup_id:String, result:bool)
+
+
 # Game Manager
 signal TowerReady(tower:Tower)
 signal TowerClear()
@@ -84,6 +90,10 @@ signal MonsterDeath(monster_data:MonsterData)
 signal SaveLoadManagerReady()
 signal Save(id:int)
 signal Load(id:int)
+signal CreateNewProfile()
+signal NewSaveFileCreated()
+signal DeleteSaveFile(save_id:int)
+signal DeleteSaveSuccess(save_id:int)
 
 
 # Tower Monster

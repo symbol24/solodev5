@@ -20,6 +20,8 @@ class_name DataManager extends Node
 @export var packed_hp_bar:PackedScene
 @export var profile_button:PackedScene
 @export var profile_create_button:PackedScene
+@export var popup_warning_icon:CompressedTexture2D
+@export var popup_error_icon:CompressedTexture2D
 
 @export_category("Currencies")
 @export var currency:PackedScene

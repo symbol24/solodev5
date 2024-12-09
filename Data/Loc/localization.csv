@@ -41,3 +41,15 @@ music_label,Music
 sfx_label,SFX
 main_menu_audio,Audio
 audio_pause_menu,Audio
+popup_small_save_confirm,Profile %s saved.
+popup_small_save_missmatch,Attempting to save %s while active save is %s.
+create_profile_btn,Create New Profile
+profile_btn_delete,Delete
+profile_btn_save,Save
+profile_btn_load,Load
+profile_btn_back,Back
+profile_title,Profiles
+main_menu_profiles,Profiles
+main_menu_settings,Settings
+delete_fail,Unable to delete profile %s.
+profile_delete_successful,Profile %s has been deleted.
