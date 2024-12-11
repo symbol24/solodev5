@@ -53,3 +53,10 @@ main_menu_profiles,Profiles
 main_menu_settings,Settings
 delete_fail,Unable to delete profile %s.
 profile_delete_successful,Profile %s has been deleted.
+profile_loaded,Profile %s load complete.
+unsaved_warning_title,WARNING
+unsaved_warning_text,Loading a profile will result in loss of all unsaved progress.
+cancel_popup_btn,Cancel
+confirm_popup_btn,Confirm
+create_profile_title,Create a new profile?
+create_profile_text,Creating a new profile will result in loss of all unsaved progress.

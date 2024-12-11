@@ -3,6 +3,13 @@
 [ext_resource type="Script" path="res://Code/Ui/create_profile_btn.gd" id="1_nsckm"]
 
 [node name="CreateProfileBtn" type="Button"]
-custom_minimum_size = Vector2(30, 30)
-text = "+"
+clip_contents = true
+custom_minimum_size = Vector2(120, 30)
+offset_right = 120.0
+offset_bottom = 30.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "create_profile_btn"
+text_overrun_behavior = 1
+clip_text = true
 script = ExtResource("1_nsckm")

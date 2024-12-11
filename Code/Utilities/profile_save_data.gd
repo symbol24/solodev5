@@ -1,4 +1,4 @@
-class_name SaveData extends Resource
+class_name ProfileSaveData extends Resource
 
 
 @export var id:int = -1

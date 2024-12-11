@@ -55,8 +55,11 @@ func _toggle_ui(id:String, display:bool = true, _previous:String = "") -> void:
 func _button_dispatcher(destination:String, _previous:String = "") -> void:
 	match destination:
 		"play":
-			Signals.LoadScene.emit("test")
-			_toggle_ui("main_menu", false)
+			if Game.save_load.active_save != null:
+				Signals.LoadScene.emit("test")
+				_toggle_ui("main_menu", false)
+			else:
+				_toggle_ui("profiles", true)
 		"credits":
 			_toggle_ui("credits", true)
 		"profiles":

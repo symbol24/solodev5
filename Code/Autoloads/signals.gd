@@ -34,6 +34,7 @@ signal ToggleSkillFromKey(id:String)
 
 # Profiles Page
 signal ProfileSelected(profile_id:int)
+signal UntoggleProfileButton(profile_id:int)
 
 
 # Popups
@@ -91,9 +92,11 @@ signal SaveLoadManagerReady()
 signal Save(id:int)
 signal Load(id:int)
 signal CreateNewProfile()
-signal NewSaveFileCreated()
+signal NewSaveFileCreated(save_id:int)
 signal DeleteSaveFile(save_id:int)
 signal DeleteSaveSuccess(save_id:int)
+signal SaveLoadComplete(active_save:ProfileSaveData)
+signal DisplaySaveIcon(time:int)
 
 
 # Tower Monster
