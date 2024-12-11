@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf5ploonyff18"]
 
 [ext_resource type="Script" path="res://Code/Ui/main_menu.gd" id="1_ek4cp"]
-[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="1_noof6"]
+[ext_resource type="Script" path="res://Code/Ui/wrappers/sy_button.gd" id="1_noof6"]
 [ext_resource type="Resource" uid="uid://btlvu1kpjqm5k" path="res://Data/Audio/main_menu.tres" id="2_jm764"]
 
 [node name="MainMenu" type="PanelContainer"]
@@ -60,7 +60,7 @@ clip_text = true
 script = ExtResource("1_noof6")
 destination = "profiles"
 
-[node name="btn_audio" type="Button" parent="Control/menu"]
+[node name="btn_settings" type="Button" parent="Control/menu"]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
@@ -69,7 +69,7 @@ text = "main_menu_settings"
 text_overrun_behavior = 1
 clip_text = true
 script = ExtResource("1_noof6")
-destination = "audio_settings"
+destination = "settings"
 
 [node name="btn_credits" type="Button" parent="Control/menu"]
 clip_contents = true

@@ -17,6 +17,7 @@ signal ToggleLoadingScreen(display:bool)
 signal ToggleDark(show:bool)
 signal DisplayDamageNumber(value:int, pos:Vector2, type:DamageType)
 signal SyButtonPressed(destination:String)
+signal ButtonPressed(button_id:String)
 signal ToggleUi(id:String, previous:String)
 signal UpdatePlayerExp(value:float, max:float)
 signal UpdatePlayerCurrency(value:float)
@@ -30,6 +31,9 @@ signal UntoggleSkillButtons(id:String)
 signal SkillLevelUpdated(id:String, level:int)
 signal ReturnDmgNbrToPool(dmg_number:DamageNumber)
 signal ToggleSkillFromKey(id:String)
+
+# Settings
+
 
 
 # Profiles Page

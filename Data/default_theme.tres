@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cedmy6ssy173y"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cedmy6ssy173y"]
 
 [ext_resource type="Texture2D" uid="uid://dnwctda6jkumq" path="res://Textures/Ui/lelve_up_card_back.png" id="1_t3tj5"]
 [ext_resource type="Texture2D" uid="uid://dp82tq17b7rb8" path="res://Textures/Ui/lelve_up_card_border_white.png" id="2_75lli"]
@@ -19,6 +19,13 @@ texture = ExtResource("2_75lli")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7v0s"]
 texture = ExtResource("2_75lli")
 modulate_color = Color(0.870543, 0.849439, 0.709633, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngio5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.129558, 0.129559, 0.129558, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_at2s5"]
 bg_color = Color(0.0530692, 0.157792, 0.231151, 1)
@@ -49,7 +56,12 @@ LevelUpCardTitle/base_type = &"RichTextLabel"
 LevelUpCardTitle/font_sizes/normal_font_size = 12
 PlayerUiPauseButton/base_type = &"Button"
 PlayerUiPauseButton/font_sizes/font_size = 8
+SettingsTabContainer/base_type = &"TabContainer"
+SettingsTabContainer/font_sizes/font_size = 8
+SettingsTabContainer/styles/panel = SubResource("StyleBoxFlat_ngio5")
 SmallPopupDescription/base_type = &"RichTextLabel"
 SmallPopupDescription/font_sizes/normal_font_size = 12
 SmallPopupPanel/base_type = &"PanelContainer"
 SmallPopupPanel/styles/panel = SubResource("StyleBoxFlat_at2s5")
+settings_label/base_type = &"Label"
+settings_label/font_sizes/font_size = 12

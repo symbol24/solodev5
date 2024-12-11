@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_jn6me")
 levels = {
-"audio_settings": "res://Scenes/Ui/audio_settings.tscn",
 "credits": "res://Scenes/Ui/credits.tscn",
 "debug_ui": "res://Scenes/Debug/debug_ui.tscn",
 "level_up_screen": "res://Scenes/Ui/LevelUpScreen.tscn",
@@ -14,6 +13,7 @@ levels = {
 "player_ui": "res://Scenes/Ui/player_ui.tscn",
 "popups": "res://Scenes/Ui/Popups/popups.tscn",
 "profiles": "res://Scenes/Ui/profiles.tscn",
-"result_screen": "res://Scenes/Ui/result_screen.tscn"
+"result_screen": "res://Scenes/Ui/result_screen.tscn",
+"settings": "res://Scenes/Ui/settings.tscn"
 }
 extra_loading_time = 0.0

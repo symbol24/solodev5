@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc7r65a7703mk"]
 
 [ext_resource type="Script" path="res://Code/Ui/result_screen.gd" id="1_7xora"]
-[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_agw4d"]
+[ext_resource type="Script" path="res://Code/Ui/wrappers/sy_button.gd" id="2_agw4d"]
 
 [node name="ResultScreen" type="PanelContainer"]
 process_mode = 3

@@ -60,3 +60,5 @@ cancel_popup_btn,Cancel
 confirm_popup_btn,Confirm
 create_profile_title,Create a new profile?
 create_profile_text,Creating a new profile will result in loss of all unsaved progress.
+settings_confirm_changes_title,Unsaved changes
+settings_confirm_changes_text,Some changes are unsaved. Do you wish to exit without saving?

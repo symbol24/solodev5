@@ -1,0 +1,167 @@
+[gd_scene load_steps=5 format=3 uid="uid://drjondkkr1ip6"]
+
+[ext_resource type="Script" path="res://Code/Ui/settings.gd" id="1_tf2tm"]
+[ext_resource type="Script" path="res://Code/Ui/audio_settings.gd" id="2_aidfc"]
+[ext_resource type="Script" path="res://Code/Ui/game_settings.gd" id="2_m76q8"]
+[ext_resource type="Script" path="res://Code/Ui/display_settings.gd" id="4_nr3to"]
+
+[node name="Settings" type="PanelContainer" node_paths=PackedStringArray("pages")]
+custom_minimum_size = Vector2(640, 360)
+script = ExtResource("1_tf2tm")
+pages = [NodePath("VBoxContainer/HBoxContainer/TabContainer/Game"), NodePath("VBoxContainer/HBoxContainer/TabContainer/Audio"), NodePath("VBoxContainer/HBoxContainer/TabContainer/Display")]
+id = "settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="settings_title_label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "settings_page_title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsTabContainer"
+current_tab = 0
+
+[node name="Game" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+script = ExtResource("2_m76q8")
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Game"]
+layout_mode = 2
+text = "Settings TBD"
+
+[node name="Audio" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+script = ExtResource("2_aidfc")
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Audio"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Audio/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_type_variation = &"settings_label"
+text = "master_label"
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="master" type="HSlider" parent="VBoxContainer/HBoxContainer/TabContainer/Audio/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+tick_count = 11
+ticks_on_borders = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Audio/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_type_variation = &"settings_label"
+text = "music_label"
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="music" type="HSlider" parent="VBoxContainer/HBoxContainer/TabContainer/Audio/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+tick_count = 11
+ticks_on_borders = true
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Audio/GridContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_type_variation = &"settings_label"
+text = "sfx_label"
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="sfx" type="HSlider" parent="VBoxContainer/HBoxContainer/TabContainer/Audio/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+tick_count = 11
+ticks_on_borders = true
+
+[node name="Display" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+script = ExtResource("4_nr3to")
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Display"]
+layout_mode = 2
+text = "Settings TBD"
+
+[node name="spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="btn_settings_save" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "settings_btn_save"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_settings_back" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "settings_btn_back"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="spacer" type="Control" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(97, 0)
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2

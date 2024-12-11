@@ -51,6 +51,9 @@
 			"uuid": "22fea728-0c33-4571-841d-cde6616d7d0f",
 			"title": "Done",
 			"tasks": [
+				"c0eddc77-fd40-4ade-8804-46d8b9f20b1d",
+				"224db163-f389-43ab-aca2-2c43dce7341c",
+				"bdc10478-bcb7-417e-ab1f-39f473d211f4",
 				"c421b6d9-26d5-4957-8772-cac660cf71d3",
 				"4ed748e1-9dbb-4168-981e-06376b228166",
 				"063cb3a8-1a03-4250-930f-8aefe1a013a5",
@@ -444,6 +447,27 @@
 		{
 			"uuid": "4ed748e1-9dbb-4168-981e-06376b228166",
 			"title": "create profile new profile creation",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "224db163-f389-43ab-aca2-2c43dce7341c",
+			"title": "save audio in profile save data",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "bdc10478-bcb7-417e-ab1f-39f473d211f4",
+			"title": "use audio from profile save data",
+			"description": "",
+			"category": "07a8c403-507d-408a-aa41-9acae9042451",
+			"steps": []
+		},
+		{
+			"uuid": "c0eddc77-fd40-4ade-8804-46d8b9f20b1d",
+			"title": "refactored settings pages",
 			"description": "",
 			"category": "07a8c403-507d-408a-aa41-9acae9042451",
 			"steps": []

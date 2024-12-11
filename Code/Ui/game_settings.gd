@@ -1,0 +1,1 @@
+class_name GameSettings extends SyScrollContainer

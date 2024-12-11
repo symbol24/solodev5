@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=4 uid="uid://cgmsdf1skw0bp"]
 
-[ext_resource type="Script" path="res://Code/Ui/sy_panel_container.gd" id="1_mxr6m"]
+[ext_resource type="Script" path="res://Code/Ui/wrappers/sy_panel_container.gd" id="1_mxr6m"]
 [ext_resource type="TileSet" uid="uid://dm60nmkkal3bp" path="res://Data/Tilesets/under_color.tres" id="2_bu464"]
-[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_fku58"]
+[ext_resource type="Script" path="res://Code/Ui/wrappers/sy_button.gd" id="2_fku58"]
 [ext_resource type="TileSet" uid="uid://brpouks8vyp2u" path="res://Data/Tilesets/blood_desert.tres" id="3_pbo8d"]
 [ext_resource type="Texture2D" uid="uid://opseqrjfatdh" path="res://Textures/Objects/big bones.png" id="4_gnc7w"]
 [ext_resource type="Texture2D" uid="uid://bcv2mbpcdl7sq" path="res://Textures/Objects/bones 1.png" id="5_oe3ph"]

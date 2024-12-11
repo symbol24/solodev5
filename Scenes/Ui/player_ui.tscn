@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Code/Ui/player_ui.gd" id="1_hia8p"]
 [ext_resource type="Texture2D" uid="uid://bes3byjr8r5cu" path="res://Textures/Ui/exp_bar_outline.png" id="2_crpe0"]
 [ext_resource type="Texture2D" uid="uid://ng0kq2ygxgox" path="res://Textures/Ui/exp_bar_fill.png" id="3_3mddq"]
-[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="6_w8yim"]
+[ext_resource type="Script" path="res://Code/Ui/wrappers/sy_button.gd" id="6_w8yim"]
 [ext_resource type="Texture2D" uid="uid://cl5hkjsd6tjwh" path="res://Textures/Objects/coin.png" id="7_aoj21"]
 [ext_resource type="Script" path="res://Code/Ui/coins_lbl.gd" id="8_wo4xa"]
 

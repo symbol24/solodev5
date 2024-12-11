@@ -6,7 +6,6 @@
 [node name="AudioSettings" type="PanelContainer"]
 custom_minimum_size = Vector2(640, 360)
 script = ExtResource("1_lpvr1")
-id = "audio_settings"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2

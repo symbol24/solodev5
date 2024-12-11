@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bu1xt6qyaxdpq"]
 
 [ext_resource type="Script" path="res://Code/Ui/profiles.gd" id="1_i55g1"]
-[ext_resource type="Script" path="res://Code/Ui/sy_button.gd" id="2_px5u1"]
+[ext_resource type="Script" path="res://Code/Ui/wrappers/sy_button.gd" id="2_px5u1"]
 
 [node name="Profiles" type="PanelContainer"]
 custom_minimum_size = Vector2(640, 360)
@@ -15,20 +15,13 @@ script = ExtResource("1_i55g1")
 [node name="vbox" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="spacer" type="Control" parent="vbox"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
 [node name="profile_title" type="Label" parent="vbox"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+theme_type_variation = &"HeaderLarge"
 text = "profile_title"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="spacer2" type="Control" parent="vbox"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="vbox"]
 layout_mode = 2

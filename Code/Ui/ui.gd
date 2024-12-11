@@ -77,8 +77,8 @@ func _button_dispatcher(destination:String, _previous:String = "") -> void:
 		"pause_menu":
 			_toggle_ui("pause_menu", true, _previous)
 			get_tree().paused = true
-		"audio_settings":
-			_toggle_ui("audio_settings", true, _previous)
+		"settings":
+			_toggle_ui("settings", true, _previous)
 		_:
 			pass
 
