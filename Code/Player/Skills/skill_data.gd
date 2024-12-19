@@ -19,4 +19,6 @@ enum SkillType {
 
 # general
 var use_delay:float:
-	get: return get_parameter("use_delay")
+	get: 
+		Debug.log("use delay: ", get_parameter("use_delay"))
+		return get_parameter("use_delay")

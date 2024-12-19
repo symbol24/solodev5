@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Parameter" load_steps=2 format=3 uid="uid://bqt8nqxwoa5xy"]
+
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="1_wimq1"]
+
+[resource]
+script = ExtResource("1_wimq1")
+id = "damage"
+value = 1.0
+type = 1

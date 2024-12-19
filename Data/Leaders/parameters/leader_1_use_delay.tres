@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Parameter" load_steps=2 format=3 uid="uid://d0qwvxgd7b3qv"]
+
+[ext_resource type="Script" path="res://Code/Utilities/parameter.gd" id="1_2c2im"]
+
+[resource]
+script = ExtResource("1_2c2im")
+id = "use_delay"
+value = -5.0
+type = 1

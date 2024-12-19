@@ -35,12 +35,13 @@ autowrap_mode = 0
 [node name="menu" type="VBoxContainer" parent="Control"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 1
-offset_left = 270.0
-offset_top = 116.0
-offset_right = 370.0
-offset_bottom = 328.0
+offset_left = 60.0
+offset_top = 110.0
+offset_right = 160.0
+offset_bottom = 322.0
 
 [node name="btn_play" type="Button" parent="Control/menu"]
+unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -48,7 +49,7 @@ text = "main_menu_play"
 text_overrun_behavior = 1
 clip_text = true
 script = ExtResource("1_noof6")
-destination = "play"
+destination = "leader_select"
 
 [node name="btn_profiles" type="Button" parent="Control/menu"]
 clip_contents = true

@@ -7,6 +7,7 @@ script = ExtResource("1_jn6me")
 levels = {
 "credits": "res://Scenes/Ui/credits.tscn",
 "debug_ui": "res://Scenes/Debug/debug_ui.tscn",
+"leader_select": "res://Scenes/Ui/leader_select.tscn",
 "level_up_screen": "res://Scenes/Ui/LevelUpScreen.tscn",
 "main_menu": "res://Scenes/Ui/main_menu.tscn",
 "pause_menu": "res://Scenes/Ui/pause_menu.tscn",

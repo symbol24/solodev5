@@ -60,6 +60,8 @@ func _button_dispatcher(destination:String, _previous:String = "") -> void:
 				_toggle_ui("main_menu", false)
 			else:
 				_toggle_ui("profiles", true)
+		"leader_select":
+			_toggle_ui("leader_select", true)
 		"credits":
 			_toggle_ui("credits", true)
 		"profiles":

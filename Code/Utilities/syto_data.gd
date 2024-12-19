@@ -55,7 +55,6 @@ func get_parameter(_param:String) -> float:
 		
 		result = (base + bonus) * percent
 
-
 	return result
 
 

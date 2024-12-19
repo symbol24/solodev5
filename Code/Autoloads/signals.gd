@@ -32,6 +32,12 @@ signal SkillLevelUpdated(id:String, level:int)
 signal ReturnDmgNbrToPool(dmg_number:DamageNumber)
 signal ToggleSkillFromKey(id:String)
 
+
+# Leader Select
+signal LeaderButtonEntered(button:LeaderButton)
+signal LeaderButtonExited(button:LeaderButton)
+
+
 # Settings
 
 

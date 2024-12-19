@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://pao8f1dagljd"]
+[gd_scene load_steps=28 format=3 uid="uid://pao8f1dagljd"]
 
 [ext_resource type="Script" path="res://Code/Utilities/Managers/data_manager.gd" id="1_r7uli"]
 [ext_resource type="Script" path="res://Code/Player/Skills/skill_data.gd" id="2_7xqek"]
@@ -22,6 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://bx3o4kjjomjl3" path="res://Scenes/Ui/create_profile_btn.tscn" id="18_sgic1"]
 [ext_resource type="Texture2D" uid="uid://soa58k4be5v3" path="res://Textures/Ui/Popup/popup_icon_warning.png" id="19_s1xp4"]
 [ext_resource type="Texture2D" uid="uid://p0fb4g6lmnqs" path="res://Textures/Ui/Popup/popup_icon_error.png" id="20_4ingv"]
+[ext_resource type="PackedScene" uid="uid://ek24y3tynaw" path="res://Scenes/Ui/Leader/leader_button.tscn" id="21_52lp2"]
+[ext_resource type="StyleBox" uid="uid://qid0truffqbq" path="res://Data/Ui/LeaderStyles/Leader_panel_normal.tres" id="21_vvkyi"]
+[ext_resource type="StyleBox" uid="uid://eldprduqwkdd" path="res://Data/Ui/LeaderStyles/Leader_panel_hover.tres" id="22_770j8"]
+[ext_resource type="StyleBox" uid="uid://duh0lgms5tjqn" path="res://Data/Ui/LeaderStyles/Leader_panel_locked.tres" id="23_kpd4o"]
+[ext_resource type="StyleBox" uid="uid://m5hblq37n6j5" path="res://Data/Ui/LeaderStyles/Leader_panel_selected.tres" id="24_er7dp"]
 
 [node name="DataManager" type="Node"]
 script = ExtResource("1_r7uli")
@@ -30,7 +35,7 @@ starter_boosters = Array[ExtResource("5_35a0n")]([ExtResource("6_d21no"), ExtRes
 starter_leaders = Array[ExtResource("8_0opb4")]([ExtResource("9_gvio7")])
 skills = Array[ExtResource("2_7xqek")]([ExtResource("10_cbx1p")])
 boosters = Array[ExtResource("5_35a0n")]([ExtResource("11_k70of")])
-leaders = Array[ExtResource("8_0opb4")]([ExtResource("12_jpb1s")])
+leaders = Array[ExtResource("8_0opb4")]([ExtResource("9_gvio7"), ExtResource("12_jpb1s")])
 skill_box = ExtResource("13_2v0go")
 booster_box = ExtResource("14_1f12c")
 damage_number = ExtResource("14_rtx1l")
@@ -39,5 +44,10 @@ profile_button = ExtResource("17_slr76")
 profile_create_button = ExtResource("18_sgic1")
 popup_warning_icon = ExtResource("19_s1xp4")
 popup_error_icon = ExtResource("20_4ingv")
+leader_style_normal = ExtResource("21_vvkyi")
+leader_style_hover = ExtResource("22_770j8")
+leader_style_locked = ExtResource("23_kpd4o")
+leader_style_selected = ExtResource("24_er7dp")
+leader_button = ExtResource("21_52lp2")
 currency = ExtResource("17_lj1b8")
 experience = ExtResource("17_ny8wd")

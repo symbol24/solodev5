@@ -8,7 +8,7 @@ class_name SyPanelContainer extends PanelContainer
 var previous:String = "":
 	set(value):
 		previous = value
-		Debug.log("Page ", id, " set previous: ", previous)
+		#Debug.log("Page ", id, " set previous: ", previous)
 
 
 func toggle_panel(display:bool, _previous:String = "") -> void:
